@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">InteractingWithApp</string>
+    <string name="call_uri">View a call</string>
+    <string name="view_map">View a map</string>
+    <string name="view_web">View a web</string>
+    <string name="send_email">Send email</string>
+    <string name="set_calendar">set calendar</string>
+    <string name="app_chooser">Show app chooser</string>
+    <string name="chooser_title">Share this photo with</string>
+    <string name="select_contact">select contact</string>
+</resources>

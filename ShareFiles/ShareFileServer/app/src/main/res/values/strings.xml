@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ShareFileServer</string>
+    <string name="pick_iamge_activity_name">Select Image</string>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ShareFileClient</string>
+    <string name="send_text">send sample text</string>
+    <string name="send_to">send text</string>
+    <string name="request_image">request image</string>
+    <string name="name">name</string>
+    <string name="size">size</string>
+    <string name="send_image">send image</string>
+</resources>

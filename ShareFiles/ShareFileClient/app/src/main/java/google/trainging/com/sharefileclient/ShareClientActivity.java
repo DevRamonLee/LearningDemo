@@ -24,27 +24,26 @@ import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-
+/**
+ *  Android training 应用程序内容共享
+ *  这个应用是发送或者请求数据的客户端。
+ * */
 
 public class ShareClientActivity extends AppCompatActivity implements View.OnClickListener {
-    /*发送一段简单文本信息*/
-    private Button sendTextBtn;
-    /*向服务端请求读取图片信息*/
-    private Button requestImageBtn;
+    private Button sendTextBtn;/*发送一段简单文本信息到服务端*/
+    private Button requestImageBtn;/*向服务端请求读取图片信息*/
     private ImageView showImage;
     private TextView nameTv;
     private TextView sizeTv;
-    /*发送图片文件*/
-    private Button sendImageBtn;
+    private Button sendImageBtn;/*发送图片文件*/
 
-    /*内部存储的根目录*/
-    private File mPrivateRootDir;
-    /*内部存储images 子目录*/
-    private File mImagesDir;
-    /*待分享的图片文件对象*/
-    File shareImage;
+
+    private File mPrivateRootDir; /*内部存储的根目录*/
+    private File mImagesDir;/*内部存储images 子目录*/
+    File shareImage;/*待分享的图片文件对象*/
 
     private ShareActionProvider mShareActionProvider;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,8 +85,12 @@ public class ShareClientActivity extends AppCompatActivity implements View.OnCli
                     ShareClientActivity.this,
                     "google.trainging.com.sharefileclient.fileprovider",
                     shareImage);
+            Log.i("meng","uir is "+ imageUri.toString());
             intent.putExtra(Intent.EXTRA_STREAM, imageUri);
             intent.setType("image/jpeg");
+            /*授予目录临时共享权限*/
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION
+                    | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             startActivity(Intent.createChooser(intent,"share image"));
         }
     }
@@ -140,7 +143,7 @@ public class ShareClientActivity extends AppCompatActivity implements View.OnCli
         sizeTv.setText(Long.toString(returnCursor.getLong(sizeIndex)));
     }
 
-    /*使用 ShareActionProvider 创建菜单，分享内容*/
+    /*使用 ShareActionProvider 给ActionBar 添加分享操作*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate menu resource file.

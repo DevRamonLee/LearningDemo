@@ -15,7 +15,7 @@ import android.widget.Button;
 import java.util.Calendar;
 import java.util.List;
 
-
+/*Android training 1.7 : 使用Intent与其他应用程序交互*/
 public class InteractingActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button callBtn;
@@ -148,11 +148,6 @@ public class InteractingActivity extends AppCompatActivity implements View.OnCli
                 // We only need the NUMBER column, because there will be only one row in the result
                 String[] projection = {ContactsContract.CommonDataKinds.Phone.NUMBER};
 
-                // Perform the query on the contact to get the NUMBER column
-                // We don't need a selection or sort order (there's only one result for the given URI)
-                // CAUTION: The query() method should be called from a separate thread to avoid blocking
-                // your app's UI thread. (For simplicity of the sample, this code doesn't do that.)
-                // Consider using CursorLoader to perform the query.
                 Cursor cursor = getContentResolver()
                         .query(contactUri, projection, null, null, null);
                 cursor.moveToFirst();

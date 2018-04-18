@@ -25,7 +25,7 @@ import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 /**
- *  Android training 应用程序内容共享
+ *  Android training 2.0  应用程序内容共享
  *  这个应用是发送或者请求数据的客户端。
  * */
 
@@ -85,7 +85,6 @@ public class ShareClientActivity extends AppCompatActivity implements View.OnCli
                     ShareClientActivity.this,
                     "google.trainging.com.sharefileclient.fileprovider",
                     shareImage);
-            Log.i("meng","uir is "+ imageUri.toString());
             intent.putExtra(Intent.EXTRA_STREAM, imageUri);
             intent.setType("image/jpeg");
             /*授予目录临时共享权限*/
@@ -155,10 +154,9 @@ public class ShareClientActivity extends AppCompatActivity implements View.OnCli
         mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
         Intent sendIntent =new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT,"http://blog.csdn.net/qq_21482865/article/details/51578880");
+        sendIntent.putExtra(Intent.EXTRA_TEXT,"http://www.baidu.com");
         sendIntent.setType("text/plain");
         setShareIntent(sendIntent);
-        // Return true to display menu
         return true;
     }
 

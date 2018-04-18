@@ -24,7 +24,6 @@
             android:label="@string/pick_iamge_activity_name">
             <intent-filter>
                 <action android:name="android.intent.action.PICK" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.OPENABLE" />
 

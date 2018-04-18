@@ -1,5 +1,5 @@
 - 1.6 [数据保存](SavingData)
 - 1.7 [与其他应用交互](InteractingWithApp)
 - 2.0 [Android 分享操作](ShareFiles)
-- 3.2 [拍照](CapturingPhotos)
+- 3.2 [拍照](Camera)
 - 4.1 [高效显示Bitmap](DisplayBitmaps)

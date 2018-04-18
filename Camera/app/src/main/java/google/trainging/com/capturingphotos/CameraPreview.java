@@ -2,6 +2,7 @@ package google.trainging.com.capturingphotos;
 
 import android.content.Context;
 import android.hardware.Camera;
+import android.os.Build;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -20,7 +21,10 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         mCamera = camera;
         mHolder = getHolder();
         mHolder.addCallback(this);
-        mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+            //API 11及以后废弃，需要时自动配置，配置作用是Camera 提供数据？
+            mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        }
     }
 
     public void surfaceCreated(SurfaceHolder holder) {

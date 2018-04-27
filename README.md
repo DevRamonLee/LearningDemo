@@ -8,4 +8,5 @@
 	* 2.0 [Android 分享操作](Android_training/ShareFiles)
 	* 3.2 [拍照](Android_training/Camera)
 	* 4.1 [高效显示Bitmap](Android_training/DisplayBitmaps)
-	* [4.2 使用 OpenGL ES 显示图像.md](Android_training/OpenGlEs)
+	* 4.2 [使用 OpenGL ES 显示图像.md](Android_training/OpenGlEs)
+	* 4.3 [添加动画.md](Android_training/AddAnimation)

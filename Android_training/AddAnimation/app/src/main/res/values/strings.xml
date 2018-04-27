@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">AddAnimation</string>
+    <string name="lorem_ipsum">TaskRabbit lets people find freelance workers to complete household tasks such as cleaning, gardening or assembling flat-pack furniture.
+The company says an "unauthorised user gained access to our systems" and "certain personally identifiable information may have been compromised".
+It pledged to notify any customer who had their data accessed in the attack.
+The TaskRabbit app and website were closed on Monday and Tuesday. And the company said it was working with law enforcement and a cyber-security company to investigate.
+The company has urged people to change their passwords on other websites and apps, if they have used their TaskRabbit password for other accounts.
+Ikea bought San Francisco-based TaskRabbit in 2017, although it is operated as an independent company within the Ikea Group.
+The app was founded in 2008 by Leah Busque, who came up with the idea of a chore-hiring company when she ran out of food for her dog one evening, while waiting to go out to dinner, and wished there was someone she could call on to help.
+完成阅读
+本周最受关注新闻
+Chinese bike-sharing service ofo welcomed in India
+
+2018-04-201639
+
+'Rampage' leads Chinese box office
+
+2018-04-181604
+
+Terracotta warrior damaged in US to be repaired
+
+2018-04-171369
+
+Air purification tower cuts PM2.5 by 15%: researcher
+
+2018-04-191260
+
+Water spray aims to deter jaywalkers in Hubei Province
+
+2018-04-191164
+
+Number of illegal online ride-hailing cars slashed after crackdown
+
+2018-04-211147
+
+World's oldest person dies in Japan at age of 117
+
+2018-04-221125
+
+China's Peppa Pig theme parks expected to open by 2019
+
+2018-04-20</string>
+    <integer name="card_flip_time_full">2000</integer>
+    <integer name="card_flip_time_half">1000</integer>
+    <string name="card_animation">Card Animation</string>
+    <string name="description_image_1">Thumb of image1</string>
+    <string name="description_zoom_touch_close">touch to zoom image</string>
+    <string name="zoom_animation">zoom animation</string>
+    <string name="layout_change_animate">layout change animate</string>
+</resources>

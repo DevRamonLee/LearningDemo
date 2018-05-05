@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.li.ramon.netdeviceconnect.MainActivity">
+
+
+    <Button
+        android:id="@+id/nsd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nsd_service" />
+
+    <Button
+        android:id="@+id/wifi_p2p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/wifi_p2p" />
+
+    <Button
+        android:id="@+id/p2p_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/p2p_local_service"
+        android:textAllCaps="false" />
+</LinearLayout>

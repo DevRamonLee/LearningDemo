@@ -11,3 +11,4 @@
 	* 4.2 [使用 OpenGL ES 显示图像](Android_training/OpenGlEs)
 	* 4.3 [添加动画](Android_training/AddAnimation)
 	* 5.1 [无线连接设备](Android_training/NetDeviceConnect)
+	* 5.2 [执行网络操作](Android_training/AccessInternet)

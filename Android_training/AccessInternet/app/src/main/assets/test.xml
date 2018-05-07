@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:re="http://purl.org/atompub/rank/1.0">
+    <title type="text">Newest questions tagged android - Stack Overflow</title>
+    <link rel="self" href="https://stackoverflow.com/feeds/tag?tagnames=android&amp;sort=newest" type="application/atom+xml" />
+    <link rel="alternate" href="https://stackoverflow.com/questions/tagged/?tagnames=android&amp;sort=newest" type="text/html" />
+    <subtitle>most recent 30 from stackoverflow.com</subtitle>
+    <updated>2018-05-06T15:55:50Z</updated>
+    <id>https://stackoverflow.com/feeds/tag?tagnames=android&amp;sort=newest</id>
+    <creativeCommons:license>http://www.creativecommons.org/licenses/by-sa/3.0/rdf</creativeCommons:license>
+    <entry>
+        <id>https://stackoverflow.com/q/50201638</id>
+        <re:rank scheme="https://stackoverflow.com">0</re:rank>
+        <title type="text">android marquee data pass</title>
+        <category scheme="https://stackoverflow.com/tags" term="android" />
+        <category scheme="https://stackoverflow.com/tags" term="marquee" />
+        <author>
+            <name>zzz</name>
+            <uri>https://stackoverflow.com/users/8389847</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/50201638/android-marquee-data-pass" />
+        <published>2018-05-06T15:51:04Z</published>
+        <updated>2018-05-06T15:51:04Z</updated>
+        <summary type="html">
+
+
+            &lt;p&gt;I built a marquee in android with dynamic texts. What i want is onclick on a text it will lead me to new activity with that text moving in bundle too towards new activity. I am able to built marquee and start new activity but still in new activity all marquee text is displaying.&lt;/p&gt;
+
+            &lt;pre&gt;&lt;code&gt; t = (TextView) view.findViewById(R.id.mywidget);
+            t.setSelected(true);
+            t.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            // in.putExtra(&quot;EdiTtEXTvALUE&quot;, t.getText().toString());
+            Intent in = new Intent(mContext, News.class);
+            in.putExtra(&quot;EdiTtEXTvALUE&quot;, t.getText().toString());
+            mContext.startActivity(in);
+
+
+            }
+            });
+            &lt;/code&gt;&lt;/pre&gt;
+
+            &lt;p&gt;this is marquee built&lt;/p&gt;
+
+            &lt;pre&gt;&lt;code&gt; for (int i = 0; i &amp;lt; offerlist.length(); i++) {
+
+            url.add(offerlist.getJSONObject(i).getString(&quot;url&quot;));
+            t.setText( offerlist.getJSONObject(i).getString(&quot;name&quot;));
+
+            }
+
+            t.setSelected(true);
+            &lt;/code&gt;&lt;/pre&gt;
+
+            &lt;p&gt;i am trying to create bundle but its giving error.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    <entry>
+        <id>https://stackoverflow.com/q/50201608</id>
+        <re:rank scheme="https://stackoverflow.com">-2</re:rank>
+        <title type="text">What are the best open source alternatives to AirDroid application?</title>
+        <category scheme="https://stackoverflow.com/tags" term="android" />
+        <category scheme="https://stackoverflow.com/tags" term="ios" />
+        <category scheme="https://stackoverflow.com/tags" term="windows" />
+        <category scheme="https://stackoverflow.com/tags" term="macos" />
+        <category scheme="https://stackoverflow.com/tags" term="file-transfer" />
+        <author>
+            <name>abhijithvijayan</name>
+            <uri>https://stackoverflow.com/users/9387542</uri>
+        </author>
+        <link rel="alternate" href="https://stackoverflow.com/questions/50201608/what-are-the-best-open-source-alternatives-to-airdroid-application" />
+        <published>2018-05-06T15:48:23Z</published>
+        <updated>2018-05-06T15:48:23Z</updated>
+        <summary type="html">
+
+
+            &lt;p&gt;Is there any project that&#39;s similar to AirDroid transfer app which is still being supported?&lt;/p&gt;
+
+        </summary>
+    </entry>
+</feed>

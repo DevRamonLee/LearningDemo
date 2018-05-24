@@ -12,6 +12,7 @@
 	* 4.3 [添加动画](Part1/Android_training/AddAnimation)
 	* 5.1 [无线连接设备](Part1/Android_training/NetDeviceConnect)
 	* 5.2 [执行网络操作](Part1/Android_training/AccessInternet)
+	* 10.2 [实现高效导航](Part1/Android_training/EffectiveNavigation)
 
 # Part3
 * [DataStructure](Part3/DataStructure)

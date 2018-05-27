@@ -13,6 +13,7 @@
 	* 5.1 [无线连接设备](Part1/Android_training/NetDeviceConnect)
 	* 5.2 [执行网络操作](Part1/Android_training/AccessInternet)
 	* 10.2 [实现高效导航](Part1/Android_training/EffectiveNavigation)
+	* 10.4 [增加搜索功能](Part1/Android_training/Search)
 
 # Part3
 * [DataStructure](Part3/DataStructure)

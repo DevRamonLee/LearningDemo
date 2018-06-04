@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mengli.notifyuser.MainActivity">
+
+    <Button
+        android:id="@+id/create_common_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create a common notify" />
+
+    <Button
+        android:id="@+id/create_task_stack_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create a notify with task stack" />
+
+    <Button
+        android:id="@+id/create_start_activity_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A activity which can only be started by this notify" />
+
+    <Button
+        android:id="@+id/update_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_notify" />
+
+    <Button
+        android:id="@+id/big_view_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Big View notify" />
+    <Button
+        android:id="@+id/determinate_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create determinate notification" />
+    <Button
+        android:id="@+id/indeterminate_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create indeterminate notification" />
+
+    <Button
+        android:id="@+id/cancel_all_notifies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel all notifications" />
+</LinearLayout>

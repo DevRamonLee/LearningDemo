@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NotifyUser</string>
+    <string name="create_nofity">Create a notification</string>
+    <string name="update_notify">Update a notificaiton</string>
+</resources>

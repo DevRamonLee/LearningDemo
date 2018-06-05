@@ -15,6 +15,7 @@
 	* 10.2 [实现高效导航](Part1/Android_training/EffectiveNavigation)
     * 10.3 [通知提示用户](Part1/Android_training/NotifyUser)
 	* 10.4 [增加搜索功能](Part1/Android_training/Search)
+    * 11.2 [创建自定义View](Part1/Android_training/CustomView)
 
 # Part3
 * [DataStructure](Part3/DataStructure)

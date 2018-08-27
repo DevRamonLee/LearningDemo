@@ -1,6 +1,7 @@
 # Part1
 * [Android_advanced](Part1/Android_advanced)
 	* [Surface SurfaceView SurfaceHolder SurfaceHolder.Callback关系](Part1/Android_advanced/TestSurfaceView)
+    * [AS 中 使用OpenCV（一）使用 Module 库](Part1/Android_advanced/OpenCVDemo1)
     * [Android 使用OpenCV 基本操作及二维码提取](Part1/Android_advanced/OpenCVDemo)
     * [Android 使用OpenCV jni调用](Part1/Android_advanced/OpenCVDemo2)
 

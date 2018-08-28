@@ -12,12 +12,12 @@
        android:layout_width="match_parent"
        android:layout_height="0dp"
        android:layout_weight="1"
-       android:src="@drawable/test2"/>
+       android:src="@drawable/qr"/>
     <ImageView
         android:id="@+id/current"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:src="@drawable/test2"/>
+        android:src="@drawable/qr"/>
 
 </LinearLayout>

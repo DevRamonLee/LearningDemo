@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -37,11 +36,6 @@ public class MainActivity extends AppCompatActivity {
     Bitmap currentBitmap;
     Mat originalMat;
 
-    Rect rectTop;
-    Rect rectLeft;
-    Rect rectRight;
-    Rect rectBottom;
-
     ImageView imageOrigional;
     ImageView imageCurrent;
 
@@ -55,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         imageOrigional = findViewById(R.id.original);
         imageCurrent = findViewById(R.id.current);
-        originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.test2);
+        originalBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.qr);
         tempBitmap = originalBitmap.copy(Bitmap.Config.ARGB_8888, true);
         currentBitmap = originalBitmap.copy(Bitmap.Config.ARGB_8888, false);
     }
@@ -104,66 +98,25 @@ public class MainActivity extends AppCompatActivity {
                 if (points.get(j).x <= leftBottom.x && points.get(j).y >= leftBottom.y) {
                     leftBottom = points.get(j);
                 }
-
                 if (points.get(j).x >= rightTop.x && points.get(j).y <= rightTop.y) {
                     rightTop = points.get(j);
                 }
             }
         }
-        //提取出二维码区域
+
         int width = (int) (rightTop.x - leftBottom.x);
         int height = (int) (leftBottom.y - rightTop.y);
 
-        Rect rect = new Rect((int)leftBottom.x,(int)rightTop.y,width,height);//二维码区域
-        Mat dst = originalMat.submat(rect);
-
-        /*rectTop = new Rect((int) leftBottom.x - width / 3, (int) rightTop.y - height / 3
-                , Integer.parseInt(new java.text.DecimalFormat("0").format(width * 5 / 3))
-                , Integer.parseInt(new java.text.DecimalFormat("0").format(height / 3)));
-        rectLeft = new Rect((int) leftBottom.x - width / 3, (int) rightTop.y - height / 3
-                , Integer.parseInt(new java.text.DecimalFormat("0").format(width / 3))
-                , Integer.parseInt(new java.text.DecimalFormat("0").format(height * 5 / 3)));
-        rectBottom = new Rect((int) leftBottom.x - width / 3, (int) rightTop.y + height
-                , Integer.parseInt(new java.text.DecimalFormat("0").format(width * 5/ 3))
-                , Integer.parseInt(new java.text.DecimalFormat("0").format(height / 3)));
-        rectRight = new Rect((int) leftBottom.x + width , (int) rightTop.y - height/3
-                , Integer.parseInt(new java.text.DecimalFormat("0").format(width / 3))
-                , Integer.parseInt(new java.text.DecimalFormat("0").format(height * 5 / 3)));*/
-
-        /* dst 与 bitmap 宽高要一致，不然 matToBitmap()会抛出 generator/src/cpp/utils.cpp:97: error: (-215)*/
-        Bitmap step1 = Bitmap.createBitmap(dst.cols(), dst.rows(), Bitmap.Config.RGB_565);
-        Utils.matToBitmap(dst, step1);
-        imageCurrent.setImageBitmap(step1);
+        /*提取出二维码区域,并保存为 bitmap*/
+        Rect qrRect = new Rect((int)leftBottom.x,(int)rightTop.y,width,height);//二维码区域
+        Mat qrMat = originalMat.submat(qrRect);
+        /* qrMat 与 bitmap 宽高要一致，不然 matToBitmap()会抛出 generator/src/cpp/utils.cpp:97: error: (-215)*/
+        Bitmap qrBitmap = Bitmap.createBitmap(qrMat.cols(), qrMat.rows(), Bitmap.Config.RGB_565);
+        Utils.matToBitmap(qrMat, qrBitmap);
+        imageCurrent.setImageBitmap(qrBitmap);
     }
 
-    public void showTopRect(){
-        Mat dst = originalMat.submat(rectTop);
-        Bitmap step2 = Bitmap.createBitmap(dst.cols(),dst.rows(),Bitmap.Config.RGB_565);
-        Utils.matToBitmap(dst,step2);
-        imageCurrent.setImageBitmap(step2);
-    }
-
-    public void showLeftRect(){
-        Mat dst = originalMat.submat(rectLeft);
-        Bitmap step2 = Bitmap.createBitmap(dst.cols(),dst.rows(),Bitmap.Config.RGB_565);
-        Utils.matToBitmap(dst,step2);
-        imageCurrent.setImageBitmap(step2);
-    }
-    public void showBottomRect(){
-        Mat dst = originalMat.submat(rectBottom);
-        Bitmap step2 = Bitmap.createBitmap(dst.cols(),dst.rows(),Bitmap.Config.RGB_565);
-        Utils.matToBitmap(dst,step2);
-        imageCurrent.setImageBitmap(step2);
-    }
-
-    public void showRightRect(){
-        Mat dst = originalMat.submat(rectRight);
-        Bitmap step2 = Bitmap.createBitmap(dst.cols(),dst.rows(),Bitmap.Config.RGB_565);
-        Utils.matToBitmap(dst,step2);
-        imageCurrent.setImageBitmap(step2);
-    }
-
-
+    int num = 0;
     //计算得出三个定位二维码的矩形坐标
     public List<List<Point>> getPositionedRectangles(Map<Integer, MatOfPoint2f> pointLists, Map<Integer, Double> areaLists) {
         List<List<Point>> result = new ArrayList<List<Point>>();
@@ -195,6 +148,13 @@ public class MainActivity extends AppCompatActivity {
                                         }
                                     }
                                 }
+                                //没有检测到小矩形内部还包含一个更小的矩形
+                                if(result.size() == num ){
+                                    num ++;
+                                    List<Point> tempPoint = calculatePoints(pointLists.get(keys.get(i)));
+                                    if (tempPoint != null && tempPoint.size() > 0)
+                                        result.add(tempPoint);
+                                }
                             }
                         }
                     }
@@ -203,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return result;
     }
+
 
     public Map<Integer, Double> sortMapByValue(Map<Integer, Double> oriMap) {
         Map<Integer, Double> sortedMap = new LinkedHashMap<>();
@@ -332,56 +293,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void loadImage(Mat img) {
-        Utils.matToBitmap(img, currentBitmap);
-        imageCurrent.setImageBitmap(currentBitmap);
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Mat result = null;
         switch (item.getItemId()) {
-            case R.id.gaussian:
-                result = OpenCvUtils.differenceOfGaussian(originalMat);
-                break;
-            case R.id.canny:
-                result = OpenCvUtils.Canny(originalMat);
-                break;
-            case R.id.sobel:
-                result = OpenCvUtils.sobel(originalMat);
-                break;
-            case R.id.harrisCorner:
-                result = OpenCvUtils.HarrisCorner(originalMat);
-                break;
-            case R.id.houghLines:
-                result = OpenCvUtils.HoughLines(originalMat);
-                break;
-            case R.id.houghCircles:
-                result = OpenCvUtils.HoughCircles(originalMat);
-                break;
-            case R.id.contours:
-                result = OpenCvUtils.contours(originalMat);
-                break;
             case R.id.my_detect:
                 myQrDetect();
                 break;
-            case R.id.top_rect:
-                showTopRect();
-                break;
-            case R.id.left_rect:
-                showLeftRect();
-                break;
-            case R.id.bottom_rect:
-                showBottomRect();
-                break;
-            case R.id.right_rect:
-                showRightRect();
-                break;
             default:
                 return super.onOptionsItemSelected(item);
-        }
-        if (result != null) {
-            loadImage(result);
         }
         return true;
     }

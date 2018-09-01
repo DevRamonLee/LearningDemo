@@ -24,3 +24,5 @@
 # Part3
 * [DataStructure](Part3/DataStructure)
     * [DataStructure](Part3/DataStructure/DataStructure)
+* [Arithmetic](Part3/Arithmetic)
+    * [Arithmetic](Part3/Arithmetic/Arithmetic)

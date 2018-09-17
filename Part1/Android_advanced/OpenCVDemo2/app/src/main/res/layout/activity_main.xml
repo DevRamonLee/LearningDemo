@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="demo.opencv.com.opencvdemo.ImageModifyActivity">
+    tools:context="demo.opencv.com.opencvdemo2.MainActivity">
 
     <ImageView
         android:id="@+id/img"
@@ -29,11 +29,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="灰度化"/>
-        <Button
-            android:id="@+id/binary_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="二值化"/>
     </LinearLayout>
 
 </RelativeLayout>

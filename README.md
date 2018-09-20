@@ -1,9 +1,11 @@
 # Part1
 * [Android_advanced](Part1/Android_advanced)
 	* [Surface SurfaceView SurfaceHolder SurfaceHolder.Callback关系](Part1/Android_advanced/TestSurfaceView)
-    * [Android Studio 中使用 OpenCV 方法一: 使用 Android Module 库](Part1/Android_advanced/OpenCVDemo1)
-    * [Android Studio 中使用 OpenCV 方法二：使用 JNI 调用 C++ 实现](Part1/Android_advanced/OpenCVDemo2)
+    * [Android Studio 中使用 OpenCV 方法一: 使用 Android Module 库,需安装 OpenCvManager.apk](Part1/Android_advanced/OpenCVDemo1)
+    * [Android Studio 中使用 OpenCV 方法二：NDK 使用 JNI 调用 C++ 实现](Part1/Android_advanced/OpenCVDemo2)
         * 注意：由于 native 文件夹太大，请自行下载拷贝进入根目录 [OpenCV android SDK下载地址](https://sourceforge.net/projects/opencvlibrary/files/opencv-android/)
+    * [Android Studio 中使用 OpenCV 方法三：使用 java 代码调用，不需要安装 OpenCvManager.apk](Part1/Android_advanced/OpenCVDemo3)
+    * [Android Studio 中使用 OpenCV 方法四：Cmake 使用 JNI 调用 C++ 实现](Part1/Android_advanced/OpenCVDemo4)
     * [AS 中使用OpenCV (二)二维码提取](Part1/Android_advanced/OpenCVDemo)
     
 

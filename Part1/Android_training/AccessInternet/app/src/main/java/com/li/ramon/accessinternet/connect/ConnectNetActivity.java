@@ -37,8 +37,8 @@ public class ConnectNetActivity extends AppCompatActivity {
     }
 
     public void myClickHandler(View view) {
-        // Gets the URL from the UI's text field.
         String stringUrl = urlText.getText().toString();
+        //检查是否有网络连接
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -68,13 +68,13 @@ public class ConnectNetActivity extends AppCompatActivity {
     }
 
     // Given a URL, establishes an HttpUrlConnection and retrieves
-// the web page content as a InputStream, which it returns as
-// a string.
+    // the web page content as a InputStream, which it returns as
+    // a string.
     private String downloadUrl(String myurl) throws IOException {
         InputStream is = null;
         // Only display the first 500 characters of the retrieved
         // web page content.
-        int len = 800;
+        int len = 500;
 
         try {
             URL url = new URL(myurl);
@@ -82,7 +82,7 @@ public class ConnectNetActivity extends AppCompatActivity {
             conn.setReadTimeout(10000 /* milliseconds */);
             conn.setConnectTimeout(15000 /* milliseconds */);
             conn.setRequestMethod("GET");
-            conn.setDoInput(true);
+            conn.setDoInput(true);//以后就可以使用conn.getInputStream().read();  
             // Starts the query
             conn.connect();
             int response = conn.getResponseCode();

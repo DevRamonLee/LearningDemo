@@ -24,6 +24,7 @@
 	* 10.4 [增加搜索功能](Part1/Android_training/Search)
     * 11.2 [创建自定义View](Part1/Android_training/CustomView)
     * 11.5 [管理系统UI](Part1/Android_training/ManageUi)
+    * 13.2 [使用CursorLoader在后台加载数据](Part1/Android_training/CursorLoader)
 
 # Part3
 * [DataStructure](Part3/DataStructure)

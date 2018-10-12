@@ -25,9 +25,14 @@
     * 11.2 [创建自定义View](Part1/Android_training/CustomView)
     * 11.5 [管理系统UI](Part1/Android_training/ManageUi)
     * 13.2 [使用CursorLoader在后台加载数据](Part1/Android_training/CursorLoader)
+    * 14.5 [多线程操作(此代码只可做参考)](Part1/Android_training/ThreadSample)
 
 # Part3
 * [DataStructure](Part3/DataStructure)
-    * [DataStructure](Part3/DataStructure/DataStructure)
+    * [DataStructure Java版](Part3/DataStructure/DataStructure)
+        * 线性表的顺序实现和表示
+        * 无向带权图的邻接矩阵表示
+    * [DataStructure C 语言版](Part3/DataStructure/DataStructure_C)
+        * 无向带权图的邻接矩阵表示
 * [Arithmetic](Part3/Arithmetic)
     * [Arithmetic](Part3/Arithmetic/Arithmetic)

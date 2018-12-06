@@ -2,16 +2,14 @@ package com.betterramon;
 
 import java.util.ArrayList;
 
-import com.betterramon.arithmetic.Binomial;
-import com.betterramon.arithmetic.KnapsackProblem;
-import com.betterramon.arithmetic.WhoIsThief;
+import com.betterramon.arithmetic.*;
 import com.betterramon.model.Item;
 import com.betterramon.model.Merchandise;
 
 
 public class Algorithm {
 	 public static void main(String args[]){
-		 //问题1：谁是小偷
+		 /*//问题1：谁是小偷
 		 WhoIsThief whoIsThief = new WhoIsThief();
 		 whoIsThief.isThief();
 		 
@@ -38,7 +36,30 @@ public class Algorithm {
 		 KnapsackProblem  knapsackProblem = new KnapsackProblem(objs, 150);
 		 //knapsackProblem.greedyAlgo(knapsackProblem, 0);
 		 //knapsackProblem.greedyAlgo(knapsackProblem, 1);
-		 knapsackProblem.greedyAlgo(knapsackProblem, 2);
+		 knapsackProblem.greedyAlgo(knapsackProblem, 2);*/
 		 
+		 /*//问题4： 字符串全排列问题，分治法
+		 Permutation  permutation= new Permutation();
+		 int [] chList = {1,2,3};
+		 permutation.permutation(chList, 0, chList.length);
+		 
+		 //问题5： 二分法查找，分治法
+		 BinarySearch binarySearch = new BinarySearch();
+		 int[] arr = {1,6,23,56,80,100,300,500,1000,4322};
+		 int index = binarySearch.binarySearch(arr, 500, 0, arr.length);
+		 System.out.println("递归实现 index = " + index);
+		 int index2 = binarySearch.binarySearch(arr, 4322);
+		 System.out.println("非递归实现 index2 = " + index2);
+		 
+		 //问题 6： 迭代法求一个数的平方根
+		 CalculateRoot calculateRoot = new CalculateRoot();
+		 System.out.println(calculateRoot.clRoot(9.0, 0.0001));*/
+		 
+		 //问题7：动态规划法求最长公共子序列
+		 DpLcs dpLcs = new DpLcs();
+		 String str1 = "abcdefgh";
+		 String str2 = "abdfh";
+		 int maxLength = dpLcs.dPLcs(str1, str2, new int[str1.length()+1][str2.length()+1]);
+		 System.out.println("Max length is " + maxLength);
 	 }
 }

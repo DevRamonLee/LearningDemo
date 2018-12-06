@@ -19,6 +19,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -29,6 +30,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 /**
  * This activity displays Picasa's current featured images. It uses a service running
@@ -163,6 +165,9 @@ public class DisplayActivity extends FragmentActivity implements OnBackStackChan
         
         // Calls the super method (required)
         super.onCreate(stateBundle);
+
+        ImageView imageView = new ImageView(this);
+        imageView.setBackgroundColor(Color.parseColor("#FF0000"));
         
         // Inflates the main View, which will be the host View for the fragments
         mMainView = getLayoutInflater().inflate(R.layout.fragmenthost, null);

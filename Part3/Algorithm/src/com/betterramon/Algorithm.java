@@ -53,13 +53,17 @@ public class Algorithm {
 		 
 		 //问题 6： 迭代法求一个数的平方根
 		 CalculateRoot calculateRoot = new CalculateRoot();
-		 System.out.println(calculateRoot.clRoot(9.0, 0.0001));*/
+		 System.out.println(calculateRoot.clRoot(9.0, 0.0001));
 		 
 		 //问题7：动态规划法求最长公共子序列
 		 DpLcs dpLcs = new DpLcs();
 		 String str1 = "abcdefgh";
 		 String str2 = "abdfh";
 		 int maxLength = dpLcs.dPLcs(str1, str2, new int[str1.length()+1][str2.length()+1]);
-		 System.out.println("Max length is " + maxLength);
+		 System.out.println("Max length is " + maxLength);*/
+		 
+		 //问题8： 百钱买鸡问题
+		 new BuyChickens().buyChickens();
+		 new BuyChickens().chickensAndRabbits();
 	 }
 }

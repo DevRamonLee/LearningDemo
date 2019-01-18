@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ramon.better.top.androidui">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".layout.LinearLayoutActivity" />
+        <activity android:name=".layout.RelativeLayoutActivity" />
+        <activity android:name=".layout.ConstraintLayoutActivity" />
+        <activity android:name=".layout.FrameLayoutActivity" />
+        <activity android:name=".layout.GridLayoutActivity" />
+        <activity android:name=".layout.TableLayoutActivity" />
+        <activity
+            android:name=".layout.DrawerLayoutActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".layout.SlidingPaneLayoutActivity" />
+        <activity android:name=".layout.BaseSlideCloseActivity" />
+        <activity
+            android:name=".testactivity.NextActivity"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".testactivity.CustomViewThreeTypesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".testactivity.SuqareShowActivity" />
+        <activity android:name=".testactivity.CustomVerticalViewGroupActivity" />
+        <activity
+            android:name=".testactivity.PropertiesPriorityViewActivity"
+            android:theme="@style/AppThemeCustom" />
+        <activity android:name=".testactivity.CanvasBasicActivity"></activity>
+        <activity android:name=".testactivity.PieViewActivity">
+        </activity>
+        <activity android:name=".testactivity.CanvasOperationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

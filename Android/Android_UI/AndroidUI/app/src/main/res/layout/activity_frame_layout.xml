@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 一：最简单的帧布局-->
+<!--<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:foreground="@mipmap/ic_launcher"
+    android:foregroundGravity="right|bottom">
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#FF6143" />
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#7BEF00" />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#FFFF00" />
+</FrameLayout>-->
+
+<!-- 实例二： 一只蚊子随着手指移动-->
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/human"
+    android:id="@+id/frame_container">
+</FrameLayout>-->
+
+<!--实例三： 定时更换前景图片，实现播放动画的效果 -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="@drawable/img001"
+    android:foregroundGravity="center"
+    android:id="@+id/frame_container">
+
+</FrameLayout>

@@ -1,4 +1,4 @@
-package ramon.better.com.lifecycle.activity;
+package ramon.better.com.components.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,14 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import ramon.better.com.lifecycle.R;
+import ramon.better.com.components.R;
+
 
 /***
  * life cycle of Activity.
  */
 public class ActivityLifeCycle extends AppCompatActivity {
 
-    private static final String TAG = "ActivityLifeCycleLog";
+    private static final String TAG = "ActivityOne";
     private Context context = this;
     private int param = 1;
 
@@ -31,10 +32,14 @@ public class ActivityLifeCycle extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, TargetActivity.class);
+                Intent intent = new Intent(context, ActivityLifeCycle2.class);
                 startActivity(intent);
             }
         });
+        if (savedInstanceState != null) {
+            String test = savedInstanceState.getString("extra_test");
+            Log.i(TAG, "onCreate restore extra_test : " + test);
+        }
     }
 
     //Activity创建或者从后台重新回到前台时被调用
@@ -93,22 +98,25 @@ public class ActivityLifeCycle extends AppCompatActivity {
      * 另外,当跳转到其他Activity或者按Home键回到主屏时该方法也会被调用,系统是为了保存当前View组件的状态.
      * 在onPause之前被调用.
      */
-    /*@Override
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putInt("param", param);
         Log.i(TAG, "onSaveInstanceState called. put param: " + param);
         super.onSaveInstanceState(outState);
-    }*/
+        outState.putString("extra_test", "test");
+    }
 
     /**
      * Activity被系统杀死后再重建时被调用.
      * 例如:屏幕方向改变时,Activity被销毁再重建;当前Activity处于后台,系统资源紧张将其杀死,用户又启动该Activity.
      * 这两种情况下onRestoreInstanceState都会被调用,在onStart之后.
      */
-    /*@Override
+    @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         param = savedInstanceState.getInt("param");
         Log.i(TAG, "onRestoreInstanceState called. get param: " + param);
         super.onRestoreInstanceState(savedInstanceState);
-    }*/
+        String test = savedInstanceState.getString("extra_test");
+        Log.i(TAG, "onRestoreInstanceState restore extra_test : " + test);
+    }
 }

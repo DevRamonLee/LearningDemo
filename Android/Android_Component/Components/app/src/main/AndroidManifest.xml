@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ramon.better.com.lifecycle">
+    package="ramon.better.com.components">
 
     <application
         android:allowBackup="true"
@@ -9,14 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ActivityLifeCycle">
+        <activity android:name=".activity.ActivityLifeCycle"></activity>
+        <activity android:name=".activity.ActivityLifeCycle2" />
+
+        <!-- Activity 启动模式： 默认 standard -->
+        <activity
+            android:name=".activity.StandardActivity"
+            android:launchMode="standard">
+            '
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.TargetActivity"></activity>
+        <activity android:name=".activity.SingleTopActivity"></activity>
     </application>
 
 </manifest>

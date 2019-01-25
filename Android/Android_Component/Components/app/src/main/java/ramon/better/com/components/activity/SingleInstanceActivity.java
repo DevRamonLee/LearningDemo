@@ -10,19 +10,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import ramon.better.com.components.R;
-/**
- * Activity 的四种启动模式
- */
-public class SingleTopActivity extends AppCompatActivity {
-    private static final String TAG = "SingleTopActivityTag";
+
+public class SingleInstanceActivity extends AppCompatActivity {
+    private static final String TAG = "SingleInstanceTag";
     private TextView showAddressTv;
-    private Button singleTopBtn;
+    private Button standardBtn;
+    private Button singleInstanceBtn;
     private Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate called");
-        setContentView(R.layout.activity_single_top);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_single_instance);
         init();
     }
 
@@ -46,17 +45,23 @@ public class SingleTopActivity extends AppCompatActivity {
     }
 
     private void init() {
-        mContext = SingleTopActivity.this;
-        showAddressTv = (TextView) findViewById(R.id.address_show_tv);
-        // 显示当前 Activity 的地址信息
-        showAddressTv.setText(mContext.toString());
-
-        singleTopBtn = (Button)findViewById(R.id.single_top_btn);
-        singleTopBtn.setOnClickListener(new View.OnClickListener() {
+        mContext = SingleInstanceActivity.this;
+        showAddressTv = findViewById(R.id.address_show_tv);
+        showAddressTv.setText(SingleInstanceActivity.this.toString());
+        standardBtn = (Button) findViewById(R.id.standard_btn);
+        standardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, SingleTopActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent(mContext, StandardActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+        singleInstanceBtn = (Button) findViewById(R.id.single_instance_btn);
+        singleInstanceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, SingleInstanceActivity.class);
+                mContext.startActivity(intent);
             }
         });
     }

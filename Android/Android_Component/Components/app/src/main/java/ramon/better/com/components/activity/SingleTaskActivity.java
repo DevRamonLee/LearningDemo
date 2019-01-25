@@ -10,19 +10,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import ramon.better.com.components.R;
-/**
- * Activity 的四种启动模式
- */
-public class SingleTopActivity extends AppCompatActivity {
-    private static final String TAG = "SingleTopActivityTag";
+
+public class SingleTaskActivity extends AppCompatActivity {
+
+    private static final String TAG = "SingleTaskActivityTag";
     private TextView showAddressTv;
     private Button singleTopBtn;
+    private Button singleTaskBtn;
     private Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate called");
-        setContentView(R.layout.activity_single_top);
+        setContentView(R.layout.activity_single_task);
         init();
     }
 
@@ -46,16 +46,25 @@ public class SingleTopActivity extends AppCompatActivity {
     }
 
     private void init() {
-        mContext = SingleTopActivity.this;
+        mContext = SingleTaskActivity.this;
         showAddressTv = (TextView) findViewById(R.id.address_show_tv);
         // 显示当前 Activity 的地址信息
         showAddressTv.setText(mContext.toString());
 
-        singleTopBtn = (Button)findViewById(R.id.single_top_btn);
+        singleTopBtn = (Button)findViewById(R.id.single_task_btn);
         singleTopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, SingleTopActivity.class);
+                Intent intent = new Intent(mContext, SingleTaskActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        singleTaskBtn = (Button) findViewById(R.id.standard_btn);
+        singleTaskBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, StandardActivity.class);
                 startActivity(intent);
             }
         });

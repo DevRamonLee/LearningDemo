@@ -51,6 +51,9 @@
 
         <service android:name=".service.StartService" />
         <service android:name=".service.BindService" />
+        <service
+            android:name=".service.RSSPullService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

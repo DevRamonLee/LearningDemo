@@ -1,11 +1,15 @@
 package ramon.better.com.components.activity;
 
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.net.Uri;
 import android.os.IBinder;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +19,7 @@ import android.widget.Toast;
 
 import ramon.better.com.components.R;
 import ramon.better.com.components.service.BindService;
+import ramon.better.com.components.service.RSSPullService;
 import ramon.better.com.components.service.StartService;
 
 public class ServiceTestActivity extends AppCompatActivity {
@@ -28,11 +33,12 @@ public class ServiceTestActivity extends AppCompatActivity {
     private Button getStatusBtn;
     private Context mContext;
 
+    // intentService
+    private Button intentServiceBtn;
+
 
     //保持所启动Service的IBinder对象
     BindService.MyBinder binder;
-
-
 
     //定义一个ServiceConnection对象
     private ServiceConnection connection = new ServiceConnection() {
@@ -101,5 +107,34 @@ public class ServiceTestActivity extends AppCompatActivity {
                 Toast.makeText(mContext, "count value is " + binder.getCount(),Toast.LENGTH_SHORT).show();
             }
         });
+
+        // 启动 IntentService
+        intentServiceBtn = (Button)findViewById(R.id.intent_service_btn);
+        intentServiceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mServiceIntent = new Intent(mContext, RSSPullService.class);
+                mServiceIntent.setData(Uri.parse("send from activity"));
+                mContext.startService(mServiceIntent);
+            }
+        });
+
+        // 注册 IntentService 的广播
+        IntentFilter mStatusIntentFilter = new IntentFilter(
+                RSSPullService.Constants.BROADCAST_ACTION);
+        DownloadStateReceiver mDownloadStateReceiver = new DownloadStateReceiver();
+        LocalBroadcastManager.getInstance(this).registerReceiver(
+                mDownloadStateReceiver, mStatusIntentFilter);
+        Log.i("meng", "The thread of Activity " + Thread.currentThread().toString());
+    }
+
+    // 接收 IntentService 的广播状态
+    private class DownloadStateReceiver extends BroadcastReceiver {
+        private DownloadStateReceiver() {
+        }
+        public void onReceive(Context context, Intent intent) {
+            String responseString = intent.getStringExtra(RSSPullService.Constants.EXTENDED_DATA_STATUS);
+            Log.i("meng","response string is :" + responseString);
+        }
     }
 }

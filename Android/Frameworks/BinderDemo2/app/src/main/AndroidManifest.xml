@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="top.betterramon.binderdemo2">
+
+    <!-- 定义服务权限 -->
+    <permission
+        android:name="top.betterramon.binderdemo2.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
+    <!-- 申请服务权限 -->
+    <uses-permission android:name="top.betterramon.binderdemo2.ACCESS_BOOK_SERVICE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".server.RemoteService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity android:name=".client.ClientActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

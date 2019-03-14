@@ -16,7 +16,7 @@ public class YueSeFu {
 
 	public static void yuesefu(int totalNum, int countNum, int startNum) {
 		// 初始化人数
-		MyCircularLinkedList<Integer> yueSeFu = new MyCircularLinkedList<Integer>();
+		CircularLinkedList<Integer> yueSeFu = new CircularLinkedList<Integer>();
 		for (int i = 1; i <= totalNum; i++) {
 			yueSeFu.add(i);
 		}

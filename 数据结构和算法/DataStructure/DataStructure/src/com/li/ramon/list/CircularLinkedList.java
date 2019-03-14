@@ -5,12 +5,12 @@ package com.li.ramon.list;
  * @author limeng
  *
  */
-public class MyCircularLinkedList<E> {
+public class CircularLinkedList<E> {
 	private Entry<E> header = new Entry<E>(null); //头结点
 	public int size = 0; // 当前尺寸
 	
 	//构造函数，初始化单链表
-	public MyCircularLinkedList() {
+	public CircularLinkedList() {
 		// 初始化循环链表：头结点的 next 指针指向 header
 		header.next = header;
 	}

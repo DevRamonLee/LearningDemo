@@ -2,13 +2,13 @@ package com.li.ramon.list;
 
 import java.util.Random;
 
-public class MyDoublyLinkedListTest {
+public class DoublyLinkedListTest {
 
 	final int MAX = 10;
 	Random random = new Random();
-	MyDoublyLinkedList<Integer> myDoublyLinkedList;
+	DoublyLinkedList<Integer> myDoublyLinkedList;
 
-	public MyDoublyLinkedListTest() {
+	public DoublyLinkedListTest() {
 		initMyDoublyLinkedList();
 	}
 
@@ -16,7 +16,7 @@ public class MyDoublyLinkedListTest {
 	 * 采用随机数初始化数组
 	 */
 	public void initMyDoublyLinkedList() {
-		myDoublyLinkedList = new MyDoublyLinkedList<Integer>();
+		myDoublyLinkedList = new DoublyLinkedList<Integer>();
 		for (int i = 0; i < MAX; i++) {
 			int value = random.nextInt(MAX);
 			// 添加一个数据
@@ -47,7 +47,7 @@ public class MyDoublyLinkedListTest {
 	}
 
 	public static void main(String[] args) {
-		MyDoublyLinkedListTest myDoublyLinkedListTest = new MyDoublyLinkedListTest();
+		DoublyLinkedListTest myDoublyLinkedListTest = new DoublyLinkedListTest();
 		myDoublyLinkedListTest.getElemTest();
 		myDoublyLinkedListTest.deleteElemTest();
 	}

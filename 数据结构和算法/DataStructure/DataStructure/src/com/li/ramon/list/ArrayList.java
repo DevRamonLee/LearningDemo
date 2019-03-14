@@ -6,7 +6,7 @@ package com.li.ramon.list;
  * @author meng.li
  * @param <T>
  */
-public class MyArrayList<T> {
+public class ArrayList<T> {
 
 	private static final int DEFAULT_CAPACITY = 10;// 默认容量
 
@@ -15,12 +15,12 @@ public class MyArrayList<T> {
 	private int maxSize;// 数组的大小
 
 	// 无参构造函数
-	public MyArrayList() {
+	public ArrayList() {
 		this(DEFAULT_CAPACITY);
 	}
 
 	// 带有初始容量的构造函数
-	public MyArrayList(int initialCapacity) {
+	public ArrayList(int initialCapacity) {
 		if (initialCapacity < 0)
 			throw new IllegalArgumentException("Illegal Capacity: "
 					+ initialCapacity);

@@ -2,12 +2,12 @@ package com.li.ramon.list;
 
 import java.util.Random;
 
-public class MySinglyLinkedListTest {
+public class SinglyLinkedListTest {
 	final int MAX = 20;
 	Random random = new Random();
-	MySinglyLinkedList<Integer> mySinglyLinkedList;
+	SinglyLinkedList<Integer> mySinglyLinkedList;
 
-	public MySinglyLinkedListTest() {
+	public SinglyLinkedListTest() {
 		initMySinglyLinkedList();
 	}
 
@@ -15,7 +15,7 @@ public class MySinglyLinkedListTest {
 	 * 采用随机数初始化数组
 	 */
 	public void initMySinglyLinkedList() {
-		mySinglyLinkedList = new MySinglyLinkedList<Integer>();
+		mySinglyLinkedList = new SinglyLinkedList<Integer>();
 		// 随机产生一个我们要插入的数据量的数值
 		int size = random.nextInt(MAX);
 		System.out.println("数据随机长度为 " + size);
@@ -63,7 +63,7 @@ public class MySinglyLinkedListTest {
 	}
 
 	public static void main(String[] args) {
-		MySinglyLinkedListTest mySinglyLinkedListTest = new MySinglyLinkedListTest();
+		SinglyLinkedListTest mySinglyLinkedListTest = new SinglyLinkedListTest();
 		mySinglyLinkedListTest.addElemTest();
 		mySinglyLinkedListTest.getElemTest();
 		mySinglyLinkedListTest.deleteElemTest();

@@ -7,12 +7,12 @@ import java.util.Random;
  * @author meng.li
  *
  */
-public class MyArrayListTest {
+public class ArrayListTest {
 	final int MAX = 60;
 	Random random = new Random();
-	MyArrayList<Integer> myArrayList;
+	ArrayList<Integer> myArrayList;
 	
-	public MyArrayListTest(){
+	public ArrayListTest(){
 		initmyArrayList();
 	}
 	
@@ -20,7 +20,7 @@ public class MyArrayListTest {
 	 *采用随机数初始化数组 
 	 */
 	public void initmyArrayList(){
-		myArrayList = new MyArrayList<Integer>();
+		myArrayList = new ArrayList<Integer>();
 		//随机产生一个我们要插入的数据量的数值
 		int size = random.nextInt(MAX);
 		System.out.println("数据随机长度为 "+size);
@@ -71,7 +71,7 @@ public class MyArrayListTest {
 	
 	
 	public static void main(String args[]){
-		MyArrayListTest myArrayListTest = new MyArrayListTest();
+		ArrayListTest myArrayListTest = new ArrayListTest();
 		myArrayListTest.insertElemTest();
 		myArrayListTest.getElemTest();
 		myArrayListTest.deleteElemTest();

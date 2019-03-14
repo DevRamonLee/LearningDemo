@@ -63,7 +63,10 @@ public class Algorithm {
 		 System.out.println("Max length is " + maxLength);*/
 		 
 		 //问题8： 百钱买鸡问题
-		 new BuyChickens().buyChickens();
-		 new BuyChickens().chickensAndRabbits();
+		 /*new BuyChickens().buyChickens();
+		 new BuyChickens().chickensAndRabbits();*/
+		 
+		 //问题9： 走楼梯问题
+		 System.out.println("走法: " + GoStairs.goStairs2(4));
 	 }
 }

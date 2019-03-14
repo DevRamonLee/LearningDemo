@@ -5,13 +5,13 @@ package com.li.ramon.list;
  * @author limeng
  *
  */
-public class MyDoublyLinkedList<E> {
+public class DoublyLinkedList<E> {
 	private Entry<E> head = new Entry<E>(null); //头结点
 	private Entry<E> tail = new Entry<E>(null); //头结点
 	private int size = 0;
 	
 	// 初始化双向链表
-	public MyDoublyLinkedList() {
+	public DoublyLinkedList() {
 		// 这一步很关键，把 head 的 prior 指针指向空， tail 的 next 指针指向空
 		head.prior = null;
 		tail.next = null;

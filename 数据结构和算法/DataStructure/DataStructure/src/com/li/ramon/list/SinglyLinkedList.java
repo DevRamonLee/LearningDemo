@@ -5,12 +5,12 @@ package com.li.ramon.list;
  * @author limeng
  * @param <E>
  */
-public class MySinglyLinkedList<E> {
+public class SinglyLinkedList<E> {
 	private Entry<E> header = new Entry<E>(null); //头结点
 	private int size = 0; // 当前尺寸
 	
 	//构造函数，初始化单链表
-	public MySinglyLinkedList() {
+	public SinglyLinkedList() {
 
 	}
 	

@@ -5,12 +5,14 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import top.betterramon.messengerdemo.R;
 import top.betterramon.messengerdemo.server.MessengerService;
@@ -30,6 +32,8 @@ public class MessengerActivity extends AppCompatActivity {
             Bundle data = new Bundle();
             data.putString("msg","hello, this is client");
             msg.setData(data);
+            // 三. 接收服务端返回的消息，最重要的一步，发送消息的时候把客户端的 Messenger 发送过去
+            msg.replyTo = mGetReplyMessenger;
             try {
                 mService.send(msg);
             } catch (RemoteException e) {
@@ -51,6 +55,23 @@ public class MessengerActivity extends AppCompatActivity {
         // 1. 绑定远程进程 MessengerService
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
     }
+
+    // 一 .接收服务端返回的消息，首先我们需要创建一个 Handler 对象
+    private static class MessengerHandler extends Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MyConstants.MSG_FROM_SERVICE:
+                    Log.i("client","receive msg form Service: " + msg.getData().getString("reply"));
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+    }
+
+    // 二.接收服务端返回的消息，使用 Handler 创建 Messenger 对象
+    private Messenger mGetReplyMessenger = new Messenger(new MessengerHandler());
 
     @Override
     protected void onDestroy() {

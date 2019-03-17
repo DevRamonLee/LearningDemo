@@ -7,9 +7,12 @@
     - AndroidUI(动画、自定义视图、fragment、layout、openGL、style、与用户交互)
 
 - [Frameworks](Android/Frameworks)
-    - BinderDemo 手写实现 AIDL
-    - BinderDemo2 AIDL 实现并扩展
-    - MessengerDemo Messenger 的使用
+    - BinderDemo (手写实现 AIDL)
+    - BinderDemo2 (AIDL 实现并扩展,跨进程接口回调)
+    - MessengerDemo (Messenger 的使用)
+    - BinderPoolDemo (Binder 连接池，存在多个 AIDL 调用时使用)
+    - ContentProviderDemo (自定义 ContentProvider 实现跨进程使用)
+    - SocketDemo (Socket 跨进程通信，简单自动回复功能)
 
 - [Android_advanced](Android/Android_advanced)
 	- [Surface SurfaceView SurfaceHolder SurfaceHolder.Callback关系](Android/Android_advanced/TestSurfaceView)
@@ -42,25 +45,31 @@
 # 数据结构和算法
 
 - [DataStructure](数据结构和算法/DataStructure)
-    - [DataStructure Java版](数据结构和算法/DataStructure/DataStructure)
-        - src\com\li\ramon\list
-            - 顺序表(基于数组) ArrayList.java
-            - 单向链表 SinglelyLinkedList.java
-            - 双向链表 DoublyLinkedList.java
-            - 循环链表 CircularLinkedList.java
-            - 顺序栈 ArrayStack.java 应用：1.任意进制转换 2.行编辑 3.括号匹配
-            - 链式栈 LinkStack.java
-            - 顺序队列 ArrayQueue.java
-            - 无向带权图的邻接矩阵表示
-    - [DataStructure C 语言版](数据结构和算法/DataStructure/DataStructure_C)
-        - 无向带权图的邻接矩阵表示
+    - src\com\li\ramon\list
+        - 顺序表(基于数组) ArrayList.java
+        - 单向链表 SinglelyLinkedList.java
+        - 双向链表 DoublyLinkedList.java
+        - 循环链表 CircularLinkedList.java
+        - 顺序栈 ArrayStack.java 应用：1.任意进制转换 2.行编辑 3.括号匹配
+        - 链式栈 LinkStack.java
+        - 顺序队列 ArrayQueue.java
+    - src\com\li\ramon\graph
+        - 无向带权图的邻接矩阵表示 AdjMatrix.java
+    - src\com\li\ramon\sort
+        - 冒泡排序 BubbleSort.java
+        - 插入排序 InsertSort.java
+        - 快速排序 QuickSort.java
+        - 选择排序 SelectSort.java
+
 - [Arithmetic](数据结构和算法/Arithmetic)
-    - 谁是小偷
-    - 多项式求解
-    - 0 1 背包问题，贪心算法
-    - 字符串全排列，分治法
-    - 二分查找，分治法
-    - 迭代求一个数的平方根
-    - 动态规划法求最长公共子序列
-    - 百钱买鸡问题，穷举法
+    - src\com\betterramon\arithmetic
+        - 谁是小偷(推理题) WhoIsThief.java
+        - 多项式求解(n 次二项式) Binomial.java
+        - 0 1 背包问题，贪心算法 KnapsackProblem.java
+        - 字符串全排列，分治法 Permutation.java
+        - 二分查找，分治法 BinarySearch.java
+        - 迭代求一个数的平方根 CalculateRoot.java
+        - 动态规划法求最长公共子序列 DpLcs.java
+        - 百钱买鸡问题，穷举法 BuyChickens.java
+        - 趴楼梯问题，一次走 1 步或 2 步（递归法和非递归法） GoStairs.java
     

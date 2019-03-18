@@ -244,4 +244,80 @@ public class BSTree<T extends Comparable<T>> {
 			return p.key;
 		return null;
 	}
+	
+	/**
+	 * 查找节点 x 的前驱节点。即，查找“二叉树中数据值小于该节点并且值最大的节点”
+	 */
+	public BSTNode<T> predecessor(BSTNode<T> x) {
+		// 如果 x 存在左孩子，则 x 的前驱节点是以其左孩子为根的子树的最大节点
+		if (x.left != null)
+			return maximum(x.left);
+		
+		// 如果 x 没有左孩子，则 x 有两种可能
+		// 1. x 是「一个右孩子」，则 x 的前驱节点为 「它的父节点」
+		// 2. x 是「一个左孩子」，则查找 「x 的最低的父节点，并且该父节点要具有右孩子」
+		BSTNode<T> y = x.parent;
+		while ((y != null) && (x == y.left)) {
+			x = y;
+			y = y.parent;
+		}
+		return y;
+	}
+	
+	/**
+	 * 查找 x 的后继节点，即，查找“二叉树中数值大于该节点并且值最小的节点”
+	 */
+	public BSTNode<T> successor(BSTNode<T> x) {
+		// 如果 x 存在右孩子，则「x 的后继节点为 『以其右孩子为根的子树的最小节点』」
+		if (x.right != null) {
+			return minmum(x.right);
+		}
+		// 如果 x 没有右孩子。则 x 有两种可能
+		// 1. x 是 「一个左孩子」，则「x 的后继节点为 『它的父节点』」
+		// 2. x 是 「一个右孩子」，则查找 「x 的最低的父节点，并且该父节点要具有左孩子」
+		BSTNode<T> y = x.parent;
+		while ((y != null) && (x == y.right)) {
+			x = y;
+			y = y.parent;
+		}
+		return y;
+	}
+	
+	/**
+	 * 插入新节点
+	 */
+	private void insert(BSTree<T> bst, BSTNode<T> z) {
+		int cmp;
+		BSTNode<T> y = null;
+		BSTNode<T> x = bst.mRoot;
+		
+		// 查找 z 的插入位置
+		while (x != null) {
+			y = x;
+			cmp = z.key.compareTo(x.key);
+			if (cmp < 0)
+				x = x.left;
+			else
+				x = x.right;
+		}
+		
+		z.parent = y;
+		if (y == null) {
+			bst.mRoot = z;// z 是第一个节点
+		} else {
+			cmp = z.key.compareTo(y.key); // 判断是插入左孩子还是插入右孩子
+			if (cmp < 0) 
+				y.left = z;
+			else
+				y.right = z;
+		}
+	}
+	
+	// 这里实现的是允许插入相同键值的节点
+	public void insert(T key) {
+		BSTNode<T> z = new BSTNode<T>(key, null, null, null);
+		// 如果创建节点失败，则返回
+		if (z != null)
+			insert(this, z);
+	}
 }

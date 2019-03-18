@@ -49,10 +49,12 @@
         - 顺序表(基于数组) ArrayList.java
         - 单向链表 SinglelyLinkedList.java
         - 双向链表 DoublyLinkedList.java
-        - 循环链表 CircularLinkedList.java
+        - 循环链表 CircularLinkedList.java 应用：约瑟夫问题 YueSeFu.java
         - 顺序栈 ArrayStack.java 应用：1.任意进制转换 2.行编辑 3.括号匹配
         - 链式栈 LinkStack.java
         - 顺序队列 ArrayQueue.java
+        - 链式队列 LinkQueue.java
+        - 循环队列 LoopQueue.java
     - src\com\li\ramon\graph
         - 无向带权图的邻接矩阵表示 AdjMatrix.java
     - src\com\li\ramon\sort
@@ -60,6 +62,8 @@
         - 插入排序 InsertSort.java
         - 快速排序 QuickSort.java
         - 选择排序 SelectSort.java
+    - src\com\li\ramon\tree
+        - 二叉搜索树 BSTree.java
 
 - [Arithmetic](数据结构和算法/Arithmetic)
     - src\com\betterramon\arithmetic
@@ -71,5 +75,5 @@
         - 迭代求一个数的平方根 CalculateRoot.java
         - 动态规划法求最长公共子序列 DpLcs.java
         - 百钱买鸡问题，穷举法 BuyChickens.java
-        - 趴楼梯问题，一次走 1 步或 2 步（递归法和非递归法） GoStairs.java
+        - 趴楼梯问题，一次走 1 步或 2 步（斐波那契数列变形。递归法和非递归法） GoStairs.java
     

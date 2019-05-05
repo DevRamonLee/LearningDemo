@@ -42,6 +42,9 @@
     - 13.2 [使用CursorLoader在后台加载数据](Android/Android_training/CursorLoader)
     - 14.5 [多线程操作(此代码只可做参考)](Android/Android_training/ThreadSample)
 
+- [Android 第三方开源库](Android/Libraries)
+	- EventBus 初步使用:[EventBusDemo](Android/Libraries/EventBusDemo)；[EventBus(一)初步认识](http://betterramon.top/eventbus/2019/05/05/EventBus(%E4%B8%80)%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86.html)
+
 # 数据结构和算法
 
 - [DataStructure](数据结构和算法/DataStructure)

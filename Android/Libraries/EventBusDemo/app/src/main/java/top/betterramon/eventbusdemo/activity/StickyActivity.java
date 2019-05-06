@@ -1,4 +1,4 @@
-package top.betterramon.eventbusdemo;
+package top.betterramon.eventbusdemo.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.widget.Toast;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import top.betterramon.eventbusdemo.event.MessageEvent;
+import top.betterramon.eventbusdemo.R;
 
 public class StickyActivity extends AppCompatActivity {
 
@@ -22,14 +25,14 @@ public class StickyActivity extends AppCompatActivity {
         EventBus.getDefault().register(this);
     }
 
-    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
-    public void onEvent(MessageEvent event) {
-        Toast.makeText(this, event.message, Toast.LENGTH_SHORT).show();
-    }
-
     @Override
     protected void onStop() {
         EventBus.getDefault().unregister(this);
         super.onStop();
+    }
+
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
+    public void onEvent(MessageEvent event) {
+        Toast.makeText(this, event.message, Toast.LENGTH_SHORT).show();
     }
 }

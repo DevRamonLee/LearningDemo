@@ -1,4 +1,4 @@
-package top.betterramon.eventbusdemo;
+package top.betterramon.eventbusdemo.event;
 
 /**
  * Created by Ramon on 2019/5/5.

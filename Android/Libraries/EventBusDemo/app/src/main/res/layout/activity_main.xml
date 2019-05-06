@@ -4,27 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
     <Button
-        android:id="@+id/post_btn"
+        android:id="@+id/send_event_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Post Event" />
+        android:text="发送事件,在高优先级方法中取消" />
     <Button
-        android:id="@+id/send_sticky_btn"
+        android:id="@+id/async_executor_exception_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send sticky event"
-        app:layout_constraintTop_toBottomOf="@+id/post_btn"/>
+        android:text="AsyncExecutor 调度事件进行异常处理"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/send_event_btn"/>
+    <Button
+        android:id="@+id/async_executor_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AsyncExecutor 调度事件"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/async_executor_exception_btn"/>
+    <Button
+        android:id="@+id/send_sticky_event_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送粘性事件"
+        app:layout_constraintTop_toBottomOf="@+id/async_executor_btn"/>
+    <Button
+        android:id="@+id/cancel_sticky_event_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消粘性事件"
+        app:layout_constraintTop_toBottomOf="@+id/send_sticky_event_btn"/>
 
     <Button
         android:id="@+id/sticky_activity_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start sticky activity"
-        app:layout_constraintTop_toBottomOf="@+id/send_sticky_btn"/>
+        android:text="启动 StickyActivity"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/cancel_sticky_event_btn"/>
 
 </android.support.constraint.ConstraintLayout>

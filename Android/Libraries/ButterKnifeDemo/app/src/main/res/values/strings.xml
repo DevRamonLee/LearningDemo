@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ButterKnifeDemo</string>
+    <string name="home_tittle">ButterKnife</string>
+    <string name="button_1">"@OnLongClick(R.id.button1)"</string>
+    <string name="button_2">"@OnClick(R.id.button2)"</string>
+    <string name="none_activity_binding">None activity binding</string>
+</resources>

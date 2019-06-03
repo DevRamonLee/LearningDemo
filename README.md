@@ -50,9 +50,9 @@
 	- ButterKnife 初步使用：[ButterKnifeDemo](Android/Libraries/ButterKnifeDemo)
 		- 相关文章：[ButterKnife(一)初步认识](http://betterramon.top/butterknife/2019/05/08/ButterKnife(%E4%B8%80)%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86.html)
 
-# 数据结构和算法
+# DataStructureAndArithmetic
 
-- [DataStructure](数据结构和算法/DataStructure)
+- [DataStructure](DataStructureAndArithmetic/DataStructure)
     - src\com\li\ramon\list
         - 顺序表(基于数组) ArrayList.java
         - 单向链表 SinglelyLinkedList.java
@@ -73,7 +73,7 @@
     - src\com\li\ramon\tree
         - 二叉搜索树 BSTree.java
 
-- [Arithmetic](数据结构和算法/Arithmetic)
+- [Arithmetic](DataStructureAndArithmetic/Arithmetic)
     - src\com\betterramon\arithmetic
         - 谁是小偷(推理题) WhoIsThief.java
         - 多项式求解(n 次二项式) Binomial.java

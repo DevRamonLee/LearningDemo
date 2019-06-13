@@ -124,6 +124,62 @@
           事件处理
         </a>
       </li>
+      <li>
+        <a
+          href="#/form/binding"
+        >
+          表单输入绑定
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/component/basic"
+        >
+          组件基础
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/component/register"
+        >
+          组件注册
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/prop"
+        >
+          Prop
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/custom/event"
+        >
+          自定义事件
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/slot"
+        >
+          插槽
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/dynamic"
+        >
+          动态组件与异步组件
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/boundary/situation"
+        >
+          处理边界情况
+        </a>
+      </li>
     </ul>
   </div>
 </template>

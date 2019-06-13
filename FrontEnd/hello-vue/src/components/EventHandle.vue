@@ -77,7 +77,38 @@
         </div>
 
         <h2> 按键修饰符 </h2>
+        <div>
+            <p>按键修饰符 v-on:keyup.enter ,在 按键 enter 按下时触发 </p>
+            <input placeholder='请输入 enter 键' v-on:keyup.enter="submit">
+            <input placeholder='请输入 page-down 键' v-on:keyup.page-down="onPageDown">
+        </div>
+        <h2> 按键码(按键码可能不被最新的浏览器支持，建议使用按键码别名) </h2>
+        <div>
+            <input placeholder= 'v-on:keyup.13= submit' v-on:keyup.13="submit">
+        </div>
         
+        <h2> 系统组合键 .ctrl .alt .shift .meta</h2>
+
+        <div>
+            <!-- Alt + C -->
+            <input placeholder="alt + C " @keyup.alt.67="clear">
+            <!-- Ctrl + Click -->
+            <div @click.ctrl="doSomething"> Ctrl + Click Do something</div>
+        </div>
+
+        <h2>.exact 修饰符，精确控制系统的修饰符</h2>
+        <div>
+            <button @click.ctrl="onClick"> click.ctrl 即使 Alt 或 Shift 被一同按下时也会触发</button>
+            <button @click.ctrl.exact="onCtrlClick"> click.ctrl.exact 有且只有 Ctrl 被按下的时候才触发</button>
+        </div>
+
+        <h2> 鼠标修饰符</h2>
+        <div>
+            <button @click.left="leftClick">Mouse left</button>
+            <button @click.right="rightClick">Mouse right</button>
+            <button @click.middle="middleClick">Mouse middle</button>
+        </div>
+
     </div>
 </template>
 <script>
@@ -111,6 +142,33 @@ export default {
         },
         log(msg) {
             console.log(msg)
+        },
+        submit(){
+            alert('press enter')
+        },
+        onPageDown() {
+            alert('press page-down')
+        },
+        clear() {
+            alert('clear')
+        },
+        doSomething() {
+            alert('Ctrl + Click do something')
+        },
+        onClick() {
+            alert('onClick')
+        },
+        onCtrlClick(){
+            alert('onCtrlClick')
+        },
+        leftClick() {
+            alert('leftClick')
+        },
+        rightClick() {
+            alert('rightClick')
+        },
+        middleClick() {
+            alert('middleClick')
         }
     }
 }

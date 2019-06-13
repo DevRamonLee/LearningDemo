@@ -8,6 +8,14 @@ import ComputeAndWatch from "@/components/ComputeAndWatch"
 import ClassAndStyle from "@/components/ClassAndStyle"
 import IfRender from "@/components/IfRender"
 import EventHandle from "@/components/EventHandle"
+import FormBinding from "@/components/FormBinding"
+import ComponentBasic from "@/components/ComponentBasic"
+import ComponentRegister from "@/components/ComponentRegister"
+import Prop from "@/components/Prop"
+import CustomEvent from "@/components/CustomEvent"
+import Slot from "@/components/Slot"
+import Dynamic from "@/components/Dynamic"
+import BoundarySituation from "@/components/BoundarySituation"
 
 Vue.use(Router)
 
@@ -49,6 +57,46 @@ export default new Router({
       path: '/event/handle',
       name: 'EventHandle',
       component: EventHandle
+    },
+    {
+      path: '/form/binding',
+      name:'FormBinding',
+      component:FormBinding
+    },
+    {
+      path:'/component/basic',
+      name: 'ComponentBasic',
+      component: ComponentBasic
+    },
+    {
+      path:'/component/register',
+      name:'ComponentRegister',
+      component:ComponentRegister
+    },
+    {
+      path:'/prop',
+      name:'Prop',
+      component:Prop
+    },
+    {
+      path:'/custom/event',
+      name:'CustomEvent',
+      component:CustomEvent
+    },
+    {
+      path:'/slot',
+      name:'Slot',
+      component:Slot
+    },
+    {
+      path:'/dynamic',
+      name:'Dynamic',
+      component:Dynamic
+    },
+    {
+      path:'/boundary/situation',
+      name:'BoundarySituation',
+      component:BoundarySituation
     }
   ]
 })

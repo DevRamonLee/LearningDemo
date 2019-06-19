@@ -9,10 +9,13 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
+  Dimensions
 } from 'react-native';
 
 const instructions = Platform.select({
+  web:'React native for web',
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
   android: 'Double tap R on your keyboard to reload,\n' +
@@ -20,6 +23,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+let widthOfMargin = Dimensions.get('window').width * 0.05;
 export default class App extends Component<Props> {
   render() {
     return (
@@ -32,6 +36,10 @@ export default class App extends Component<Props> {
         </Text>
         <Text style={styles.instructions}>
           {instructions}
+        </Text>
+        <Image style={styles.img} source={require('../img/scene.jpg')}/>
+        <Text style={styles.instructions}>
+          test
         </Text>
       </View>
     );
@@ -55,4 +63,7 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  img:{
+    margin: widthOfMargin
+  }
 });

@@ -37,10 +37,6 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
-        <Image style={styles.img} source={require('../img/scene.jpg')}/>
-        <Text style={styles.instructions}>
-          test
-        </Text>
       </View>
     );
   }
@@ -62,8 +58,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  },
-  img:{
-    margin: widthOfMargin
   }
 });

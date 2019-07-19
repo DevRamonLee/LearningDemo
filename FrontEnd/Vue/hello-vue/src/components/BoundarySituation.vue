@@ -5,7 +5,8 @@
             如果存在多级子组件，通过$parent访问得到的是它最近一级的父组件，通过root访问得到的是根组件。</p>
             <root-obj ref='getRootObj'>xxxxx</root-obj>
         <h2> 访问子组件实例或子元素 </h2>
-        <Button v-on:click='getRootObj'>ref 测试 </Button>
+        <input ref="inputRef"/>
+        <Button v-on:click="getRef">ref 测试 </Button>
         
     </div>
 </template>
@@ -55,6 +56,10 @@ export default {
     methods:{
         getRootObj:function() {
             console.log(this.$refs.getRootObj.msg)
+        },
+        getRef:function() {
+            console.log("getRef")
+            this.$refs.inputRef.focus()
         }
     }
 }

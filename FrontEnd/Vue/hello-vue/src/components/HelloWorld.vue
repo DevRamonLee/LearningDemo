@@ -180,6 +180,11 @@
           处理边界情况
         </a>
       </li>
+      <li>
+        <a href="#/animation">
+          动画效果
+        </a>
+      </li>
     </ul>
   </div>
 </template>

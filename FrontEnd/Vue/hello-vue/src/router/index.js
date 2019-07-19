@@ -16,6 +16,7 @@ import CustomEvent from "@/components/CustomEvent"
 import Slot from "@/components/Slot"
 import Dynamic from "@/components/Dynamic"
 import BoundarySituation from "@/components/BoundarySituation"
+import Animation from "@/components/Animation"
 
 Vue.use(Router)
 
@@ -97,6 +98,11 @@ export default new Router({
       path:'/boundary/situation',
       name:'BoundarySituation',
       component:BoundarySituation
+    },
+    {
+      path:'/animation',
+      name:'Animation',
+      component: Animation
     }
   ]
 })

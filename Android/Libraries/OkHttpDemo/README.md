@@ -398,6 +398,449 @@ private void configTimeouts() throws IOException {
 }
 ```
 
+
+- http://www.ymapk.com/article-250-1.html(转载自此文)
+- [官网介绍](https://square.github.io/okhttp/)
+- [OkHttp Wiki 文档](https://github.com/square/okhttp/wiki/Calls)
+
+## 简单封装
+
+首先我们来新建一个 `OkHttpUtils.java` 文件，一个应用中，`OkHttpUtils` 需要是单例的，所以我们首先需要来实现一个单例
+
+```
+public class OkHttpUtils {
+    // OkHttpClient 需要是单例的
+    private static OkHttpUtils mInstance;
+    private OkHttpClient mHttpClient;
+
+    private OkHttpUtils() {}
+
+    public static OkHttpUtils getInstance() {
+        return mInstance;
+    }
+    
+    ...
+}
+```
+
+一般网络请求分为 get 和 post 请求两种，但无论哪种请求都是需要用到 request 的，所以我们首先封装一个 request,创建一个 doRequest 方法，在其内先编写 `mHttpClient.newCall(request).enqueue(new Callback())` 相关逻辑
+
+```
+public void doRequest(final Request request) {
+    mHttpClient.newCall(request).enqueue(new Callback() {
+        @Override
+        public void onFailure(Call call, IOException e) {
+
+        }
+
+        @Override
+        public void onResponse(Call call, Response response) throws IOException {
+
+        }
+    });
+}
+```
+
+我们需要自定义一个callback，BaseCallback,并将其传入request方法中
+
+```
+public abstract class BaseCallback  {
+
+}
+```
+
+在 `OkHttpUtils.java` 中编写 get 和 post 方法
+
+```
+public void get(String url){
+
+
+}
+
+public void post(String url,Map<String,Object> param){
+
+
+}
+```
+
+post 方法中构建 request 对象，这里我们需要创建一个 buildRequest 方法，用于生成 request 对象
+
+```
+private  Request buildRequest(String url,HttpMethodType methodType,Map<String,Object> params){
+    return null;
+}
+```
+
+这里需要定一个枚举对象 HttpMethodType，用于区分是 get 还是 post
+
+```
+enum  HttpMethodType {
+    GET,
+    POST
+}
+```
+
+buildRequest 方法根据 HttpMethodType 不同有相应的逻辑处理
+
+```
+private  Request buildRequest(String url,HttpMethodType methodType,Map<String,Object> params){
+
+    Request.Builder builder = new Request.Builder()
+            .url(url);
+    if (methodType == HttpMethodType.POST){
+
+        builder.post(body);
+    }
+    else if(methodType == HttpMethodType.GET){
+        builder.get();
+    }
+    return builder.build();
+}
+```
+
+`builder.post()`方法中需要一个 body ,所以我们需要创建一个方法 `builderFormData()` 方法用于返回 RequestBody ,这里内部逻辑后面再进行完善
+
+```
+private RequestBody builderFormData(Map<String,Object> params){
+    return null;
+}
+```
+
+于是 `buildRequest()` 方法变成了这样
+
+```
+private Request buildRequest(String url,HttpMethodType methodType, Map<String, Object> params) {
+    Request.Builder builder = new Request.Builder()
+            .url(url);
+    if (methodType == HttpMethodType.POST) {
+        RequestBody body = builderFormDate(params);
+        builder.post(body);
+    } else if (methodType == HttpMethodType.GET) {
+        builder.get();
+    }
+    return builder.build();
+}
+```
+
+get 方法进行修改
+
+```
+public void get(String url,BaseCallback callback){
+    Request request = buildRequest(url,HttpMethodType.GET,null);
+    doRequest(request,callback);
+}
+```
+
+post 方法进行修改
+
+```
+public void post(String url,Map<String,Object> params,BaseCallback callback){
+    Request request = buildRequest(url,HttpMethodType.POST,params);
+    doRequest(request,callback);
+}
+```
+
+完善 `buildFormData()` 方法
+
+```
+private RequestBody builderFormData(Map<String,String> params){
+    FormBody.Builder builder =  new FormBody.Builder();
+    // 添加键值对
+    if(params!=null){
+        for(Map.Entry<String,String> entry:params.entrySet()){
+            builder.add(entry.getKey(),entry.getValue());
+        }
+    }
+    return builder.build();
+}
+```
+
+`BaseCallback` 中定义一个抽象方法 `onBeforeRequest`，这样做的理由是我们在加载网络数据成功前，一般都有进度条等显示，这个方法就是用来做这些处理的
+
+```
+public abstract class BaseCallback  {
+    public  abstract void onBeforeRequest(Request request);
+}
+```
+
+`OkHttpUtils` 的 `doRequest` 方法增加如下语句：
+
+```
+baseCallback.onBeforeRequest(request);
+```
+
+BaseCallback 中多定义2个抽象方法
+
+```
+public abstract  void onFailure(Request request, Exception e) ;
+
+/**
+ *请求成功时调用此方法
+ * @param response
+ */
+public abstract  void onResponse(Response response);
+```
+
+由于 Response 的状态有多种，比如成功和失败，所以需要将 onResponse 分解为3个抽象方法
+
+```
+/**
+ *
+ * 状态码大于200，小于300 时调用此方法
+ * @param response
+ * @param t
+ * @throws
+ */
+public abstract void onSuccess(Response response,T t) ;
+
+/**
+ * 状态码400，404，403，500等时调用此方法
+ * @param response
+ * @param code
+ * @param e
+ */
+public abstract void onError(Response response, int code,Exception e) ;
+
+/**
+ * Token 验证失败。状态码401,402,403 等时调用此方法
+ * @param response
+ * @param code
+ */
+public abstract void onTokenError(Response response, int code);
+```
+
+`response.body.string()` 方法返回的都是 String 类型，而我们需要显示的数据其实是对象，所以我们就想抽取出方法，直接返回对象，由于我们不知道对象的类型是什么，所以我们在`BaseCallback` 中使用范型
+
+```
+public abstract class BaseCallback<T>  
+```
+
+BaseCallback 中需要将泛型转换为 Type，所以要声明 Type 类型
+
+```
+public   Type mType;
+```
+
+BaseCallback 中需要如下一段代码，将泛型 T 转换为 Type 类型
+
+```
+static Type getSuperClassTypeParameter(Class<?> subClass) {
+    Type superClass = subClass.getGenericSuperclass();
+    if (subClass instanceof  Class) {
+        throw new RuntimeException("Missing type parameter");
+    }
+    ParameterizedType parameterized = (ParameterizedType) superClass;
+    return $Gson$Types.canonicalize(parameterized.getActualTypeArguments()[0]);
+}
+```
+这里 `$Gson$Types` 会提示 Can not resolved,我们需要添加 GSON 支持，首先在 Gradle 中导入依赖
+
+```
+implementation 'com.google.code.gson:gson:2.8.5'
+```
+
+然后在文件中导入这个类
+
+```
+import com.google.gson.internal.$Gson$Types;
+```
+
+在 BaseCallback 的构造函数中进行 mType 进行赋值
+
+```
+public BaseCallBack() {
+    mType = getSuperClassTypeParameter(getClass());
+}
+```
+
+`OkHttpUtils` 中 `doRequest`方法的 `onFailure` 与 `onResponse` 方法会相应的去调用 `baseCallback`的方法
+
+```
+mHttpClient.newCall(request).enqueue(new Callback() {
+    @Override
+    public void onFailure(Call call, IOException e) {
+        baseCallBack.onFailure(request, e);
+    }
+
+    @Override
+    public void onResponse(Call call, Response response) throws IOException {
+        if (response.isSuccessful()) {
+            baseCallBack.onSuccess(response, null);
+        } else {
+            baseCallBack.onError(response, response.code(), null);
+        }
+    }
+});
+```
+
+onResponse 方法中成功的情况又有区分，根据 mType 的类型不同有相应的处理逻辑，同时还要考虑 Gson 解析错误的情况
+
+```
+ @Override
+public void onResponse(Call call, Response response) throws IOException {
+    // 请求成功
+    if (response.isSuccessful()) {
+        String resultStr = response.body().string();
+        // 根据类型判断
+        if (baseCallBack.mType == String.class) {
+            baseCallBack.onSuccess(response, resultStr);
+        } else {
+            try {
+                Object obj = mGson.fromJson(resultStr, baseCallBack.mType);
+                baseCallBack.onSuccess(response, obj);
+            } catch (JsonParseException e) {
+                // json 解析错误
+                baseCallBack.onError(response, response.code(), e);
+            }
+        }
+    } else {
+        // 请求出现错误
+        baseCallBack.onError(response, response.code(), null);
+    }
+}
+```
+
+构造函数中进行一些全局变量的初始化的操作，还有一些超时的设计
+
+```
+private OkHttpUtils() {
+    mHttpClient = new OkHttpClient();
+    OkHttpClient.Builder builder = mHttpClient.newBuilder();
+    builder.connectTimeout(10, TimeUnit.SECONDS);
+    builder.readTimeout(10,TimeUnit.SECONDS);
+    builder.writeTimeout(30, TimeUnit.SECONDS);
+
+    mGson = new Gson();
+}
+```
+
+静态代码块初始化 OkHttpUtils 对象
+```
+static {
+    mInstance = new OkHttpUtils();
+}
+```
+
+在 okHttpUtils 内，需要创建 handler 进行 UI 界面的更新操作，创建 `callbackSuccess` 方法
+
+```
+// 使用 handler 进行 UI 的操作
+private void callBackSuccess(final BaseCallBack baseCallBack, final Response response, final Object obj) {
+    mHandler.post(new Runnable(){
+        @Override
+        public void run() {
+            baseCallBack.onSuccess(response, obj);
+        }
+    });
+}
+```
+
+这里我们需要在构造函数中创建 Handler
+
+```
+private Handler mHandler;
+private OkHttpUtils() {
+    ...
+    mHandler = new Handler();
+}
+```
+
+doRequest 的 onResponse 方法也需要进行改写
+
+```
+if (baseCallBack.mType == String.class) {
+    /*baseCallBack.onSuccess(response, resultStr);*/
+    callBackSuccess(baseCallBack, response, resultStr);
+}
+```
+
+创建 callbackError 方法
+
+```
+private void callBackError(final BaseCallBack baseCallBack, final Response response, final Exception e) {
+    mHandler.post(new Runnable() {
+        @Override
+        public void run() {
+            baseCallBack.onError(response, response.code(), e);
+        }
+    });
+}
+```
+
+将 `doRequest` 方法的 `onResponse` 方法中的 `baseCallback.onError(response,response.code(),e);` 替换为 `callbackError(baseCallback,response,e);` 方法
+
+```
+@Override
+public void onResponse(Call call, Response response) throws IOException {
+    // 请求成功
+    if (response.isSuccessful()) {
+        String resultStr = response.body().string();
+        // 根据类型判断
+        if (baseCallBack.mType == String.class) {
+            /*baseCallBack.onSuccess(response, resultStr);*/
+            callBackSuccess(baseCallBack, response, resultStr);
+        } else {
+            try {
+                Object obj = mGson.fromJson(resultStr, baseCallBack.mType);
+                /*baseCallBack.onSuccess(response, obj);*/
+                callBackSuccess(baseCallBack, response, obj);
+            } catch (JsonParseException e) {
+                // json 解析错误
+                /*baseCallBack.onError(response, response.code(), e);*/
+                callBackError(baseCallBack, response, e);
+            }
+        }
+    } else {
+        // 请求出现错误
+        /*baseCallBack.onError(response, response.code(), null);*/
+        callBackError(baseCallBack, response, null);
+    }
+}
+```
+
+使用这个简易封装库
+
+```
+findViewById(R.id.get_test).setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        String url = "http://write.blog.csdn.net/postlist/0/0/enabled/1";
+        OkHttpUtils.getInstance().get(url, new BaseCallBack<String>() {
+            @Override
+            public void onBeforeRequest(Request request) {
+
+            }
+
+            @Override
+            public void onSuccess(Response response, String s) {
+                getResultTv.setText(s);
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+
+            @Override
+            public void onFailure(Request request, Exception e) {
+
+            }
+
+            @Override
+            public void onResponse(Response response) {
+
+            }
+
+            @Override
+            public void onTokenError(Response response, int code) {
+
+            }
+        });
+    }
+});
+```
+
+
 #### 遇到的问题
 
 - **问题1**`java.net.ProtocolException: Expected ':status' header not present`

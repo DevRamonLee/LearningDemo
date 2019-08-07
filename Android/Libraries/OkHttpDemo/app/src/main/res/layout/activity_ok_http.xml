@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="top.betterramon.okhttpdemo.basic.OkHttpActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <Button
+            android:id="@+id/execute_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="同步请求 execute()"/>
+        <Button
+            android:id="@+id/enqueue_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="异步请求 enqueue(Callback)"/>
+        <Button
+            android:id="@+id/post_json_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="post 提交 json 数据"/>
+        <Button
+            android:id="@+id/post_pair_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="post 提交键值对数据"/>
+        <Button
+            android:id="@+id/post_file_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="post 异步上传文件"/>
+        <Button
+            android:id="@+id/response_header_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提取响应头"/>
+        <Button
+            android:id="@+id/post_string_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="post 提交 string"/>
+        <Button
+            android:id="@+id/post_stream_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="post 方式提交流"/>
+        <Button
+            android:id="@+id/post_form_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="post 方式提交表单"/>
+        <Button
+            android:id="@+id/post_multi_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="post 分块请求"/>
+        <Button
+            android:id="@+id/cache_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="响应缓存"/>
+        <Button
+            android:id="@+id/timeout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="配置超时"/>
+        <Button
+            android:id="@+id/simple_lib_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="简易封装库"/>
+
+    </LinearLayout>
+</ScrollView>

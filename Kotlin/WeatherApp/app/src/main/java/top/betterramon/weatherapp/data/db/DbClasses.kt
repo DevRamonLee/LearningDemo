@@ -2,6 +2,9 @@ package top.betterramon.weatherapp.data.db
 
 import java.util.*
 
+/**
+ * 这两个类会帮助我们 SQLite 表与对象之间的互相映射
+ */
 class CityForecast(val map: MutableMap<String, Any?>, val dailyForecast: List<DayForecast>) {
     var _id: Long by map
     var city: String by map

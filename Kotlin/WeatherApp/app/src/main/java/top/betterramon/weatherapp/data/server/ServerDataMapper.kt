@@ -6,8 +6,7 @@ import java.util.concurrent.TimeUnit
 import top.betterramon.weatherapp.domain.model.Forecast as ModelForecast
 
 /***
- * 将 json 转换的对象再次做一次处理
- * 这里使用了操作符
+ * 将 Json 对象转换为 UI 界面上需要显示的信息对象
  */
 class ServerDataMapper {
 

@@ -399,10 +399,6 @@ private void configTimeouts() throws IOException {
 ```
 
 
-- http://www.ymapk.com/article-250-1.html(转载自此文)
-- [官网介绍](https://square.github.io/okhttp/)
-- [OkHttp Wiki 文档](https://github.com/square/okhttp/wiki/Calls)
-
 ## 简单封装
 
 首先我们来新建一个 `OkHttpUtils.java` 文件，一个应用中，`OkHttpUtils` 需要是单例的，所以我们首先需要来实现一个单例

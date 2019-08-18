@@ -1,0 +1,4 @@
+#Sun Mar 31 18:24:11 CST 2019
+base.0=D\:\\MyWorkspace\\RamonLearningCode\\Android\\OkHttpDemo\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3
+path.0=classes.dex
+renamed.0=classes.dex

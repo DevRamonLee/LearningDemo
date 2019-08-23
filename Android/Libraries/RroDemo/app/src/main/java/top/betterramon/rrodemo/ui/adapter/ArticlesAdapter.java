@@ -1,10 +1,9 @@
-package top.betterramon.rrodemo.adapters;
+package top.betterramon.rrodemo.ui.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,16 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import top.betterramon.rrodemo.R;
-import top.betterramon.rrodemo.net.beans.ArticlesSubject;
+import top.betterramon.rrodemo.beans.ArticlesBean;
 
 /**
  * Created by Ramon Lee on 2019/8/9.
  */
 public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ArticlesViewHolder>{
-    private ArticlesSubject articles;
     private Context mContext;
 
-    public ArticlesAdapter(Context context,ArticlesSubject articles) {
+    private List<ArticlesBean.ArticleInfo> articles;
+
+    public ArticlesAdapter(Context context, List<ArticlesBean.ArticleInfo> articles) {
         this.mContext = context;
         this.articles = articles;
     }
@@ -35,13 +35,13 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
 
     @Override
     public void onBindViewHolder(@NonNull ArticlesViewHolder holder, int position) {
-        holder.articleTitle.setText(articles.getData().getDatas().get(position).getTitle());
-        holder.superChapterName.setText(articles.getData().getDatas().get(position).getChapterName());
+        holder.articleTitle.setText(articles.get(position).getTitle());
+        holder.superChapterName.setText(articles.get(position).getChapterName());
     }
 
     @Override
     public int getItemCount() {
-        return articles.getData().getDatas().size();
+        return articles.size();
     }
 
     class ArticlesViewHolder extends RecyclerView.ViewHolder {

@@ -1,95 +1,68 @@
-package top.betterramon.rrodemo.net.beans;
+package top.betterramon.rrodemo.beans;
 
 import java.util.List;
 
 /**
  * Created by Ramon Lee on 2019/8/9.
  */
-public class ArticlesSubject {
-    private Data data;
-    private int errorCode;
-    private String errorMsg;
-    public void setData(Data data) {
-        this.data = data;
+public class ArticlesBean {
+    private int curPage;
+    private List<ArticleInfo> datas;
+    private int offset;
+    private boolean over;
+    private int pageCount;
+    private int size;
+    private int total;
+    public void setCurPage(int curPage) {
+        this.curPage = curPage;
     }
-    public Data getData() {
-        return data;
-    }
-
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
-    }
-    public int getErrorCode() {
-        return errorCode;
+    public int getCurPage() {
+        return curPage;
     }
 
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public void setDatas(List<ArticleInfo> datas) {
+        this.datas = datas;
     }
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public static class Data {
-        private int curPage;
-        private List<Datas> datas;
-        private int offset;
-        private boolean over;
-        private int pageCount;
-        private int size;
-        private int total;
-        public void setCurPage(int curPage) {
-            this.curPage = curPage;
-        }
-        public int getCurPage() {
-            return curPage;
-        }
-
-        public void setDatas(List<Datas> datas) {
-            this.datas = datas;
-        }
-        public List<Datas> getDatas() {
-            return datas;
-        }
-
-        public void setOffset(int offset) {
-            this.offset = offset;
-        }
-        public int getOffset() {
-            return offset;
-        }
-
-        public void setOver(boolean over) {
-            this.over = over;
-        }
-        public boolean getOver() {
-            return over;
-        }
-
-        public void setPageCount(int pageCount) {
-            this.pageCount = pageCount;
-        }
-        public int getPageCount() {
-            return pageCount;
-        }
-
-        public void setSize(int size) {
-            this.size = size;
-        }
-        public int getSize() {
-            return size;
-        }
-
-        public void setTotal(int total) {
-            this.total = total;
-        }
-        public int getTotal() {
-            return total;
-        }
-
+    public List<ArticleInfo> getDatas() {
+        return datas;
     }
 
-    public static class Datas {
+    public void setOffset(int offset) {
+        this.offset = offset;
+    }
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setOver(boolean over) {
+        this.over = over;
+    }
+    public boolean getOver() {
+        return over;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+    public int getSize() {
+        return size;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+    public int getTotal() {
+        return total;
+    }
+
+    public static class ArticleInfo {
         private String apkLink;
         private String author;
         private int chapterId;
@@ -273,5 +246,47 @@ public class ArticlesSubject {
         public int getZan() {
             return zan;
         }
+
+        @Override
+        public String toString() {
+            return "ArticleInfo{" +
+                    "apkLink='" + apkLink + '\'' +
+                    ", author='" + author + '\'' +
+                    ", chapterId=" + chapterId +
+                    ", chapterName='" + chapterName + '\'' +
+                    ", collect=" + collect +
+                    ", courseId=" + courseId +
+                    ", desc='" + desc + '\'' +
+                    ", envelopePic='" + envelopePic + '\'' +
+                    ", fresh=" + fresh +
+                    ", id=" + id +
+                    ", link='" + link + '\'' +
+                    ", niceDate='" + niceDate + '\'' +
+                    ", origin='" + origin + '\'' +
+                    ", prefix='" + prefix + '\'' +
+                    ", projectLink='" + projectLink + '\'' +
+                    ", publishTime=" + publishTime +
+                    ", superChapterId=" + superChapterId +
+                    ", superChapterName='" + superChapterName + '\'' +
+                    ", title='" + title + '\'' +
+                    ", type=" + type +
+                    ", userId=" + userId +
+                    ", visible=" + visible +
+                    ", zan=" + zan +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "ArticlesBean{" +
+                "curPage=" + curPage +
+                ", datas=" + datas +
+                ", offset=" + offset +
+                ", over=" + over +
+                ", pageCount=" + pageCount +
+                ", size=" + size +
+                ", total=" + total +
+                '}';
     }
 }

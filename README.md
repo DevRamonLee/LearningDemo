@@ -48,13 +48,16 @@
     - 13.2 [使用CursorLoader在后台加载数据](Android/Android_training/CursorLoader)
     - 14.5 [多线程操作(此代码只可做参考)](Android/Android_training/ThreadSample)
 
-- EventBus
-	- EventBus 初步使用:[EventBusDemo](Android/Libraries/EventBusDemo)
-		- 相关文章：[EventBus(一)初步认识](http://betterramon.top/eventbus/2019/05/05/EventBus(%E4%B8%80)%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86.html)
+- [EventBus](Android/Libraries/EventBus)
+	- EventBus 初步使用:[EventBusDemo](Android/Libraries/EventBus/EventBusDemo)
 
-- ButterKnife 
-    - 初步使用：[ButterKnifeDemo](Android/Libraries/ButterKnifeDemo)
-	- 相关文章：[ButterKnife(一)初步认识](http://betterramon.top/butterknife/2019/05/08/ButterKnife(%E4%B8%80)%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86.html)
+- [ButterKnife](Android/Libraries/ButterKnife)
+	- [ButterKnife(一)初步认识](Android/Libraries/ButterKnife/ButterKnifeDemo)
+
+- [OkHttp](Android/Libraries/OkHttp/)
+	- [OkHttp(一)初步认识](Android/Libraries/OkHttp/OkHttpDemo)
+	- [OKHttp(二)在项目中封装使用 OkHttp](Android/Libraries/OkHttp/OkHttpDemo2)
+
 
 ## Vue
 

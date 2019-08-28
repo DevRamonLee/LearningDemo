@@ -17,13 +17,12 @@ import java.io.FileNotFoundException;
 
 /**
 *  Android training 2.0  应用程序内容共享
-*  响应 intent 请求
+*  响应文字和图片分享
 * */
-
-/*接收处理文字和图片intent数据*/
 public class ShareServerActivity extends AppCompatActivity {
     private TextView receiveText;
     private ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,17 +43,20 @@ public class ShareServerActivity extends AppCompatActivity {
                 handleSendMultipleImages(intent); // Handle multiple images being sent
             }
         } else {
-        /*处理从其他地方启动，例如从launcher*/
+            // 处理从其他地方启动，例如从 launcher
         }
     }
+
     private void initView(){
         receiveText = (TextView) findViewById(R.id.receive_text);
         imageView = (ImageView) findViewById(R.id.imageView);
     }
+
     private void handleSendText(Intent intent){
         String receivedStr = intent.getStringExtra(Intent.EXTRA_TEXT);
         receiveText.setText(receiveText.getText().toString()+ " : "+ receivedStr);
     }
+
     private  void handleSendImage(Intent intent){
         Uri returnUri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
         /*7.0 以前可以使用这种方法*/
@@ -70,6 +72,7 @@ public class ShareServerActivity extends AppCompatActivity {
         Bitmap bm = BitmapFactory.decodeFileDescriptor(fd);
         imageView.setImageBitmap(bm);
     }
+
     private  void handleSendMultipleImages(Intent intent){
         //接收多张图片
         //ArrayList<Uri> uris=intent.getParcelableArrayListExtra(Intent.EXTRA_STREAM);

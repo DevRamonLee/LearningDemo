@@ -125,7 +125,7 @@ private void openMapshowSelector() {
 }
 ```
 
-![intent_001](3061B6C272F24A37A4D48C971BE6B171)
+![intent_001](./assets/intent_001.png)
 
 #### 从 Activity 获取返回结果
 

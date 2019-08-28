@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ShareFileClient</string>
-    <string name="send_text">send sample text</string>
-    <string name="send_to">send text</string>
-    <string name="request_image">request image</string>
-    <string name="name">name</string>
-    <string name="size">size</string>
-    <string name="send_image">send image</string>
+    <string name="send_text">发送简单文本</string>
+    <string name="send_to">发送文本</string>
+    <string name="request_image">请求图片</string>
+    <string name="name">名字</string>
+    <string name="size">尺寸</string>
+    <string name="send_image">发送图片</string>
 </resources>

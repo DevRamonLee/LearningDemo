@@ -49,15 +49,22 @@
     - 14.5 [多线程操作(此代码只可做参考)](Android/Android_training/ThreadSample)
 
 - [EventBus](Android/Libraries/EventBus)
-	- EventBus 初步使用:[EventBusDemo](Android/Libraries/EventBus/EventBusDemo)
+	- [EventBus(一) 初步使用](Android/Libraries/EventBus/EventBusDemo)
 
 - [ButterKnife](Android/Libraries/ButterKnife)
 	- [ButterKnife(一)初步认识](Android/Libraries/ButterKnife/ButterKnifeDemo)
 
 - [OkHttp](Android/Libraries/OkHttp/)
-	- [OkHttp(一)初步认识](Android/Libraries/OkHttp/OkHttpDemo)
+	- [OkHttp(一)初步认识与简单封装](Android/Libraries/OkHttp/OkHttpDemo)
 	- [OKHttp(二)在项目中封装使用 OkHttp](Android/Libraries/OkHttp/OkHttpDemo2)
 
+- [Retrofit](Android\Libraries\Retrofit\)
+	- [Retrofit(一)初步认识](Android\Libraries\Retrofit\RetrofitDemo)
+
+- [RxJava](Android\Libraries\RxJava)
+	- [RxJava(一) 初步认识](Android\Libraries\RxJava\RxJavaDemo)
+	
+- [Retrofit+RxJava+Okhttp 封装网络请求框架](Android\Libraries\RroDemo)
 
 ## Vue
 

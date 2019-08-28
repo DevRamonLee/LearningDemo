@@ -4,6 +4,11 @@
 
 ## Android
 
+#### Android 基础
+
+- [Intent 与 IntentFilter](Android/Basic/Intent 与 IntentFilter.md)
+- [数据存储(SharedPreference、文件、数据库)](Android/Basic/SavingData)
+
 - [Android 四大组件](Android/Android_Component)
     - Components(Activity、Service)
 
@@ -31,7 +36,6 @@
     
 
 - [Android_training](Android/Android_training)
-	- 1.6 [数据保存](Android/Android_training/SavingData)
 	- 1.7 [与其他应用交互](Android/Android_training/InteractingWithApp)
 	- 2.0 [Android 分享操作](Android/Android_training/ShareFiles)
 	- 3.2 [拍照](Android/Android_training/Camera)
@@ -48,8 +52,11 @@
     - 13.2 [使用CursorLoader在后台加载数据](Android/Android_training/CursorLoader)
     - 14.5 [多线程操作(此代码只可做参考)](Android/Android_training/ThreadSample)
 
+
+#### Android 流行库	
+
 - [EventBus](Android/Libraries/EventBus)
-	- [EventBus(一) 初步使用](Android/Libraries/EventBus/EventBusDemo)
+	- [EventBus(一) 初步认识](Android/Libraries/EventBus/EventBusDemo)
 
 - [ButterKnife](Android/Libraries/ButterKnife)
 	- [ButterKnife(一)初步认识](Android/Libraries/ButterKnife/ButterKnifeDemo)
@@ -62,7 +69,10 @@
 	- [Retrofit(一)初步认识](Android/Libraries/Retrofit/RetrofitDemo)
 
 - [RxJava](Android/Libraries/RxJava)
-	- [RxJava(一) 初步认识](Android/Libraries/RxJava/RxJavaDemo)
+	- [RxJava(一)初步认识](Android/Libraries/RxJava/RxJavaDemo)
+
+- [Glide](Android/Libraries/Glide)
+	- [Glide(一)初步认识](Android/Libraries/Glide/GlideDemo)
 	
 - [Retrofit+RxJava+Okhttp 封装网络请求框架](Android/Libraries/RroDemo)
 
@@ -116,11 +126,14 @@ Ramon Lee - [http://betterramon.top](http://betterramon.top/)
 
 ## License
 
-> Copyright (C) 2019 Ramon Lee `<betterramon@gmail.com>`<br/><br/>
+Copyright (C) 2019 Ramon Lee `<betterramon@gmail.com>`
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
-You may obtain a copy of the License at<br/><br/>
-http://www.apache.org/licenses/LICENSE-2.0<br/><br/>
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.

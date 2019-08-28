@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SavingData</string>
+    <string name="sharedpreference_btn">SharedPreference</string>
+    <string name="file_btn">Android File</string>
+    <string name="sqlite_database">Sqlite Datebase</string>
+    <string name="save_data">save data</string>
+    <string name="read_data">read data</string>
+    <string name="save_data_internal">Save in internal</string>
+    <string name="title">tiltle</string>
+    <string name="sub_title">subtitle</string>
+    <string name="insert">插入数据库</string>
+    <string name="query">查询数据库</string>
+    <string name="title_value">输入 title 值查询</string>
+    <string name="delete_key">input delete message key</string>
+    <string name="delete">删除</string>
+    <string name="update">更新标题 </string>
+    <string name="update_name">更新</string>
+</resources>

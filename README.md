@@ -1,4 +1,8 @@
-# Android
+# 大前端学习笔记
+
+![logo](./assets/betterramon.png)
+
+## Android
 
 - [Android 四大组件](Android/Android_Component)
     - Components(Activity、Service)
@@ -44,13 +48,23 @@
     - 13.2 [使用CursorLoader在后台加载数据](Android/Android_training/CursorLoader)
     - 14.5 [多线程操作(此代码只可做参考)](Android/Android_training/ThreadSample)
 
-- [Android 第三方开源库](Android/Libraries)
+- EventBus
 	- EventBus 初步使用:[EventBusDemo](Android/Libraries/EventBusDemo)
 		- 相关文章：[EventBus(一)初步认识](http://betterramon.top/eventbus/2019/05/05/EventBus(%E4%B8%80)%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86.html)
-	- ButterKnife 初步使用：[ButterKnifeDemo](Android/Libraries/ButterKnifeDemo)
-		- 相关文章：[ButterKnife(一)初步认识](http://betterramon.top/butterknife/2019/05/08/ButterKnife(%E4%B8%80)%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86.html)
 
-# DataStructureAndArithmetic
+- ButterKnife 
+    - 初步使用：[ButterKnifeDemo](Android/Libraries/ButterKnifeDemo)
+	- 相关文章：[ButterKnife(一)初步认识](http://betterramon.top/butterknife/2019/05/08/ButterKnife(%E4%B8%80)%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86.html)
+
+## Vue
+
+## React
+
+## Flutter
+
+## ReactNative
+
+## 数据结构与算法
 
 - [DataStructure](DataStructureAndArithmetic/DataStructure)
     - src\com\li\ramon\list
@@ -84,4 +98,21 @@
         - 动态规划法求最长公共子序列 DpLcs.java
         - 百钱买鸡问题，穷举法 BuyChickens.java
         - 趴楼梯问题，一次走 1 步或 2 步（斐波那契数列变形。递归法和非递归法） GoStairs.java
-    
+		
+		
+## Developed By
+
+Ramon Lee - [http://betterramon.top](http://betterramon.top/)
+
+## License
+
+> Copyright (C) 2019 Ramon Lee `<betterramon@gmail.com>`<br/><br/>
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at<br/><br/>
+http://www.apache.org/licenses/LICENSE-2.0<br/><br/>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

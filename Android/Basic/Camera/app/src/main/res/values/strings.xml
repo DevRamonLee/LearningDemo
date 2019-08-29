@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CapturingPhotos</string>
+    <string name="capture_photos">拍摄缩略图</string>
+    <string name="full_size_photo">拍摄全尺寸图片</string>
+    <string name="photo_activity">调用系统相机拍照</string>
+    <string name="video_activity">调用系统相机录像</string>
+    <string name="take_video">Take video</string>
+    <string name="camera_activity">自定义相机</string>
+    <string name="capture">Capture</string>
+    <string name="prompt_support">The device not supports camera</string>
+    <string name="camera_switch">Switch</string>
+</resources>

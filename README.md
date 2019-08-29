@@ -9,6 +9,7 @@
 - [Intent 与 IntentFilter](Android/Basic/Intent-and-IntentFilter.md)
 - [数据存储(SharedPreference、文件、数据库)](Android/Basic/SavingData)
 - [分享操作 - FileProvider-ActionProvider 的使用](Android/Basic/ShareFiles/ShareAction-FileProvider-ActionProvider.md)
+- [Camera 的使用](Android/Basic/Camera)
 
 - [Android 四大组件](Android/Android_Component)
     - Components(Activity、Service)
@@ -37,9 +38,6 @@
     
 
 - [Android_training](Android/Android_training)
-	- 1.7 [与其他应用交互](Android/Android_training/InteractingWithApp)
-	- 2.0 [Android 分享操作](Android/Android_training/ShareFiles)
-	- 3.2 [拍照](Android/Android_training/Camera)
 	- 4.1 [高效显示Bitmap](Android/Android_training/DisplayBitmaps)
 	- 4.2 [使用 OpenGL ES 显示图像](Android/Android_training/OpenGlEs)
 	- 4.3 [添加动画](Android/Android_training/AddAnimation)
@@ -127,13 +125,13 @@ Ramon Lee - [http://betterramon.top](http://betterramon.top/)
 
 ## License
 
-Copyright (C) 2019 Ramon Lee `<betterramon@gmail.com>`
+Copyright (C) 2019 Ramon Lee `<`[betterramon@gmail.com](betterramon@gmail.com)`>`
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-	http://www.apache.org/licenses/LICENSE-2.0
+	[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

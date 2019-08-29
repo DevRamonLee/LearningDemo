@@ -309,7 +309,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
 
 ## 请求分享文件
 
-下面我们来实现一个例子，实现类似从图库选取一张图片作为图像的操作，我们需要完成两个应用程序，客户端和服务端。客户端去发送请求，向服务端请求获取图片，服务端使用 Fileprovider 来提供客户端可访问的图片资源列表供客户端选择，选择完成后显示在 imageview 中。如下图所示。
+下面我们来实现一个例子(例子在上一级目录，分两部分 ShareClient 和 ShareServer)，实现类似从图库选取一张图片作为图像的操作，我们需要完成两个应用程序，客户端和服务端。客户端去发送请求，向服务端请求获取图片，服务端使用 Fileprovider 来提供客户端可访问的图片资源列表供客户端选择，选择完成后显示在 imageview 中。如下图所示。
 
 ![shareData1](../assets/shareData1.png)
 

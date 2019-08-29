@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="google.trainging.com.bitmapandanimation.MainActivity">
+
+    <Button
+        android:id="@+id/load_sample_bitmap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/load_bitmap"/>
+
+    <Button
+        android:id="@+id/handle_concurency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/handle_concurency"/>
+
+    <Button
+        android:id="@+id/bitmap_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cache_bitmap" />
+
+    <Button
+        android:id="@+id/cfg_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cfg_change"/>
+
+    <Button
+        android:id="@+id/manage_memory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/manage_memory" />
+
+    <Button
+        android:id="@+id/inBitmap_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_inbitmap"/>
+
+    <Button
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_pager_ui" />
+
+    <Button
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_grid" />
+</LinearLayout>

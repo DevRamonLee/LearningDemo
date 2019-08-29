@@ -10,6 +10,7 @@
 - [数据存储(SharedPreference、文件、数据库)](Android/Basic/SavingData)
 - [分享操作 - FileProvider-ActionProvider 的使用](Android/Basic/ShareFiles/ShareAction-FileProvider-ActionProvider.md)
 - [Camera 的使用](Android/Basic/Camera)
+- [高效加载大图](Android/Basic/DisplayBitmaps)
 
 - [Android 四大组件](Android/Android_Component)
     - Components(Activity、Service)

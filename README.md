@@ -39,8 +39,6 @@
     
 
 - [Android_training](Android/Android_training)
-	- 4.1 [高效显示Bitmap](Android/Android_training/DisplayBitmaps)
-	- 4.2 [使用 OpenGL ES 显示图像](Android/Android_training/OpenGlEs)
 	- 4.3 [添加动画](Android/Android_training/AddAnimation)
 	- 5.1 [无线连接设备](Android/Android_training/NetDeviceConnect)
 	- 5.2 [执行网络操作](Android/Android_training/AccessInternet)

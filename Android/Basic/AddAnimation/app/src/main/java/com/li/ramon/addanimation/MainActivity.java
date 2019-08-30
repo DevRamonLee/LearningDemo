@@ -7,7 +7,13 @@ import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 
+import com.li.ramon.addanimation.view.ViewAnimActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Button viewAnimation;       // 视图动画
+
+
     private Button crossFade;           // 渐变动画
     private Button viewPagerAnimaiton;  // viewpager 切换动画
     private Button cardAnimation;       // 卡片翻转动画
@@ -22,11 +28,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     protected void init() {
-        crossFade = (Button) findViewById(R.id.cross_fade);
-        viewPagerAnimaiton = (Button) findViewById(R.id.viewpager_animation);
-        cardAnimation = (Button) findViewById(R.id.card_animation);
-        zoomAnimation = (Button) findViewById(R.id.zoom_btn);
-        layoutChange = (Button) findViewById(R.id.layout_change);
+        viewAnimation = findViewById(R.id.view_animation);
+
+        crossFade = findViewById(R.id.cross_fade);
+        viewPagerAnimaiton = findViewById(R.id.viewpager_animation);
+        cardAnimation = findViewById(R.id.card_animation);
+        zoomAnimation = findViewById(R.id.zoom_btn);
+        layoutChange = findViewById(R.id.layout_change);
+
+        viewAnimation.setOnClickListener(this);
         crossFade.setOnClickListener(this);
         viewPagerAnimaiton.setOnClickListener(this);
         cardAnimation.setOnClickListener(this);
@@ -39,6 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
+            case R.id.view_animation:   // 视图动画
+                intent = new Intent(MainActivity.this, ViewAnimActivity.class);
+                startActivity(intent);
+                break;
             case R.id.cross_fade:
                 intent = new Intent(MainActivity.this, CrossfadeActivity.class);
                 startActivity(intent);

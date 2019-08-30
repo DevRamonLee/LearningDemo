@@ -5,42 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.li.ramon.addanimation.MainActivity">
-
-
-    <Button
-        android:id="@+id/view_animation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="视图动画(View Animation)"/>
+    android:layoutAnimation="@anim/anim_layout"
+    tools:context=".view.ViewGroupActivity">
 
     <Button
-        android:id="@+id/cross_fade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cross fade Animation" />
+        android:text="item 进场动画"/>
 
     <Button
-        android:id="@+id/viewpager_animation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Viewpager Animation" />
+        android:text="item 进场动画"/>
 
     <Button
-        android:id="@+id/card_animation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/card_animation" />
+        android:text="item 进场动画"/>
 
     <Button
-        android:id="@+id/zoom_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/zoom_animation" />
+        android:text="item 进场动画"/>
 
     <Button
-        android:id="@+id/layout_change"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/layout_change_animate" />
+        android:text="item 进场动画"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="item 进场动画"/>
 </LinearLayout>

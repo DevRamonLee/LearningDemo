@@ -1,4 +1,4 @@
-package com.li.ramon.addanimation;
+package com.li.ramon.addanimation.property;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -8,6 +8,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.View;
+
+import com.li.ramon.addanimation.R;
 
 public class ScreenSlidePagerActivity extends FragmentActivity {
     private static final int NUM_PAGES = 5;//页面数量
@@ -22,9 +24,9 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-        //mPager.setPageTransformer(true, new ZoomOutPageTransformer());
-        //mPager.setPageTransformer(true,new DepthPageTransformer());
-        mPager.setPageTransformer(true,new RotatePageTransform());
+//        mPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        mPager.setPageTransformer(true,new DepthPageTransformer());
+//        mPager.setPageTransformer(true,new RotatePageTransform());
     }
 
     @Override

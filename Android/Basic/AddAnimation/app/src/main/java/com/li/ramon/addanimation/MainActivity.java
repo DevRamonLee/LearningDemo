@@ -3,18 +3,22 @@ package com.li.ramon.addanimation;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 
+import com.li.ramon.addanimation.frame.FrameAnimActivity;
+import com.li.ramon.addanimation.property.PropertyActivity;
+import com.li.ramon.addanimation.property.ScreenSlidePagerActivity;
+import com.li.ramon.addanimation.property.card.CardFlipActivity;
 import com.li.ramon.addanimation.view.ViewAnimActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button viewAnimation;       // 视图动画
+    private Button frameAnimation;      // 帧动画
+    private Button propertyAnimation;   // 属性动画
 
 
-    private Button crossFade;           // 渐变动画
     private Button viewPagerAnimaiton;  // viewpager 切换动画
     private Button cardAnimation;       // 卡片翻转动画
     private Button zoomAnimation;       // 图片放大缩放动画
@@ -29,15 +33,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected void init() {
         viewAnimation = findViewById(R.id.view_animation);
+        frameAnimation = findViewById(R.id.frame_animation);
+        propertyAnimation = findViewById(R.id.property_animation);
 
-        crossFade = findViewById(R.id.cross_fade);
         viewPagerAnimaiton = findViewById(R.id.viewpager_animation);
         cardAnimation = findViewById(R.id.card_animation);
         zoomAnimation = findViewById(R.id.zoom_btn);
         layoutChange = findViewById(R.id.layout_change);
 
         viewAnimation.setOnClickListener(this);
-        crossFade.setOnClickListener(this);
+        frameAnimation.setOnClickListener(this);
+        propertyAnimation.setOnClickListener(this);
+
         viewPagerAnimaiton.setOnClickListener(this);
         cardAnimation.setOnClickListener(this);
         zoomAnimation.setOnClickListener(this);
@@ -53,8 +60,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(MainActivity.this, ViewAnimActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.cross_fade:
-                intent = new Intent(MainActivity.this, CrossfadeActivity.class);
+            case R.id.frame_animation:  // 帧动画
+                intent = new Intent(MainActivity.this, FrameAnimActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.property_animation:   // 属性动画
+                intent = new Intent(MainActivity.this, PropertyActivity.class);
                 startActivity(intent);
                 break;
             case R.id.viewpager_animation:

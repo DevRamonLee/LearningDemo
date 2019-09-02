@@ -1,7 +1,9 @@
-package com.li.ramon.addanimation;
+package com.li.ramon.addanimation.property.card;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.li.ramon.addanimation.R;
 
 /*fragment  换场动画  card 翻转效果*/
 public class CardFlipActivity extends AppCompatActivity {

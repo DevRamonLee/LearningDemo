@@ -1,4 +1,4 @@
-package com.li.ramon.addanimation;
+package com.li.ramon.addanimation.property;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.li.ramon.addanimation.R;
 
 /**
  * Created by limeng on 2018/4/23.

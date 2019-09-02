@@ -11,8 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".view.ViewGroupActivity"></activity>
-        <activity android:name=".view.ActivityConvertActivity"></activity>
+        <activity android:name=".property.PropertyActivity"></activity>
+        <activity android:name=".frame.FrameAnimActivity" />
+        <activity android:name=".view.ViewGroupActivity" />
+        <activity android:name=".view.ActivityConvertActivity" />
         <activity android:name=".view.PopUpWindowActivity" />
         <activity android:name=".view.ViewAnimBasicActivity" />
         <activity android:name=".view.ViewAnimActivity" />
@@ -23,9 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CrossfadeActivity" />
-        <activity android:name=".ScreenSlidePagerActivity" />
-        <activity android:name=".CardFlipActivity" />
+        <activity android:name=".property.CrossfadeActivity" />
+        <activity android:name=".property.ScreenSlidePagerActivity" />
+        <activity android:name=".property.card.CardFlipActivity" />
         <activity android:name=".ZoomActivity" />
         <activity android:name=".LayoutChangesActivity" />
     </application>

@@ -15,10 +15,16 @@
         android:text="视图动画(View Animation)"/>
 
     <Button
-        android:id="@+id/cross_fade"
+        android:id="@+id/frame_animation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cross fade Animation" />
+        android:text="帧动画(Frame Animation) Drawable Animation"/>
+
+    <Button
+        android:id="@+id/property_animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="属性动画(Property Animation)"/>
 
     <Button
         android:id="@+id/viewpager_animation"

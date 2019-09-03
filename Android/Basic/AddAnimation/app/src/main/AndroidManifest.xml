@@ -28,8 +28,8 @@
         <activity android:name=".property.CrossfadeActivity" />
         <activity android:name=".property.ScreenSlidePagerActivity" />
         <activity android:name=".property.card.CardFlipActivity" />
-        <activity android:name=".ZoomActivity" />
-        <activity android:name=".LayoutChangesActivity" />
+        <activity android:name=".property.ZoomActivity" />
+        <activity android:name=".property.LayoutChangesActivity" />
     </application>
 
 </manifest>

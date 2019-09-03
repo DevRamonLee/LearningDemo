@@ -2,6 +2,7 @@ package com.li.ramon.addanimation.property.card;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 
 import com.li.ramon.addanimation.R;
 
@@ -23,10 +24,13 @@ public class CardFlipActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        flipCard();
+    public boolean onTouchEvent(MotionEvent event) {
+        if(event.getAction() == MotionEvent.ACTION_UP) {
+            flipCard();
+            return true;
+        }
+        return super.onTouchEvent(event);
     }
-
 
     private void flipCard() {
         if (mShowingBack) {

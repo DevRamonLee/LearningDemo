@@ -25,28 +25,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="属性动画(Property Animation)"/>
-
-    <Button
-        android:id="@+id/viewpager_animation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Viewpager Animation" />
-
-    <Button
-        android:id="@+id/card_animation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/card_animation" />
-
-    <Button
-        android:id="@+id/zoom_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/zoom_animation" />
-
-    <Button
-        android:id="@+id/layout_change"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/layout_change_animate" />
 </LinearLayout>

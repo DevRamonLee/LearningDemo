@@ -16,7 +16,6 @@ import betterramon.top.binderdemo.proxy.Proxy;
 /**
  * 抽象类，继承 Binder，拥有跨进程通信能力，具体提供的服务功能由实现类自身处理
  */
-
 public abstract  class Stub extends Binder implements IBookManager{
     //定义字符描述
     public static final String DESCRIPTOR = "betterramon.top.binderdemo.proxy.BookManager";
@@ -25,18 +24,17 @@ public abstract  class Stub extends Binder implements IBookManager{
     public static final int ADD_BOOK = IBinder.FIRST_CALL_TRANSACTION + 1;
 
     public Stub( ) {
-        // 1. 将（descriptor，IBookManager）作为（key,value）对存入到Binder对象中的一个Map<String,IInterface>对象中
-        // 2. 之后，Binder对象 可根据descriptor通过queryLocalIInterface（）获得对应IInterface对象（即Stub）的引用，
+        // 1. 将（descriptor，IBookManager）作为（key,value）对存入到 Binder 对象中的一个Map<String,IInterface>对象中
+        // 2. 之后，Binder对象 可根据 descriptor 通过 queryLocalIInterface（）获得对应 IInterface 对象（即Stub）的引用，
         // 可依靠该引用完成对请求方法的调用
         this.attachInterface(this, DESCRIPTOR);
     }
 
     @Override
     protected boolean onTransact(int code, @NonNull Parcel data, @Nullable Parcel reply, int flags) throws RemoteException {
-        //跨进程通信时，当client 通过 transact 方法请求时，驱动会通知对数据进行解包，
+        // 跨进程通信时，当 client 通过 transact 方法请求时，驱动会通知对数据进行解包，
         // 最后会回调这个方法进行处理，该方法在服务端 binder 线程池中运行
         // 这个方法返回 false 时，客户端请求会失败，可以用来做权限验证，避免随便一个进程都能远程调用我们的服务
-
         switch (code) {
             case INTERFACE_TRANSACTION:
                 reply.writeString(DESCRIPTOR);

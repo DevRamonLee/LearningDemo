@@ -100,6 +100,7 @@ public class IntentActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // 验证请求码
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_CONTACT_REQUEST) {
             // resultCode是由被请求 Activity 通过其 setResult() 方法返回。用于标识处理结果，一般成功返回 RESULT_OK
             if (resultCode == RESULT_OK) {

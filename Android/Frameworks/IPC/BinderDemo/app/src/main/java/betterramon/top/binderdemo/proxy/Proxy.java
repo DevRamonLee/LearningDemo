@@ -14,7 +14,6 @@ import betterramon.top.binderdemo.server.Stub;
 /**
  * 远程服务代理类，需要实现接口，才能代理服务功能
  */
-
 public class Proxy implements IBookManager{
     //定义字符描述
     public static final String DESCRIPTOR = "betterramon.top.binderdemo.proxy.BookManager";
@@ -59,7 +58,6 @@ public class Proxy implements IBookManager{
         //创建输入输出对象
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
-
         try {
             //写入ITnterface的描述
             data.writeInterfaceToken(DESCRIPTOR);

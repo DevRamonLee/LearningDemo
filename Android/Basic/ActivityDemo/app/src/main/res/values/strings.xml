@@ -2,4 +2,5 @@
     <string name="app_name">ActivityDemo</string>
     <string name="activity_launch_mode">Activity 启动模式</string>
     <string name="intent_go">Intent 跳转</string>
+    <string name="activity_life_cycle">Activity 生命周期</string>
 </resources>

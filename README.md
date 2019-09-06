@@ -6,6 +6,7 @@
 
 #### Android 基础
 
+- [Activity 的生命周期](Android/Basic/Activity-life-cycle.md)
 - [Activity 启动模式](Android/Basic/Activity-launch-mode.md)
 - [Intent 与 IntentFilter](Android/Basic/Intent-and-IntentFilter.md)
 - [数据存储(SharedPreference、文件、数据库)](Android/Basic/SavingData)
@@ -131,7 +132,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-	[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

@@ -19,7 +19,7 @@ Activity 作为四大组件之一，主要用来显示界面，用于和用户�
 
 Activity 的生命周期如下图：
 
-![activity_life_cycle_001](./assets/activity_life_cycle_001.png)
+![activity_life_cycle_001](./assets/activity_life_cycle_001.PNG)
 
 #### 创建工程 LifeCycle 创建 ActivityLifeCycle.java
 ```
@@ -203,7 +203,7 @@ ActivityLifeCycleLog: onWindowFocusChanged called.
 
 当系统配置发生改变时， Activity 就会被销毁并重建，其生命周期如下图：
 
-![activity_life_cycle_002](./assets/activity_life_cycle_002.png)
+![activity_life_cycle_002](./assets/activity_life_cycle_002.PNG)
 
 当系统的配置发生改变后，Activity 会异常销毁，其 onpase onstop ondestroy 均会被调用，同时由于Activity是异常情况下终止的， onSaveInstanceState 会来保存当前 Activity 的状态。（调用时机是在 onStop 之前）
 
@@ -230,7 +230,7 @@ android:configChanges = "orientation"
 
 下面是ConfigChanges 表
 
-![activity_life_cycle_003](./assets/activity_life_cycle_003.png)
+![activity_life_cycle_003](./assets/activity_life_cycle_003.PNG)
 
 其实我们常用的只有 `orientation locale keyboardHidden` (注意我们在使用 `orientation` 的时候一般还要指定 `screensize`，因为在旋转屏幕的时候，屏幕的 `size` 尺寸会发生变化，API 13 后添加的)
 

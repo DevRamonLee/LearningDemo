@@ -256,7 +256,7 @@ intent.setData(uri);
 
 - **data属性解析**
     - `<scheme>://<host>:<port>/[<path>|<pathPrefix>|<pathPattern>]/mimeType`
-        - URI 为 mimeType 前面的部分，mimeType设置了数据的类型
+        - URI 为 [mimeType](./MIME-introduce.md) 前面的部分，mimeType设置了数据的类型
         - Scheme： URI 的模式，比如 http、file、content等，如果 URI 中没有指定 schema，那么整个 URI 的其他参数无效，这也意味着 URI 是无效的
         - Host:URI 的主机名，如 www.baidu.com, 如果 host 未指定，那么整个URL 中的其他参数无效，也意味着 URI 是无效的。
         - Post：URI 中的端口号，比如 80，仅当 URI 中指定了 scheme 和 host 参数的时候 port 参数才有意义。

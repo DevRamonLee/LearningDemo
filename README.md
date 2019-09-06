@@ -24,6 +24,7 @@
 - [IPC]()
 	- [IPC 第一话：Binder 与 序列化](Android/Frameworks/IPC/IPC-one.md)
 	- [IPC 第二话：手写实现 Binder](Android/Frameworks/IPC/IPC-two.md)
+	- [IPC 第三话：AIDL 方式实现 Binder](Android/Frameworks/IPC/IPC-three.md)
 
 - [Frameworks](Android/Frameworks)
     - BinderDemo (手写实现 AIDL)

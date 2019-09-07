@@ -1,7 +1,5 @@
 # 大前端学习笔记
 
-![logo](./assets/betterramon.png)
-
 ## Android
 
 #### Android 基础
@@ -9,10 +7,10 @@
 - [Activity 的生命周期](Android/Basic/Activity-life-cycle.md)
 - [Activity 启动模式](Android/Basic/Activity-launch-mode.md)
 - [Intent 与 IntentFilter](Android/Basic/Intent-and-IntentFilter.md)
-- [数据存储(SharedPreference、文件、数据库)](Android/Basic/SavingData)
+- [数据存储(SharedPreference、文件、数据库)](Android/Basic/SavingData.md)
 - [分享操作 - FileProvider-ActionProvider 的使用](Android/Basic/ShareFiles/ShareAction-FileProvider-ActionProvider.md)
-- [Camera 的使用](Android/Basic/Camera)
-- [高效加载大图](Android/Basic/DisplayBitmaps)
+- [Camera 的使用](Android/Basic/Camera.md)
+- [高效加载大图](Android/Basic/DispalyBitmaps.md)
 
 - [Android UI](Android/Android_UI)
     - AndroidUI(动画、自定义视图、fragment、layout、openGL、style、与用户交互)
@@ -25,6 +23,7 @@
 	- [IPC 第一话：Binder 与 序列化](Android/Frameworks/IPC/IPC-one.md)
 	- [IPC 第二话：手写实现 Binder](Android/Frameworks/IPC/IPC-two.md)
 	- [IPC 第三话：AIDL 方式实现 Binder](Android/Frameworks/IPC/IPC-three.md)
+	- [IPC 第四话：Bundle-文件共享-Messenger实现 IPC](Android/Frameworks/IPC/IPC-four.md)
 
 - [Frameworks](Android/Frameworks)
     - BinderDemo (手写实现 AIDL)

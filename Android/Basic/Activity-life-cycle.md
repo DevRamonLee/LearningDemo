@@ -234,5 +234,4 @@ android:configChanges = "orientation"
 
 其实我们常用的只有 `orientation locale keyboardHidden` (注意我们在使用 `orientation` 的时候一般还要指定 `screensize`，因为在旋转屏幕的时候，屏幕的 `size` 尺寸会发生变化，API 13 后添加的)
 
-
-
+例子源码：[ActivityDemo](./ActivityDemo)

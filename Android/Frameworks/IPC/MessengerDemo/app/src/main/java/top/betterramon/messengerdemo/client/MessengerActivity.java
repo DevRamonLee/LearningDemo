@@ -1,6 +1,5 @@
 package top.betterramon.messengerdemo.client;
 
-import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;

@@ -561,3 +561,5 @@ protected void showNameAndSize(Uri returnUri){
 > FileProvider 类具有 `query()` 方法的默认实现，该方法返回与 Cursor 中的内容 URI 关联的文件的名称和大小。默认实现返回两列：
 文件的名称，作为一个字符串。 与 `File.getName()` 返回的值相同。
 文件的大小（以字节为单位 long 类型）,与 `File.length()` 返回的值相同
+
+例子源码：[ShareFiles](../ShareFiles)

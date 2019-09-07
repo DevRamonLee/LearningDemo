@@ -416,3 +416,5 @@ intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
 - `FLAG_ACTIVITY_EXCLUDES_FROM_RECENTS`
     -  某些情况下我们不希望用户通过历史列表回到我们的 `Activity` 的时候这个标记比较有用，它等同于在 `XML` 为 `Activity` 指定 `android：excludeFromRecents="true"`
+	
+例子源码：[ActivityDemo](./ActivityDemo)

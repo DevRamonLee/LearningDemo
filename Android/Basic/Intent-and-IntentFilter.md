@@ -322,3 +322,6 @@ data 有一点和 action 不同，就是它有两种特殊写法
     <data android:host="www.baidu.com">
 </intent-filter>
 ```
+
+
+例子源码：[ActivityDemo](./ActivityDemo)

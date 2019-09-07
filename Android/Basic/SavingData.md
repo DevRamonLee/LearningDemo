@@ -419,4 +419,6 @@ db.execSQL( sql)
 db.rawQuery(sql);
 ```
 
+例子源码：[SavingData](./SavingData)
+
 > 上面这种方法我们不通过 SQLiteOpenHelper 类的 API 来操作数据库，而是使用 SQL 语句操作，一般不推荐使用。

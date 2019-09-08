@@ -64,7 +64,7 @@ public class TCPClientActivity extends AppCompatActivity implements View.OnClick
         mSendButton.setOnClickListener(this);
         mMessageEditText = findViewById(R.id.msg);
         Intent service = new Intent(this, TCPServerService.class);
-        startService(service);
+        startService(service);      // 启动服务端的服务
         new Thread() {
             @Override
             public void run() {

@@ -15,7 +15,6 @@ import top.betterramon.binderpooldemo.server.BinderPoolService;
 /**
  * Created by meng.li on 2019/3/12.
  */
-
 public class BinderPool {
     private static final String TAG = "BinderPool";
     public static final int BINDER_NONE = -1;

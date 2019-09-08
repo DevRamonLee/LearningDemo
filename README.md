@@ -22,8 +22,11 @@
 - [IPC]()
 	- [IPC 第一话：Binder 与 序列化](Android/Frameworks/IPC/IPC-one.md)
 	- [IPC 第二话：手写实现 Binder](Android/Frameworks/IPC/IPC-two.md)
-	- [IPC 第三话：AIDL 方式实现 Binder](Android/Frameworks/IPC/IPC-three.md)
+	- [IPC 第三话：AIDL 方式实现 Binder,跨进程接口回调](Android/Frameworks/IPC/IPC-three.md)
 	- [IPC 第四话：Bundle-文件共享-Messenger实现 IPC](Android/Frameworks/IPC/IPC-four.md)
+	- [IPC 第五话：ContentProvider 实现 IPC](Android/Frameworks/IPC/IPC-five.md)
+	- [IPC 第六话：Socket 实现 IPC](Android/Frameworks/IPC/IPC-six.md)
+	- [IPC 第七话：Binder 连接池](Android/Frameworks/IPC/IPC-seven.md)
 
 - [Frameworks](Android/Frameworks)
     - BinderDemo (手写实现 AIDL)

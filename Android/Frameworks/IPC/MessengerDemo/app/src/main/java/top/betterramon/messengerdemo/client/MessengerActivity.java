@@ -61,7 +61,7 @@ public class MessengerActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MyConstants.MSG_FROM_SERVICE:
-                    Log.i("client","receive msg form Service: " + msg.getData().getString("reply"));
+                    Log.i(TAG,"receive msg form Service: " + msg.getData().getString("reply"));
                     break;
                 default:
                     super.handleMessage(msg);

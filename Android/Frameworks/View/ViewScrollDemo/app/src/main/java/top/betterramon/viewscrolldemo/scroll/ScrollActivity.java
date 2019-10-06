@@ -1,15 +1,17 @@
-package top.betterramon.viewscrolldemo;
+package top.betterramon.viewscrolldemo.scroll;
 
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
+import top.betterramon.viewscrolldemo.R;
+
+/**
+ * 各种方式实现 View 的滑动以及弹性滑动
+ */
 public class ScrollActivity extends AppCompatActivity {
     private ScrollerListView scrollList;
     String [] arr = new String[100];
@@ -34,7 +36,7 @@ public class ScrollActivity extends AppCompatActivity {
         scrollList.requestLayout();*/
 
         // 实现弹性滑动
-        //scrollList.smoothScrollTo(200, 0);
+        scrollList.smoothScrollTo(200, 0);
 
         // 利用动画的特性来实现弹性滑动
         final int startY = 0;
@@ -50,7 +52,7 @@ public class ScrollActivity extends AppCompatActivity {
         //animator.start();
 
         // 使用 Handler 延时策略来实现渐进滑动
-        mHandler.sendEmptyMessageDelayed(MESSAGE_SCROLLTO, DELAYED_TIME);
+//        mHandler.sendEmptyMessageDelayed(MESSAGE_SCROLLTO, DELAYED_TIME);
     }
 
     private static final int MESSAGE_SCROLLTO = 1;

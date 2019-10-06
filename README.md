@@ -28,15 +28,6 @@
 	- [IPC 第六话：Socket 实现 IPC](Android/Frameworks/IPC/IPC-six.md)
 	- [IPC 第七话：Binder 连接池](Android/Frameworks/IPC/IPC-seven.md)
 
-- [Frameworks](Android/Frameworks)
-    - BinderDemo (手写实现 AIDL)
-    - BinderDemo2 (AIDL 实现并扩展,跨进程接口回调)
-    - MessengerDemo (Messenger 的使用)
-    - BinderPoolDemo (Binder 连接池，存在多个 AIDL 调用时使用)
-    - ContentProviderDemo (自定义 ContentProvider 实现跨进程使用)
-    - SocketDemo (Socket 跨进程通信，简单自动回复功能)
-
-
 
 - [Android_advanced](Android/Android_advanced)
 	- [Surface SurfaceView SurfaceHolder SurfaceHolder.Callback关系](Android/Android_advanced/TestSurfaceView)

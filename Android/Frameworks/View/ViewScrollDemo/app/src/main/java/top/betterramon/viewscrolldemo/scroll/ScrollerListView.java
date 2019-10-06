@@ -1,4 +1,4 @@
-package top.betterramon.viewscrolldemo;
+package top.betterramon.viewscrolldemo.scroll;
 
 import android.content.Context;
 import android.util.AttributeSet;

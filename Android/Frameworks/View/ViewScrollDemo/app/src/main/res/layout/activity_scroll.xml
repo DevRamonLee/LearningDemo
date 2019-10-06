@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="top.betterramon.viewscrolldemo.ScrollActivity">
-    <top.betterramon.viewscrolldemo.ScrollerListView
+    tools:context="top.betterramon.viewscrolldemo.scroll.ScrollActivity">
+    <top.betterramon.viewscrolldemo.scroll.ScrollerListView
         android:id="@+id/scroll_lv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </top.betterramon.viewscrolldemo.ScrollerListView>
+    </top.betterramon.viewscrolldemo.scroll.ScrollerListView>
 
 </LinearLayout>

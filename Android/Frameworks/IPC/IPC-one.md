@@ -14,7 +14,7 @@ IPC (Inter-Process Communication) 含义为进程间通信，是指两个进程�
 
 ## 多进程使用场景
 
-- 1.可能是有些模块由于特殊原因需要运行在单独的进程中，或者为了让一个应用获取多份内存空间。（具体应用分配多少内存和屏幕密度、尺寸有关，可查看[高效加载大图](https://github.com/BetterRamon/RamonLearningCode/tree/master/Android/Basic/DisplayBitmaps)）
+- 1.可能是有些模块由于特殊原因需要运行在单独的进程中，或者为了让一个应用获取多份内存空间。（具体应用分配多少内存和屏幕密度、尺寸有关，可查看[高效加载大图](https://github.com/BetterRamon/RamonLearningCode/blob/master/Android/Basic/DispalyBitmaps.md)）
 - 2.两个应用之间需要进行数据交换，这种就要使用跨进程的方式通信。例如 `ContentProvider`
 
 ## Android 中的多进程模式

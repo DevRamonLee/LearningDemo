@@ -19,7 +19,7 @@
 
 #### Android Framework
 
-- [IPC]()
+- IPC
 	- [IPC 第一话：Binder 与 序列化](Android/Frameworks/IPC/IPC-one.md)
 	- [IPC 第二话：手写实现 Binder](Android/Frameworks/IPC/IPC-two.md)
 	- [IPC 第三话：AIDL 方式实现 Binder,跨进程接口回调](Android/Frameworks/IPC/IPC-three.md)
@@ -28,6 +28,12 @@
 	- [IPC 第六话：Socket 实现 IPC](Android/Frameworks/IPC/IPC-six.md)
 	- [IPC 第七话：Binder 连接池](Android/Frameworks/IPC/IPC-seven.md)
 
+- View
+	- [View 第一话：View 的基础知识](Android/Frameworks/View/View-one-basic.md)
+	- [View 第二话：View 滑动](Android/Frameworks/View/View-two-scroll.md)
+	- [View 第三话：View 的事件分发](Android/Frameworks/View/View-three-dispacth-event.md)
+	- [View 第四话：View 滑动冲突](Android/Frameworks/View/View-four-scroll-conflict.md)
+	- [View 第五话：View 的绘制流程](Android/Frameworks/View/View-five-paint-progress.md)
 
 - [Android_advanced](Android/Android_advanced)
 	- [Surface SurfaceView SurfaceHolder SurfaceHolder.Callback关系](Android/Android_advanced/TestSurfaceView)

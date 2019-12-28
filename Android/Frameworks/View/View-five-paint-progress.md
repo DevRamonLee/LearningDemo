@@ -45,7 +45,7 @@ ViewGroup rootView = (ViewGroup) content.getChildAt(0);
 
 - **ViewRoot**: `ViewRoot` 的作用非常大，所有 `View` 的绘制以及事件分发等交互都是通过它来执行或者传递的。 `ViewRoot` 的实现类是 `ViewRootImpl` 类，它是连接 `WindowManagerService` 和 `DecorView` 的纽带，`View` 的三大流程 `measuere layout draw` 均通过 `ViewRoot` 来完成。`ViewRoot` 既非 `View` 的子类，也不是它的父类，但是实现了 `ViewParent` 接口，这让它可以作为 `View` 名义上的父视图。Android 中所有的触屏事件，按键事件，界面刷新都是通过 `ViewRoot` 进行分发的。
 
-![view_005](A194A2569828460499221544E3EC850A)
+![view_005](./assets/view_005.png)
 
 
 #### DecorView 的创建
@@ -351,7 +351,7 @@ public void addView(View view, ViewGroup.LayoutParams params,
 
 看到其中实例化了 `ViewRootImpl` 对象，然后调用其 `setView` 方法，将 `ViewRootImpl` 和 `Window` 所对应的 `View` 绑定了起来，`ViewRootImpl` 类中会对 `View` 进行测量，布局，绘制等。
 
-![view_006](1D88C9028F574738AEF1C0EC232742B3)
+![view_006](./assets/view_006.png)
 
 
 ```
@@ -809,7 +809,7 @@ public static int getChildMeasureSpec(int spec, int padding, int childDimension)
 
 `getChildMeasureSpec` 展示了普通 `View` 的 `MeasureSpec` 的创建规则，它的逻辑如下表
 
-![view_007](BD3A3C75045345BFA5C43643A999CBF2)
+![view_007](./assets/view_007.png)
 
 > 普通 View 的 MeasureSpec 由父容器的 MeasureSpec 和 自身的 LayoutParam 来共同决定。当 View 的宽高是 wrap_content 时，不管父容器的模式是精准还是最大化，View 的模式总是最大化并且大小不能超过父容器的剩余空间。
 

@@ -10,7 +10,7 @@
 
 `View` 的位置主要由它的四个顶点来决定，分别对应 `View` 的四个属性： `top、left、right、bottom`（如下图）。需要注意的是，这些坐标都是相对于 `View` 的父容器来说的，因此它是一种相对坐标。
 
-![view_001](8B9EF930B47E430E9DDED43175227AD8)
+![view_001](./assets/view_001.png)
 
 根据上图，可以很容易得出 View 的宽高
 
@@ -30,7 +30,7 @@ bottom = getBottom();
 
 `Android 3.0` 以后， `View` 增加了几个参数 「`x 、y、translationX、translationY`」，其中 `x` 和 `y` 是 `View` 左上角的坐标，而 `translationX` 和 `translationY` 是 `View` 左上角相对于父容器的偏移量，它们的默认值是 0。几个参数的换算关系是
 
-![view_002](3FC5967A390D450AAE2D70F61C578550)
+![view_002](./assets/view_002.png)
 
 ```
 x = left + translationX;

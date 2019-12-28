@@ -51,7 +51,7 @@ public void scrollBy(int x, int y) {
 
 在滑动过程中，`mScrollX` 的值总是等于 `View` 左边缘和 `View` 内容左边缘在水平方向的距离，而 `mScrollY` 的值总是等于 `View` 上边缘和 `View` 内容上边缘在竖直方向的距离。如下图：
 
-![view_003](0C34294D7BE94E47BE377B6D3C86A0B3)
+![view_003](./assets/view_003.png)
 
 
 #### 使用动画

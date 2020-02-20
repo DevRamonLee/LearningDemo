@@ -83,11 +83,7 @@
 
 ## Vue
 
-## React
-
 ## Flutter
-
-## ReactNative
 
 ## 数据结构与算法
 

@@ -1,8 +1,4 @@
-# 大前端学习笔记
-
 ## Android
-
-#### Android 基础
 
 - [Activity 的生命周期](Android/Basic/Activity-life-cycle.md)
 - [Activity 启动模式](Android/Basic/Activity-launch-mode.md)
@@ -16,8 +12,6 @@
     - AndroidUI(动画、自定义视图、fragment、layout、openGL、style、与用户交互)
 	- WebView 基本使用总结:[WebViewDemo](Android/Android_UI/WebViewDemo)
 		- [WebView 基本使用方法总结](http://betterramon.top/android-ui/2019/05/09/WebView%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html)
-
-#### Android Framework
 
 - IPC
 	- [IPC 第一话：Binder 与 序列化](Android/Frameworks/IPC/IPC-one.md)
@@ -56,9 +50,6 @@
     - 11.5 [管理系统UI](Android/Android_training/ManageUi)
     - 13.2 [使用CursorLoader在后台加载数据](Android/Android_training/CursorLoader)
     - 14.5 [多线程操作(此代码只可做参考)](Android/Android_training/ThreadSample)
-
-
-#### Android 流行库	
 
 - [EventBus](Android/Libraries/EventBus)
 	- [EventBus(一) 初步认识](Android/Libraries/EventBus/EventBusDemo)

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class BasicWidget extends StatefulWidget {
@@ -13,6 +14,8 @@ class _BasicWidgetState extends State<BasicWidget>{
   var editController = TextEditingController();
   String _operation = "No Gesture detected";
 
+  TapGestureRecognizer _tapRecognizer = TapGestureRecognizer();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -24,13 +27,75 @@ class _BasicWidgetState extends State<BasicWidget>{
               'Text Widget',
               maxLines: 1, // 最多多少行
               overflow: TextOverflow.ellipsis, // 溢出显示 ...
+              textScaleFactor: MediaQueryData().textScaleFactor,  // 缩放因子，相当于在 style 中指定 fontSize
               // 添加样式
               style: TextStyle(
                   decoration: TextDecoration.underline, // 添加下划线，一般使用 none
+                  decorationStyle: TextDecorationStyle.dashed,  // 虚线
+                  background: new Paint()..color = Colors.pink, // 设置背景颜色
                   fontSize: 30.0, // 文字大小
                   color: Colors.blue,
                   fontWeight: FontWeight.bold),
             ),
+            Text.rich(TextSpan( // 富文本
+              children:[
+                TextSpan(
+                  text: "Site:"
+                ),
+                TextSpan(
+                  text:"flutter.com",
+                  style: TextStyle(
+                    color: Colors.blue
+                  ),
+                  recognizer: _tapRecognizer..onTap = (){
+                    print("Tap link");
+                  },
+                )
+              ]
+            )),
+
+            DefaultTextStyle(   //  指定文本默认样式
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 20.0
+              ),
+              textAlign: TextAlign.center,
+              child: Column(
+                children: <Widget>[
+                  Text("Hello Flutter"),
+                  Text("I am Ramon"),
+                  Text("I like programing",
+                    style: TextStyle(
+                      inherit: false, // 不继承默认样式
+                      color: Colors.blue
+                    ),
+                  )
+                ],
+              ),
+            ),
+            RaisedButton.icon(  // 带 icon 的 button
+              icon:Icon(Icons.send),
+              label: Text("RaisedButton"),
+              onPressed: (){},
+            ),
+            FlatButton(   // 自定义 Button 外观
+              color: Colors.blue,
+              highlightColor: Colors.blue[700],
+              colorBrightness: Brightness.dark, // 指定按钮主题，设置文字颜色为浅色
+              splashColor: Colors.grey,
+              child: Text("FlatButton"),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              onPressed: (){},
+            ),
+            OutlineButton(
+              child: Text("OutlineButton"),
+              onPressed: (){},
+            ),
+            IconButton(
+              icon: Icon(Icons.thumb_up),
+              onPressed: (){},
+            ),
+
             /*
                   Image.asset(name);
                   Image.file(file);
@@ -39,8 +104,8 @@ class _BasicWidgetState extends State<BasicWidget>{
                */
             Image.network(
               "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4135477902,3355939884&fm=26&gp=0.jpg",
-              width: 400.0,
-              height: 300.0,
+              width: 200.0,
+              height: 100.0,
               fit: BoxFit.fill,
             ),
 
@@ -50,12 +115,12 @@ class _BasicWidgetState extends State<BasicWidget>{
               height: 100,
               fit: BoxFit.cover,
             ),
-//                实现圆形图片
+            // 实现圆形图片
             Container(
-              width: 300,
-              height: 300,
+              width: 150,
+              height: 150,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(150),
+                  borderRadius: BorderRadius.circular(75),
                   image: DecorationImage(
                       image: NetworkImage(
                         'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4135477902,3355939884&fm=26&gp=0.jpg',

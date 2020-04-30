@@ -1,27 +1,17 @@
+import 'package:basic_widget/integrated_case3.dart';
 import 'package:basic_widget/pages/page_basic.dart';
 import 'package:flutter/material.dart';
-import 'package:basic_widget/gridview_demo1.dart';
-import 'package:basic_widget/gridview_demo2.dart';
-import 'package:basic_widget/listview_demo.dart';
-import 'package:basic_widget/listview_demo2.dart';
-import 'package:basic_widget/listview_demo3.dart';
 import 'package:basic_widget/integrated_case1.dart';
 import 'package:basic_widget/integrated_case2.dart';
-import 'package:basic_widget/load_more_demo.dart';
 
 void main() {
   runApp(new MaterialApp(
     home: new HomePage(),
     routes: {
-      '/b': (BuildContext context) => new GridDemo1Page(),
-      '/c': (BuildContext context) => new GridDemo2Page(),
-      '/e': (BuildContext context) => new ListViewPageDemo(),
-      '/k': (BuildContext context) => new ListViewPageDemo2(),
-      '/l': (BuildContext context) => new ListViewPageDemo3(),
       '/i': (BuildContext context) => new PageBasic(Key('basic_widget')),
       '/g': (BuildContext context) => new MyAppOne(),
       '/h': (BuildContext context) => new MyAppTwo(),
-      '/m': (BuildContext context) => new LoadMoreDemoPage()
+      '/m': (BuildContext context) => new MyAppThree()
     }
   ));
 }
@@ -59,15 +49,10 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            getGestureDetector('/b', 'GridView Demo 1'),
-            getGestureDetector('/c', 'GridView Demo 2'),
-            getGestureDetector('/e', 'ListView Demo 默认构造函数'),
-            getGestureDetector('/k', 'ListView Demo2 builder'),
-            getGestureDetector('/l', 'ListView Demo3 分割线'),
             getGestureDetector('/i', '基本组件'),
             getGestureDetector('/g', '综合案例 1 复杂布局'),
             getGestureDetector('/h', '综合案例 2 ListView 与点击事件'),
-            getGestureDetector('/m', 'ListView 加载更多')
+            getGestureDetector('/m', '综合案例 3 ListView 加载更多')
           ],
         ),
       ),

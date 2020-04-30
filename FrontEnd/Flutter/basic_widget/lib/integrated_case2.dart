@@ -1,46 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:oktoast/oktoast.dart';
 
 /// 综合案例2
 // 布局综合案例2： 实现一个 ListView
-class MyAppTwo extends StatelessWidget {
+class MyAppTwo extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppTwoState();
+  }
+}
+
+class _MyAppTwoState extends State<MyAppTwo> {
+  final buildings = [
+    Building(
+        BuildingType.theater, 'CineArts at the Empire', '85 W Portal Ave'),
+    Building(BuildingType.theater, 'The Castro Theater', '429 Castro St'),
+    Building(
+        BuildingType.theater, 'Alamo Drafthouse Cinema', '2550 Mission St'),
+    Building(BuildingType.theater, 'Roxie Theater', '3117 16th St'),
+    Building(BuildingType.theater, 'United Artists Stonestown Twin',
+        '501 Buckingham Way'),
+    Building(BuildingType.theater, 'AMC Metreon 16', '135 4th St #3000'),
+    Building(BuildingType.restaurant, 'K\'s Kitchen', '1923 Ocean Ave'),
+    Building(BuildingType.restaurant, 'Chaiya Thai Restaurant',
+        '72 Claremont Blvd'),
+    Building(BuildingType.restaurant, 'La Ciccia', '291 30th St'),
+
+    // double
+    Building(
+        BuildingType.theater, 'CineArts at the Empire', '85 W Portal Ave'),
+    Building(BuildingType.theater, 'The Castro Theater', '429 Castro St'),
+    Building(
+        BuildingType.theater, 'Alamo Drafthouse Cinema', '2550 Mission St'),
+    Building(BuildingType.theater, 'Roxie Theater', '3117 16th St'),
+    Building(BuildingType.theater, 'United Artists Stonestown Twin',
+        '501 Buckingham Way'),
+    Building(BuildingType.theater, 'AMC Metreon 16', '135 4th St #3000'),
+    Building(BuildingType.restaurant, 'K\'s Kitchen', '1923 Ocean Ave'),
+    Building(BuildingType.restaurant, 'Chaiya Thai Restaurant',
+        '72 Claremont Blvd'),
+    Building(BuildingType.restaurant, 'La Ciccia', '291 30th St'),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    final buildings = [
-      Building(
-          BuildingType.theater, 'CineArts at the Empire', '85 W Portal Ave'),
-      Building(BuildingType.theater, 'The Castro Theater', '429 Castro St'),
-      Building(
-          BuildingType.theater, 'Alamo Drafthouse Cinema', '2550 Mission St'),
-      Building(BuildingType.theater, 'Roxie Theater', '3117 16th St'),
-      Building(BuildingType.theater, 'United Artists Stonestown Twin',
-          '501 Buckingham Way'),
-      Building(BuildingType.theater, 'AMC Metreon 16', '135 4th St #3000'),
-      Building(BuildingType.restaurant, 'K\'s Kitchen', '1923 Ocean Ave'),
-      Building(BuildingType.restaurant, 'Chaiya Thai Restaurant',
-          '72 Claremont Blvd'),
-      Building(BuildingType.restaurant, 'La Ciccia', '291 30th St'),
-
-      // double
-      Building(
-          BuildingType.theater, 'CineArts at the Empire', '85 W Portal Ave'),
-      Building(BuildingType.theater, 'The Castro Theater', '429 Castro St'),
-      Building(
-          BuildingType.theater, 'Alamo Drafthouse Cinema', '2550 Mission St'),
-      Building(BuildingType.theater, 'Roxie Theater', '3117 16th St'),
-      Building(BuildingType.theater, 'United Artists Stonestown Twin',
-          '501 Buckingham Way'),
-      Building(BuildingType.theater, 'AMC Metreon 16', '135 4th St #3000'),
-      Building(BuildingType.restaurant, 'K\'s Kitchen', '1923 Ocean Ave'),
-      Building(BuildingType.restaurant, 'Chaiya Thai Restaurant',
-          '72 Claremont Blvd'),
-      Building(BuildingType.restaurant, 'La Ciccia', '291 30th St'),
-    ];
     return new  Scaffold(
         appBar: AppBar(
           title: Text('Buildings'),
         ),
         body: BuildingListView(
-            buildings, (index) => debugPrint('item $index clicked')),
+            buildings, (index) => print("click $index")),
       );
   }
 }

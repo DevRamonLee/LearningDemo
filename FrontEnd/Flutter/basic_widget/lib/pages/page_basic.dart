@@ -1,13 +1,12 @@
 import 'package:basic_widget/pages/tabs/basic_widget.dart';
 import 'package:basic_widget/pages/tabs/custom_scoll_view_widget.dart';
 import 'package:basic_widget/pages/tabs/gridview_widget.dart';
+import 'package:basic_widget/pages/tabs/inherited_widget.dart';
 import 'package:basic_widget/pages/tabs/listview_widget.dart';
 import 'package:flutter/material.dart';
 
 /// 基本组件的用法
 class PageBasic extends StatefulWidget {
-  PageBasic(Key key): super(key: key);
-
   @override
   State<StatefulWidget> createState() => new _PageBasic();
 }
@@ -16,14 +15,15 @@ class _PageBasic extends State<PageBasic> with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
 
   List<Widget> _pageList = [
-    new BasicWidget(Key('basic_widget')),
+    new BasicWidget(),
     new ListViewWidget(),
     new GridViewWidget(),
-    new CustomScrollViewWidget()
+    new CustomScrollViewWidget(),
+    new InheritedWidgetTest()
   ];
 
   TabController _tabController; // TabBar  需要定义一个 controller
-  List tabs = ["基本组件", "ListView", "GridView", "CustomScrollView"];
+  List tabs = ["基本组件", "ListView", "GridView", "CustomScrollView", "InheritedWidget"];
 
   @override
   void initState() {
@@ -80,6 +80,10 @@ class _PageBasic extends State<PageBasic> with SingleTickerProviderStateMixin {
         BottomNavigationBarItem(
           icon: Icon(Icons.list),
           title: Text("CustomScrollView")
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.assignment_ind),
+          title: Text("InheritedWidget")
         )
       ]),
       floatingActionButton: FloatingActionButton(

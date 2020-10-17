@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- SquareView 自定义布局属性 name 为声明的 “属性集合”名，
+    可以随便取，推荐和我们的自定义 View 一致 @ {-->
+    <declare-styleable name="SquareView">
+        <!-- 声明自定义属性，名称为 default_size 取值类型为 dp, px-->
+        <attr name="default_size" format="dimension"/>
+    </declare-styleable>
+    <!--SquareView 自定义布局属性 @}-->
+
+    <!-- 验证自定义属性的优先级 @{
+    直接在XML中定义 > style定义 > 由defStyleAttr定义的值 > defStyleRes指定的默认值 > 直接在Theme中指定的值
+    -->
+    <declare-styleable name="PropertiesPriorityView">
+        <attr name="attr_one" format="string" />
+        <attr name="attr_two" format="string" />
+        <attr name="attr_three" format="string" />
+        <attr name="attr_four" format="string" />
+    </declare-styleable>
+
+    <attr name="PropertiesPriorityViewStyle" format="reference" />
+    <!-- 验证自定义属性的优先级 @} -->
+</resources>

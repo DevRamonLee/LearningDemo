@@ -1,78 +1,32 @@
 ## Android
 
-- [Activity 的生命周期](Android/Basic/Activity-life-cycle.md)
-- [Activity 启动模式](Android/Basic/Activity-launch-mode.md)
-- [Intent 与 IntentFilter](Android/Basic/Intent-and-IntentFilter.md)
-- [数据存储(SharedPreference、文件、数据库)](Android/Basic/SavingData.md)
-- [分享操作 - FileProvider-ActionProvider 的使用](Android/Basic/ShareFiles/ShareAction-FileProvider-ActionProvider.md)
-- [Camera 的使用](Android/Basic/Camera.md)
-- [高效加载大图](Android/Basic/DispalyBitmaps.md)
-
-- [Android UI](Android/Android_UI)
-    - AndroidUI(动画、自定义视图、fragment、layout、openGL、style、与用户交互)
-	- WebView 基本使用总结:[WebViewDemo](Android/Android_UI/WebViewDemo)
-		- [WebView 基本使用方法总结](http://betterramon.top/android-ui/2019/05/09/WebView%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html)
+- 四大组件
+    - [Activity 的生命周期](Android/FourComponents/Activity-life-cycle.md)
+    - [Activity 启动模式](Android/FourComponents/Activity-launch-mode.md)
+    - [Intent 与 IntentFilter](Android/FourComponents/Intent-and-IntentFilter.md)
 
 - IPC
-	- [IPC 第一话：Binder 与 序列化](Android/Frameworks/IPC/IPC-one.md)
-	- [IPC 第二话：手写实现 Binder](Android/Frameworks/IPC/IPC-two.md)
-	- [IPC 第三话：AIDL 方式实现 Binder,跨进程接口回调](Android/Frameworks/IPC/IPC-three.md)
-	- [IPC 第四话：Bundle-文件共享-Messenger实现 IPC](Android/Frameworks/IPC/IPC-four.md)
-	- [IPC 第五话：ContentProvider 实现 IPC](Android/Frameworks/IPC/IPC-five.md)
-	- [IPC 第六话：Socket 实现 IPC](Android/Frameworks/IPC/IPC-six.md)
-	- [IPC 第七话：Binder 连接池](Android/Frameworks/IPC/IPC-seven.md)
+	- [IPC 第一话：Binder 与 序列化](Android/IPC/IPC-one.md)
+	- [IPC 第二话：手写实现 Binder](Android/IPC/IPC-two.md)
+	- [IPC 第三话：AIDL 方式实现 Binder,跨进程接口回调](Android/IPC/IPC-three.md)
+	- [IPC 第四话：Bundle-文件共享-Messenger实现 IPC](Android/IPC/IPC-four.md)
+	- [IPC 第五话：ContentProvider 实现 IPC](Android/IPC/IPC-five.md)
+	- [IPC 第六话：Socket 实现 IPC](Android/IPC/IPC-six.md)
+	- [IPC 第七话：Binder 连接池](Android/IPC/IPC-seven.md)
 
-- View
-	- [View 第一话：View 的基础知识](Android/Frameworks/View/View-one-basic.md)
-	- [View 第二话：View 滑动](Android/Frameworks/View/View-two-scroll.md)
-	- [View 第三话：View 的事件分发](Android/Frameworks/View/View-three-dispacth-event.md)
-	- [View 第四话：View 滑动冲突](Android/Frameworks/View/View-four-scroll-conflict.md)
-	- [View 第五话：View 的绘制流程](Android/Frameworks/View/View-five-paint-progress.md)
+- View 事件体系
+	- [View 第一话：View 的基础知识](Android/View/View-one-basic.md)
+	- [View 第二话：View 滑动](Android/View/View-two-scroll.md)
+	- [View 第三话：View 的事件分发](Android/View/View-three-dispacth-event.md)
+	- [View 第四话：View 滑动冲突](Android/View/View-four-scroll-conflict.md)
+	- [View 第五话：View 的绘制流程](Android/View/View-five-paint-progress.md)
+    - [View 第六话：RemoteView](Android/View/View-six-RemoteView.md)
 
-- [Android_advanced](Android/Android_advanced)
-	- [Surface SurfaceView SurfaceHolder SurfaceHolder.Callback关系](Android/Android_advanced/TestSurfaceView)
-    - [Android Studio 中使用 OpenCV 方法一: 使用 Android Module 库,需安装 OpenCvManager.apk](Android/Android_advanced/OpenCVDemo1)
-    - [Android Studio 中使用 OpenCV 方法二：NDK 使用 JNI 调用 C++ 实现](Android/Android_advanced/OpenCVDemo2)
-        - 注意：由于 native 文件夹太大，请自行下载拷贝进入根目录 [OpenCV android SDK下载地址](https://sourceforge.net/projects/opencvlibrary/files/opencv-android/)
-    - [Android Studio 中使用 OpenCV 方法三：使用 java 代码调用，不需要安装 OpenCvManager.apk](Android/Android_advanced/OpenCVDemo3)
-    - [Android Studio 中使用 OpenCV 方法四：Cmake 使用 JNI 调用 C++ 实现](Android/Android_advanced/OpenCVDemo4)
-    - [AS 中使用OpenCV (二)二维码提取](Android/Android_advanced/OpenCVDemo)
-    
-
-- [Android_training](Android/Android_training)
-	- 4.3 [添加动画](Android/Android_training/AddAnimation)
-	- 5.1 [无线连接设备](Android/Android_training/NetDeviceConnect)
-	- 5.2 [执行网络操作](Android/Android_training/AccessInternet)
-	- 10.2 [实现高效导航](Android/Android_training/EffectiveNavigation)
-    - 10.3 [通知提示用户](Android/Android_training/NotifyUser)
-	- 10.4 [增加搜索功能](Android/Android_training/Search)
-    - 11.2 [创建自定义View](Android/Android_training/CustomView)
-    - 11.5 [管理系统UI](Android/Android_training/ManageUi)
-    - 13.2 [使用CursorLoader在后台加载数据](Android/Android_training/CursorLoader)
-    - 14.5 [多线程操作(此代码只可做参考)](Android/Android_training/ThreadSample)
-
-- [EventBus](Android/Libraries/EventBus)
-	- [EventBus(一) 初步认识](Android/Libraries/EventBus/EventBusDemo)
-
-- [ButterKnife](Android/Libraries/ButterKnife)
-	- [ButterKnife(一)初步认识](Android/Libraries/ButterKnife/ButterKnifeDemo)
-
-- [OkHttp](Android/Libraries/OkHttp/)
-	- [OkHttp(一)初步认识与简单封装](Android/Libraries/OkHttp/OkHttpDemo)
-	- [OKHttp(二)在项目中封装使用 OkHttp](Android/Libraries/OkHttp/OkHttpDemo2)
-
-- [Retrofit](Android/Libraries/Retrofit/)
-	- [Retrofit(一)初步认识](Android/Libraries/Retrofit/RetrofitDemo)
-
-- [RxJava](Android/Libraries/RxJava)
-	- [RxJava(一)初步认识](Android/Libraries/RxJava/RxJavaDemo)
-
-- [Glide](Android/Libraries/Glide)
-	- [Glide(一)初步认识](Android/Libraries/Glide/GlideDemo)
-	
-- [Retrofit+RxJava+Okhttp 封装网络请求框架](Android/Libraries/RroDemo)
-
-## Vue
+- 其他
+    - [数据存储(SharedPreference、文件、数据库)](Android/Others/SavingData.md)
+    - [分享操作 - FileProvider-ActionProvider 的使用](Android/Others/ShareFiles/ShareAction-FileProvider-ActionProvider.md)
+    - [Camera 的使用](Android/Others/Camera.md)
+    - [高效加载大图](Android/Others/DispalyBitmaps.md)
 
 ## Flutter
 
@@ -114,11 +68,11 @@
 		
 ## Developed By
 
-Ramon Lee - [http://betterramon.top](http://betterramon.top/)
+Ramon Lee
 
 ## License
 
-Copyright (C) 2019 Ramon Lee `<`[betterramon@gmail.com](betterramon@gmail.com)`>`
+Copyright (C) 2020 Ramon Lee `<`[betterramon@gmail.com](betterramon@gmail.com)`>`
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

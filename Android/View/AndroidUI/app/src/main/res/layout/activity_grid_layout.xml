@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 示例一：通过 layout_rowWeight layout_columnWeight 控制子视图的比例--><!--
+<android.support.v7.widget.GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:rowCount="2"
+    app:columnCount="2"
+    android:background="#000000"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_margin="1dp"
+        android:orientation="vertical"
+        app:layout_rowWeight="2"
+        app:layout_columnWeight="2"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gridlayout_logo"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="1dp"
+        app:layout_rowWeight="1"
+        app:layout_columnWeight="1"
+        android:gravity="center"
+        android:background="#ffffff">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gridlayout_logo"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="帮助"/>
+    </LinearLayout>
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_margin="1dp"
+        android:orientation="vertical"
+        app:layout_rowWeight="1"
+        app:layout_columnWeight="1"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gridlayout_logo"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出"/>
+    </LinearLayout>
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_margin="1dp"
+        android:orientation="vertical"
+        app:layout_rowWeight="1"
+        app:layout_columnWeight="1"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gridlayout_logo"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="隐藏"/>
+    </LinearLayout>
+</android.support.v7.widget.GridLayout>-->
+
+<!-- 实例二：计算器界面-->
+<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:columnCount="4"
+    app:orientation="horizontal"
+    app:rowCount="6">
+
+    <TextView
+        app:layout_columnSpan="4"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#FFCCCC"
+        app:layout_gravity="fill"
+        android:text="0"
+        android:textSize="50sp" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnSpan="2"
+        app:layout_rowWeight="2"
+        app:layout_columnWeight="2"
+        android:text="回退" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnSpan="2"
+        app:layout_rowWeight="2"
+        app:layout_columnWeight="2"
+        android:text="清空" />-->
+
+    <Button android:text="+"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1"
+        />
+
+    <Button android:text="1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="-"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="*"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="/"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+    <Button
+        android:text="."
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+
+    <Button android:text="="
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_columnWeight="1"
+        app:layout_rowWeight="1" />
+</android.support.v7.widget.GridLayout>

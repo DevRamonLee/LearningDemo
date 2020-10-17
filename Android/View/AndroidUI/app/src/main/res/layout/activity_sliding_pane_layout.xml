@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 实例一：最简单的例子-->
+<!--<android.support.v4.widget.SlidingPaneLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/spl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layout.SlidingPaneLayoutActivity">
+    <TextView
+        android:id="@+id/tv_left"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:text="左侧菜单"
+        android:textSize="22sp"
+        android:background="#ff0000"/>
+    <TextView
+        android:id="@+id/tv_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="这是内容"
+        android:textSize="24sp"
+        android:background="@color/colorPrimaryDark"/>
+</android.support.v4.widget.SlidingPaneLayout>-->
+
+<!--实例二： 结合 Fragment 使用-->
+<!--<android.support.v4.widget.SlidingPaneLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/spl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layout.SlidingPaneLayoutActivity">
+    <fragment
+        android:id="@+id/fragment_leftmenu"
+        android:name="ramon.better.top.androidui.fragment.LeftMenuFragment"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"/>
+    <fragment
+        android:id="@+id/fragment_rightcontent"
+        android:name="ramon.better.top.androidui.fragment.RightContentFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="right"/>
+</android.support.v4.widget.SlidingPaneLayout>-->
+
+<!-- 实例三： 向右滑动 Activity 实现 关闭当前 Activity 的效果 -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button
+        android:id="@+id/slide_close_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SlidePaneLayout滑动关闭Activity"/>
+</LinearLayout>

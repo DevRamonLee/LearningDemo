@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RemoteViewDemo</string>
+    <string name="default_notify">通知栏消息</string>
+    <string name="simulate_notify">发送模拟通知栏消息</string>
+</resources>

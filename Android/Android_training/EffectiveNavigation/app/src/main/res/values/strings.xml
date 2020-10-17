@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">EffectiveNavigation</string>
-    <string name="title_activity_drawer_demo">DrawerDemoActivity</string>
-    <string name="drawer_open">drawer is opened</string>
-    <string name="drawer_close">drawer is closed</string>
-    <string name="collection_activity">Collection Activity</string>
-    <string name="drawer_btn">Drawer activity</string>
-    <string name="sliding_activity">Sliding menu</string>
-</resources>

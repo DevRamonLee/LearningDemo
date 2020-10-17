@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <style>
+        #button {
+            background-color: #4CAF50; /* Green */
+            width:100%;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+         // js 调用 android 方法
+         function callAndroid(){
+            test.hello("js调用了 android 中的 hello 方法");
+         }
+         // android 调用 js 警告框
+         function callJsAlert() {
+            alert("android  调用了 javascript 的 callJsAlert 方法");
+         }
+         // android 调用 js 提示框
+         function callJsPrompt() {
+              var b = prompt("please input your password", "prompt");
+              alert("your input is " + b);
+         }
+         // android 调用 js 的 confirm 函数
+         function callJsConfirm() {
+            var b = confirm("are you male?");
+            alert("your choice is " + b);
+         }
+    </script>
+</head>
+<body>
+    <input id="button" type="button" onclick="callAndroid()" value="js 调用 android 代码"/>
+</body>
+
+</html>

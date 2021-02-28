@@ -125,9 +125,7 @@ public class BSTree<T extends Comparable<T>> {
 					p = temp.right;// 开始遍历它的右子树
 				} else {// 第二次出现在栈顶
 					System.out.print(temp.key + " ");
-					p = null; // 被访问过了，置空
 				}
-				
 			}
 		}
 	}

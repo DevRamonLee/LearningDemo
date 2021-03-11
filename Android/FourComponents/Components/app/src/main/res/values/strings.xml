@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">Components</string>
-    <string name="activity_launch_mode">Activity 启动模式</string>
-    <string name="intent_go">Intent 跳转</string>
-</resources>

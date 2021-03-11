@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onClick"
+            type="ramon.lee.fourcomponent.activity.MainActivity.OnClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="40dp"
+        tools:context=".activity.MainActivity">
+
+        <Button
+            android:id="@+id/btn_life_cycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:text="@string/activity_life_cycle"
+            android:onClick="@{(view)->onClick.onClick(view)}"/>
+
+        <Button
+            android:id="@+id/btn_launch_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:text="@string/activity_launch_mode"
+            android:onClick="@{(view)->onClick.onClick(view)}"/>
+
+        <Button
+            android:id="@+id/btn_service_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:text="@string/service_test"
+            android:onClick="@{(view)->onClick.onClick(view)}"/>
+    </LinearLayout>
+</layout>

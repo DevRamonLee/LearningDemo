@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FourComponent</string>
+    <string name="start_activity_two">Start activity two</string>
+    <string name="activity_life_cycle">Activity life cycle</string>
+    <string name="activity_launch_mode">Activity launch mode</string>
+    <string name="start_standard">Start Standard</string>
+    <string name="start_singletop">Start SingleTop</string>
+    <string name="start_singletask">Start SingleTask</string>
+    <string name="start_singleinstance">Start singleInstance</string>
+    <string name="service_test">Service test</string>
+    <string name="start_service">Start service</string>
+    <string name="stop_service">Stop service</string>
+    <string name="bind_service">Bind service</string>
+    <string name="unbind_service">Unbind service</string>
+    <string name="get_count">Get count</string>
+    <string name="start_intent_service">Start intent service</string>
+</resources>

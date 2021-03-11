@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ramon.lee.fourcomponent">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FourComponent">
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false"></service>
+        <service
+            android:name=".service.BindService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".activity.ServiceTestActivity" />
+
+        <service
+            android:name=".service.StartService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.StandardActivity" />
+        <activity android:name=".activity.LifeCycleTwoActivity" />
+        <activity android:name=".activity.LifeCycleActivity" />
+        <activity
+            android:name=".activity.SingleTopActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.SingleTaskActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.SingleInstanceActivity"
+            android:launchMode="singleInstance" />
+    </application>
+
+</manifest>

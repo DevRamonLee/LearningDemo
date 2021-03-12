@@ -41,5 +41,14 @@
             android:gravity="center"
             android:text="@string/service_test"
             android:onClick="@{(view)->onClick.onClick(view)}"/>
+
+        <Button
+            android:id="@+id/btn_receiver_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:text="@string/receiver_test"
+            android:onClick="@{(view)->onClick.onClick(view)}"/>
     </LinearLayout>
 </layout>

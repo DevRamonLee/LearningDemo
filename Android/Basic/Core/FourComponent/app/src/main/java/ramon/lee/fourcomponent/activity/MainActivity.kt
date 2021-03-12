@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_service_test -> {
                     startActivity(Intent(this@MainActivity, ServiceTestActivity::class.java))
                 }
+                R.id.btn_receiver_test -> {
+                    startActivity(Intent(this@MainActivity, BroadcastTestActivity::class.java))
+                }
             }
         }
     }

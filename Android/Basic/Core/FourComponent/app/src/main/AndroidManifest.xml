@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ramon.lee.fourcomponent">
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,21 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FourComponent">
-        <service
-            android:name=".service.MyIntentService"
-            android:exported="false"></service>
-        <service
-            android:name=".service.BindService"
-            android:enabled="true"
-            android:exported="true" />
-
+        <activity android:name=".activity.BroadcastTestActivity"></activity>
         <activity android:name=".activity.ServiceTestActivity" />
-
-        <service
-            android:name=".service.StartService"
-            android:enabled="true"
-            android:exported="true" />
-
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +29,64 @@
             android:launchMode="singleTask" />
         <activity
             android:name=".activity.SingleInstanceActivity"
-            android:launchMode="singleInstance" />
+            android:launchMode="singleInstance" /> <!-- 带权限接收的广播 -->
+        <receiver
+            android:name=".receiver.GoAsyncReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.SEND_SMS">
+            <intent-filter>
+                <action android:name="android.broadcast.action.ASYNC" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.SecondReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.MY_BROADCAST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.FirstReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.MY_BROADCAST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.AlarmChangeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.app.action.NEXT_ALARM_CLOCK_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false" />
+        <service
+            android:name=".service.BindService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.StartService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- 声明此权限才能给 GoAsyncReceiver 发送广播-->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 </manifest>

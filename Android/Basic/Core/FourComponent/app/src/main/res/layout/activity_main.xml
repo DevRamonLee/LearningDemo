@@ -50,5 +50,23 @@
             android:gravity="center"
             android:text="@string/receiver_test"
             android:onClick="@{(view)->onClick.onClick(view)}"/>
+
+        <Button
+            android:id="@+id/btn_provider_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:text="@string/provider_test"
+            android:onClick="@{(view)->onClick.onClick(view)}"/>
+
+        <Button
+            android:id="@+id/btn_start_provider_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:text="@string/start_provider_test_implicit"
+            android:onClick="@{(view)->onClick.onClick(view)}"/>
     </LinearLayout>
 </layout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ramon.lee.fourcomponent">
-
+    <!-- 声明此权限才能给 GoAsyncReceiver 发送广播 -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FourComponent">
-        <activity android:name=".activity.BroadcastTestActivity"></activity>
+        <activity android:name=".activity.ProviderTestActivity">
+            <intent-filter>
+                <action android:name="ramon.lee.fourcomponent.activity.ProviderTestActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.scott.person"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ramon.lee.fourcomponent.activity.ProviderTestActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.scott.person"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.BroadcastTestActivity" />
         <activity android:name=".activity.ServiceTestActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
@@ -29,7 +41,14 @@
             android:launchMode="singleTask" />
         <activity
             android:name=".activity.SingleInstanceActivity"
-            android:launchMode="singleInstance" /> <!-- 带权限接收的广播 -->
+            android:launchMode="singleInstance" />
+
+        <provider
+            android:name=".provider.PersonProvider"
+            android:authorities="ramon.lee.PersonProvider"
+            android:enabled="true"
+            android:exported="true" />
+        <!-- 带权限接收的广播 -->
         <receiver
             android:name=".receiver.GoAsyncReceiver"
             android:enabled="true"
@@ -83,16 +102,11 @@
             android:name=".service.StartService"
             android:enabled="true"
             android:exported="true" />
-    </application>
-
+    </application> <!-- 读取联系人 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 写入联系人 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-    <!-- 声明此权限才能给 GoAsyncReceiver 发送广播-->
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
-    <!-- 读取联系人 -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-
-    <!-- 写入联系人 -->
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 </manifest>

@@ -16,4 +16,11 @@
     <string name="start_intent_service">Start intent service</string>
     <string name="send_broadcast">Send broadcast</string>
     <string name="receiver_test">Receiver test</string>
+    <string name="provider_test">Provider test</string>
+    <string name="start_provider_test_implicit">Start provider implicit</string>
+    <string name="init">init</string>
+    <string name="query">query</string>
+    <string name="insert">insert</string>
+    <string name="delete">delete</string>
+    <string name="update">update</string>
 </resources>

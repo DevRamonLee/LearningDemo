@@ -1,6 +1,7 @@
 package ramon.lee.fourcomponent.activity
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -30,6 +31,15 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.btn_receiver_test -> {
                     startActivity(Intent(this@MainActivity, BroadcastTestActivity::class.java))
+                }
+                R.id.btn_provider_test -> {
+                    startActivity(Intent(this@MainActivity, ProviderTestActivity::class.java))
+                }
+                R.id.btn_start_provider_activity -> {
+                    val intent = Intent("ramon.lee.fourcomponent.activity.ProviderTestActivity")
+                    val uri = Uri.parse("content://ramon.lee.PersonProvider/persons/1")
+                    intent.data = uri
+                    startActivity(intent)
                 }
             }
         }

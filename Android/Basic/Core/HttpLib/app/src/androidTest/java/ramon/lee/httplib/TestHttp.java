@@ -33,4 +33,25 @@ public class TestHttp {
         String result = HttpUrlConnectionUtil.execute(request);
         Log.i(TAG, "testHttpPost: result = " + result);
     }
+
+    @Test
+    public void testHttpPostOnSubThread() {
+        String url = "https://www.wanandroid.com/lg/uncollect_originId/2333/json";
+        String content = "";
+        Request request = new Request(url, Request.RequestMethod.POST);
+        request.content = content;
+        request.setCallback(new ICallback() {
+            @Override
+            public void onSuccess(String result) {
+                Log.i(TAG, "testHttpPostOnSubThread: onSuccess result = " + result);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Log.i(TAG, "testHttpPostOnSubThread: onFailure result = " + e.getMessage());
+            }
+        });
+        RequestTask task = new RequestTask(request);
+        task.execute();
+    }
 }

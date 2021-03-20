@@ -8,6 +8,12 @@ import java.util.Map;
  * @create 2021/3/20 23:45
  */
 public class Request {
+    public ICallback iCallback;
+
+    public void setCallback(ICallback iCallback) {
+        this.iCallback = iCallback;
+    }
+
     public enum RequestMethod {
         GET,
         POST,

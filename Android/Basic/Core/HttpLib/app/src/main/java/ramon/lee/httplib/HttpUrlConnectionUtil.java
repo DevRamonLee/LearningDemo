@@ -15,13 +15,25 @@ import java.util.Map;
  */
 public class HttpUrlConnectionUtil {
 
-    public static String get(String url, Map<String, String> header) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-        connection.setRequestMethod("GET");
+    public static String execute(Request request) throws IOException {
+        switch (request.requestMethod) {
+            case GET:
+            case DELETE:
+                return get(request);
+            case POST:
+            case PUT:
+                return post(request);
+        }
+        return null;
+    }
+
+    private static String get(Request request) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL(request.url).openConnection();
+        connection.setRequestMethod(request.requestMethod.name());
         connection.setConnectTimeout(15 * 3000);
         connection.setReadTimeout(15 * 3000);
 
-        addHeader(connection, header);
+        addHeader(connection, request.header);
         int status = connection.getResponseCode();
         if (status == HttpURLConnection.HTTP_OK) {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -39,18 +51,18 @@ public class HttpUrlConnectionUtil {
         return null;
     }
 
-    public static String post(String url, String content, Map<String, String> header) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-        connection.setRequestMethod("POST");
+    private static String post(Request request) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL(request.url).openConnection();
+        connection.setRequestMethod(request.requestMethod.name());
         connection.setConnectTimeout(15 * 3000);
         connection.setReadTimeout(15 * 3000);
         connection.setDoOutput(true);
 
-        addHeader(connection, header);
+        addHeader(connection, request.header);
 
-        if (content != null) {
+        if (request.content != null) {
             OutputStream os = connection.getOutputStream();
-            os.write(content.getBytes());
+            os.write(request.content.getBytes());
         }
 
         int status = connection.getResponseCode();

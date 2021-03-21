@@ -21,6 +21,7 @@ public class Request {
     public String content;
     public Map<String, String> header;
     public RequestMethod method;
+    public ICallback callback;
 
     public Request(String uri) {
         this.url = uri;
@@ -30,5 +31,9 @@ public class Request {
     public Request(String uri, RequestMethod method) {
         this.url = uri;
         this.method = method;
+    }
+
+    public void setICallback(ICallback iCallback) {
+        this.callback = iCallback;
     }
 }

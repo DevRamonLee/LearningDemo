@@ -7,6 +7,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import ramon.lee.httplib.ICallback;
+import ramon.lee.httplib.RequestTask;
 import ramon.lee.httplib.HttpUrlConnectionUtil;
 import ramon.lee.httplib.Request;
 
@@ -34,5 +36,25 @@ public class TestHttp {
         request.content = "";
         String result = HttpUrlConnectionUtil.execute(request);
         Log.i(TAG, "testHttpPost: result = " + result);
+    }
+
+    @Test
+    public void testHttpPostOnSubThread() {
+        String url = "https://www.wanandroid.com/lg/uncollect_originId/2333/json";
+        Request request = new Request(url, Request.RequestMethod.POST);
+        request.content = "";
+        request.setICallback(new ICallback(){
+            @Override
+            public void onSuccess(Object o) {
+                Log.i(TAG, "testHttpPostOnSubThread: result = " + (String)o);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Log.i(TAG, "testHttpPostOnSubThread: result = " + e.getMessage());
+            }
+        });
+        RequestTask requestTask = new RequestTask(request);
+        requestTask.execute();
     }
 }

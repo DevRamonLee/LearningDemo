@@ -1,13 +1,19 @@
 package ramon.lee.httpsample;
 
+import android.content.Context;
+import android.os.Environment;
 import android.util.Log;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.io.File;
 import java.util.List;
+
+import ramon.lee.httplib.FileCallback;
 import ramon.lee.httplib.JsonCallback;
 import ramon.lee.httplib.Request;
 import ramon.lee.httplib.RequestTask;
@@ -74,6 +80,28 @@ public class TestHttp {
                 Log.i(TAG, "testHttpGetOnSubThreadGeneric: onFailure " + e.getMessage());
             }
         });
+        RequestTask task = new RequestTask(request);
+        task.execute();
+    }
+
+    @Test
+    public void testHttpGetOnSubThreadDownload() throws Throwable {
+        String url = "https://scpic.chinaz.net/files/pic/pic9/202103/apic31574.jpg";
+        Request request = new Request(url);
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+
+        String path = appContext.getExternalCacheDir().getPath() + File.separator + "test.jpg";
+        request.setICallback(new FileCallback() {
+            @Override
+            public void onSuccess(String path) {
+                Log.i(TAG, "testHttpGetOnSubThreadDownload: path" + path);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Log.i(TAG, "testHttpGetOnSubThreadDownload: onFailure " + e.getMessage());
+            }
+        }.setCachePath(path));
         RequestTask task = new RequestTask(request);
         task.execute();
     }

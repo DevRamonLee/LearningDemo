@@ -1,6 +1,10 @@
 package ramon.lee.httplib;
 
+import android.util.Log;
+
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 
@@ -10,25 +14,53 @@ import java.net.HttpURLConnection;
  * @create 2021/3/21 23:38
  */
 public abstract class AbstractCallback<T> implements ICallback<T>{
+    String path;
     @Override
     public T parse(HttpURLConnection connection) throws Exception {
         int state = connection.getResponseCode();
+        Log.i("AbstractCallback", "111111");
         if (state == HttpURLConnection.HTTP_OK) {
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            InputStream is = connection.getInputStream();
-            byte[] buffer = new byte[2048];
-            int len;
-            while ((len = is.read(buffer)) != -1) {
-                out.write(buffer, 0, len);
+            Log.i("AbstractCallback", "22222");
+            if (path == null) {
+                ByteArrayOutputStream out = new ByteArrayOutputStream();
+                InputStream is = connection.getInputStream();
+                byte[] buffer = new byte[2048];
+                int len;
+                while ((len = is.read(buffer)) != -1) {
+                    out.write(buffer, 0, len);
+                }
+                is.close();
+                out.flush();
+                out.close();
+                String result = new String(out.toByteArray());
+                return bindData(result);
+            } else {
+                File file = new File(path);
+                Log.i("AbstractCallback", "path is " + path);
+                if (!file.exists()) file.createNewFile();
+                Log.i("AbstractCallback", "file path " + file.getAbsolutePath());
+
+                FileOutputStream out = new FileOutputStream(path);
+                InputStream is = connection.getInputStream();
+                byte[] buffer = new byte[2048];
+                int len;
+                while ((len = is.read(buffer)) != -1) {
+                    out.write(buffer, 0, len);
+                }
+                is.close();
+                out.flush();
+                out.close();
+                Log.i("AbstractCallback", "path " + path);
+                return bindData(path);
             }
-            is.close();
-            out.flush();
-            out.close();
-            String result = new String(out.toByteArray());
-            return bindData(result);
         }
         return null;
     }
 
     protected abstract T bindData(String result) throws Exception;
+
+    public ICallback setCachePath(String path) {
+        this.path = path;
+        return this;
+    }
 }

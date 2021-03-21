@@ -1,0 +1,3 @@
+include ':HttpLib'
+include ':app'
+rootProject.name = "HttpSample"

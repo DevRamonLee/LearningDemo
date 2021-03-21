@@ -1,24 +1,15 @@
 package ramon.lee.httplib;
 
-import android.util.Log;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONObject;
-
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.util.ArrayList;
 
 /**
- * @Desc :
+ * @Desc : 将 JsonCallback 和 XmlCallback 中的公共部分提取出来
  * @Author : Ramon
- * @create 2021/3/21 22:24
+ * @create 2021/3/21 23:38
  */
-public abstract class Callback<T> implements ICallback<T> {
-
+public abstract class AbstractCallback<T> implements ICallback<T>{
     @Override
     public T parse(HttpURLConnection connection) throws Exception {
         int state = connection.getResponseCode();
@@ -34,12 +25,10 @@ public abstract class Callback<T> implements ICallback<T> {
             out.flush();
             out.close();
             String result = new String(out.toByteArray());
-            JSONObject jsonObject = new JSONObject(result);
-            String data = jsonObject.getString("data");
-            Gson gson = new Gson();
-            TypeToken<ArrayList<T>> token = new TypeToken<ArrayList<T>>() {};
-            return gson.fromJson(data, token.getType());
+            return bindData(result);
         }
         return null;
     }
+
+    protected abstract T bindData(String result) throws Exception;
 }

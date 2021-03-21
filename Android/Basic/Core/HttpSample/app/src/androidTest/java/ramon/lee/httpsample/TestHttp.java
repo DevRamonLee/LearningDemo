@@ -4,13 +4,11 @@ import android.util.Log;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.google.gson.reflect.TypeToken;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.List;
-import ramon.lee.httplib.Callback;
+import ramon.lee.httplib.JsonCallback;
 import ramon.lee.httplib.Request;
 import ramon.lee.httplib.RequestTask;
 import ramon.lee.httpsample.data.User;
@@ -46,7 +44,7 @@ public class TestHttp {
         String url = "https://www.wanandroid.com/lg/uncollect_originId/2333/json";
         Request request = new Request(url, Request.RequestMethod.POST);
         request.content = "";
-        request.setICallback(new Callback<String>(){
+        request.setICallback(new JsonCallback<String>(){
             @Override
             public void onSuccess(String o) {
                 Log.i(TAG, "testHttpPostOnSubThread: result = " + o);
@@ -65,7 +63,7 @@ public class TestHttp {
     public void testHttpGetOnSubThreadGeneric() throws Throwable {
         String url = "https://wanandroid.com/wxarticle/chapters/json";
         Request request = new Request(url);
-        request.setICallback(new Callback<List<User>>() {
+        request.setICallback(new JsonCallback<List<User>>() {
             @Override
             public void onSuccess(List<User> users) {
                 Log.i(TAG, "testHttpGetOnSubThreadGeneric: users size is " + users.size());

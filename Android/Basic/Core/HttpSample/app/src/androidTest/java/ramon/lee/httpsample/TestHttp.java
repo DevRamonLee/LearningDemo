@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import ramon.lee.httplib.HttpUrlConnectionUtil;
+import ramon.lee.httplib.Request;
 
 /**
  * @Desc :
@@ -21,15 +22,17 @@ public class TestHttp {
     @Test
     public void testHttpGet() throws Throwable {
         String url = "https://wanandroid.com/wxarticle/chapters/json";
-        String result = HttpUrlConnectionUtil.get(url, null);
+        Request request = new Request(url);
+        String result = HttpUrlConnectionUtil.execute(request);
         Log.i(TAG, "testHttpGet: result = " + result);
     }
 
     @Test
     public void testHttpPost() throws Throwable {
         String url = "https://www.wanandroid.com/lg/uncollect_originId/2333/json";
-        String content = "";
-        String result = HttpUrlConnectionUtil.post(url, content, null);
+        Request request = new Request(url, Request.RequestMethod.POST);
+        request.content = "";
+        String result = HttpUrlConnectionUtil.execute(request);
         Log.i(TAG, "testHttpPost: result = " + result);
     }
 }

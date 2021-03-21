@@ -17,12 +17,24 @@ import java.util.Map;
  */
 public class HttpUrlConnectionUtil {
 
-    public static String get(String url, Map<String, String> header) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-        connection.setRequestMethod("GET");
+    public static String execute(Request request) throws IOException {
+        switch (request.method) {
+            case GET:
+            case DELETE:
+                return get(request);
+            case POST:
+            case PUT:
+                return post(request);
+        }
+        return null;
+    }
+
+    private static String get(Request request) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL(request.url).openConnection();
+        connection.setRequestMethod(request.method.name());
         connection.setReadTimeout(15 * 3000);
         connection.setConnectTimeout(15 * 3000);
-        addHeader(connection, header);
+        addHeader(connection, request.header);
         int state = connection.getResponseCode();
         if (state == HttpURLConnection.HTTP_OK) {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -40,14 +52,14 @@ public class HttpUrlConnectionUtil {
         return null;
     }
 
-    public static String post(String url, String content, Map<String, String> header) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-        connection.setRequestMethod("GET");
+    private static String post(Request request) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL(request.url).openConnection();
+        connection.setRequestMethod(request.method.name());
         connection.setReadTimeout(15 * 3000);
         connection.setConnectTimeout(15 * 3000);
         connection.setDoOutput(true);
 
-        addHeader(connection, header);
+        addHeader(connection, request.header);
         int state = connection.getResponseCode();
         if (state == HttpURLConnection.HTTP_OK) {
             ByteArrayOutputStream out = new ByteArrayOutputStream();

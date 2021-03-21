@@ -1,7 +1,5 @@
 package ramon.lee.httplib;
 
-import android.net.Uri;
-
 import java.util.Map;
 
 /**
@@ -22,6 +20,7 @@ public class Request {
     public Map<String, String> header;
     public RequestMethod method;
     public ICallback callback;
+    public Boolean enableProgressUpdated = false;   // 是否启用进度更新
 
     public Request(String uri) {
         this.url = uri;
@@ -35,5 +34,9 @@ public class Request {
 
     public void setICallback(ICallback iCallback) {
         this.callback = iCallback;
+    }
+
+    public void enableProgressUpdated(boolean b) {
+        this.enableProgressUpdated = b;
     }
 }

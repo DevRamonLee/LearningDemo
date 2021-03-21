@@ -15,12 +15,16 @@ import java.net.HttpURLConnection;
  */
 public abstract class AbstractCallback<T> implements ICallback<T>{
     String path;
+
     @Override
     public T parse(HttpURLConnection connection) throws Exception {
+        return parse(connection, null);
+    }
+
+    @Override
+    public T parse(HttpURLConnection connection, OnProgressUpdateListener listener) throws Exception {
         int state = connection.getResponseCode();
-        Log.i("AbstractCallback", "111111");
         if (state == HttpURLConnection.HTTP_OK) {
-            Log.i("AbstractCallback", "22222");
             if (path == null) {
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
                 InputStream is = connection.getInputStream();
@@ -36,16 +40,18 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
                 return bindData(result);
             } else {
                 File file = new File(path);
-                Log.i("AbstractCallback", "path is " + path);
                 if (!file.exists()) file.createNewFile();
-                Log.i("AbstractCallback", "file path " + file.getAbsolutePath());
 
                 FileOutputStream out = new FileOutputStream(path);
                 InputStream is = connection.getInputStream();
                 byte[] buffer = new byte[2048];
+                int totalLen = connection.getContentLength();
+                int curLen = 0;
                 int len;
                 while ((len = is.read(buffer)) != -1) {
                     out.write(buffer, 0, len);
+                    curLen += len;
+                    listener.updateProgress(curLen, totalLen);
                 }
                 is.close();
                 out.flush();
@@ -55,6 +61,11 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
             }
         }
         return null;
+    }
+
+    @Override
+    public void updateProgress(int curLen, int totalLen) {
+
     }
 
     protected abstract T bindData(String result) throws Exception;

@@ -105,4 +105,32 @@ public class TestHttp {
         RequestTask task = new RequestTask(request);
         task.execute();
     }
+
+    @Test
+    public void testHttpGetOnSubThreadDownloadProgress() throws Throwable {
+        String url = "https://scpic.chinaz.net/files/pic/pic9/202103/apic31574.jpg";
+        Request request = new Request(url);
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+
+        String path = appContext.getExternalCacheDir().getPath() + File.separator + "test.jpg";
+        request.setICallback(new FileCallback() {
+            @Override
+            public void onSuccess(String path) {
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadProgress: path" + path);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadProgress: onFailure " + e.getMessage());
+            }
+
+            @Override
+            public void updateProgress(int curLen, int totalLen) {
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadProgress: updateProgress " + curLen + "/" + totalLen);
+            }
+        }.setCachePath(path));
+        request.enableProgressUpdated(true);
+        RequestTask task = new RequestTask(request);
+        task.execute();
+    }
 }

@@ -3,6 +3,7 @@ package ramon.lee.httplib;
 import android.os.AsyncTask;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
 
 /**
  * @Desc :
@@ -24,18 +25,19 @@ public class RequestTask extends AsyncTask<Void, Integer, Object> {
     @Override
     protected Object doInBackground(Void... voids) {
         try {
-            return HttpUrlConnectionUtil.execute(request);
-        } catch (IOException e) {
+            HttpURLConnection connection =  HttpUrlConnectionUtil.execute(request);
+            return request.callback.parse(connection);
+        } catch (Exception e) {
             return e;
         }
     }
 
     @Override
     protected void onPostExecute(Object o) {
-        if (o instanceof String) {
-            request.callback.onSuccess((String)o);
-        } else {
+        if (o instanceof Exception) {
             request.callback.onFailure((Exception) o);
+        } else {
+            request.callback.onSuccess(o);
         }
     }
 }

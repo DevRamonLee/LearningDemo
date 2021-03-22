@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import java.io.File;
 import java.util.List;
 
+import ramon.lee.httplib.AppException;
 import ramon.lee.httplib.FileCallback;
 import ramon.lee.httplib.JsonCallback;
 import ramon.lee.httplib.Request;
@@ -57,7 +58,7 @@ public class TestHttp {
             }
 
             @Override
-            public void onFailure(Exception e) {
+            public void onFailure(AppException e) {
                 Log.i(TAG, "testHttpPostOnSubThread: result = " + e.getMessage());
             }
         });
@@ -76,7 +77,7 @@ public class TestHttp {
             }
 
             @Override
-            public void onFailure(Exception e) {
+            public void onFailure(AppException e) {
                 Log.i(TAG, "testHttpGetOnSubThreadGeneric: onFailure " + e.getMessage());
             }
         });
@@ -98,7 +99,7 @@ public class TestHttp {
             }
 
             @Override
-            public void onFailure(Exception e) {
+            public void onFailure(AppException e) {
                 Log.i(TAG, "testHttpGetOnSubThreadDownload: onFailure " + e.getMessage());
             }
         }.setCachePath(path));
@@ -120,8 +121,15 @@ public class TestHttp {
             }
 
             @Override
-            public void onFailure(Exception e) {
+            public void onFailure(AppException e) {
                 Log.i(TAG, "testHttpGetOnSubThreadDownloadProgress: onFailure " + e.getMessage());
+                if (e.statusCode == 403) {
+                    if ("password incorrect".equals(e.responseMsg)) {
+                        // TODO: 提示
+                    } else if ("token invalid".equals(e.responseMsg)) {
+                        // TODO: reLogin
+                    }
+                }
             }
 
             @Override

@@ -1,5 +1,7 @@
 package ramon.lee.httplib;
 
+import android.webkit.URLUtil;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -12,7 +14,11 @@ import java.util.Map;
  */
 public class HttpUrlConnectionUtil {
 
-    public static HttpURLConnection execute(Request request) throws IOException {
+    public static HttpURLConnection execute(Request request) throws AppException {
+        if (!URLUtil.isNetworkUrl(request.url)) {
+            throw new AppException("the url " + request.url + " is not valid");
+        }
+
         switch (request.method) {
             case GET:
             case DELETE:
@@ -24,24 +30,32 @@ public class HttpUrlConnectionUtil {
         return null;
     }
 
-    private static HttpURLConnection get(Request request) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) new URL(request.url).openConnection();
-        connection.setRequestMethod(request.method.name());
-        connection.setReadTimeout(15 * 3000);
-        connection.setConnectTimeout(15 * 3000);
-        addHeader(connection, request.header);
-        return connection;
+    private static HttpURLConnection get(Request request) throws AppException {
+        try {
+            HttpURLConnection connection = (HttpURLConnection) new URL(request.url).openConnection();
+            connection.setRequestMethod(request.method.name());
+            connection.setReadTimeout(15 * 3000);
+            connection.setConnectTimeout(15 * 3000);
+            addHeader(connection, request.header);
+            return connection;
+        } catch (IOException e) {
+            throw new AppException(e.getMessage());
+        }
     }
 
-    private static HttpURLConnection post(Request request) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) new URL(request.url).openConnection();
-        connection.setRequestMethod(request.method.name());
-        connection.setReadTimeout(15 * 3000);
-        connection.setConnectTimeout(15 * 3000);
-        connection.setDoOutput(true);
+    private static HttpURLConnection post(Request request) throws AppException {
+        try {
+            HttpURLConnection connection = (HttpURLConnection) new URL(request.url).openConnection();
+            connection.setRequestMethod(request.method.name());
+            connection.setReadTimeout(15 * 3000);
+            connection.setConnectTimeout(15 * 3000);
+            connection.setDoOutput(true);
 
-        addHeader(connection, request.header);
-        return connection;
+            addHeader(connection, request.header);
+            return connection;
+        } catch (IOException e) {
+            throw new AppException(e.getMessage());
+        }
     }
 
     private static void addHeader(HttpURLConnection connection, Map<String, String> header) {

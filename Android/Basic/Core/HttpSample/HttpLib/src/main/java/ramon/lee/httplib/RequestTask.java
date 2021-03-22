@@ -2,7 +2,6 @@ package ramon.lee.httplib;
 
 import android.os.AsyncTask;
 
-import java.io.IOException;
 import java.net.HttpURLConnection;
 
 /**
@@ -36,15 +35,21 @@ public class RequestTask extends AsyncTask<Void, Integer, Object> {
             } else {
                 return request.callback.parse(connection);
             }
-        } catch (Exception e) {
+        } catch (AppException e) {
             return e;
         }
     }
 
     @Override
     protected void onPostExecute(Object o) {
-        if (o instanceof Exception) {
-            request.callback.onFailure((Exception) o);
+        if (o instanceof AppException) {
+            if (request.globalExceptionListener != null) {
+                if (!request.globalExceptionListener.handleException((AppException) o)) {
+                    request.callback.onFailure((AppException) o);
+                }
+            } else {
+                request.callback.onFailure((AppException) o);
+            }
         } else {
             request.callback.onSuccess(o);
         }

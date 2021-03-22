@@ -7,7 +7,7 @@ package ramon.lee.httplib;
  */
 public abstract class XmlCallback<T> extends AbstractCallback<T>{
     @Override
-    protected T bindData(String result) throws Exception {
+    protected T bindData(String result) throws AppException {
         return null;
     }
 }

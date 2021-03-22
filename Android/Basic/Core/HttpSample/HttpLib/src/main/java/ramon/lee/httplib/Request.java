@@ -21,6 +21,7 @@ public class Request {
     public RequestMethod method;
     public ICallback callback;
     public Boolean enableProgressUpdated = false;   // 是否启用进度更新
+    public OnGlobalExceptionListener globalExceptionListener;   // 处理 App 异常
 
     public Request(String uri) {
         this.url = uri;
@@ -38,5 +39,9 @@ public class Request {
 
     public void enableProgressUpdated(boolean b) {
         this.enableProgressUpdated = b;
+    }
+
+    public void setOnGlobalExceptionListener(OnGlobalExceptionListener listener) {
+        this.globalExceptionListener = listener;
     }
 }

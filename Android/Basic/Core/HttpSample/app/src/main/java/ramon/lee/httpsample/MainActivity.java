@@ -1,7 +1,9 @@
 package ramon.lee.httpsample;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import java.io.File;
 
@@ -17,35 +19,52 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        testHandleException();
+        findViewById(R.id.btn_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testHttpGetOnSubThreadDownloadCancel();
+            }
+        });
+
     }
 
 
-    private void testHandleException() {
-        // 这里故意将地址写错，触发 BaseActivity 的 handleException
-        String url = "https://scpic.chinaz.net/files/pic/pic9/202103/apic315";
+    public void testHttpGetOnSubThreadDownloadCancel() {
+        String url = "https://scpic.chinaz.net/files/pic/pic9/202103/apic31574.jpg";
         Request request = new Request(url);
-
+        request.setOnGlobalExceptionListener(this);
+        RequestTask task = new RequestTask(request);
         String path = getApplication().getExternalCacheDir().getPath() + File.separator + "test.jpg";
         request.setICallback(new FileCallback() {
             @Override
             public void onSuccess(String path) {
-                Log.i(TAG, "testHttpGetOnSubThreadDownloadProgress: path" + path);
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadCancel: path" + path);
             }
 
             @Override
             public void onFailure(AppException e) {
-                Log.i(TAG, "testHttpGetOnSubThreadDownloadProgress: onFailure " + e.getMessage());
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadCancel: onFailure " + e.getMessage());
+                if (e.statusCode == 403) {
+                    if ("password incorrect".equals(e.responseMsg)) {
+                        // TODO: 提示
+                    } else if ("token invalid".equals(e.responseMsg)) {
+                        // TODO: reLogin
+                    }
+                }
+                e.printStackTrace();
             }
 
             @Override
             public void updateProgress(int curLen, int totalLen) {
-                Log.i(TAG, "testHttpGetOnSubThreadDownloadProgress: updateProgress " + curLen + "/" + totalLen);
+                if (curLen * 100L / totalLen > 20) {
+                    // 取消请求，只能在 doInBackground 执行完之后取消
+//                    task.cancel(true);
+                    request.cancel();
+                }
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadCancel: updateProgress " + curLen + "/" + totalLen);
             }
         }.setCachePath(path));
         request.enableProgressUpdated(true);
-        request.setOnGlobalExceptionListener(this);
-        RequestTask task = new RequestTask(request);
         task.execute();
     }
 }

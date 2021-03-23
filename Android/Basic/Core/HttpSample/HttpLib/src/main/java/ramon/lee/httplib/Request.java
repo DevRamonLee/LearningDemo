@@ -24,6 +24,8 @@ public class Request {
     public OnGlobalExceptionListener globalExceptionListener;   // 处理 App 异常
     public int maxRetryCount = 3;
 
+    public volatile boolean isCanceled = false;
+
     public Request(String uri) {
         this.url = uri;
         this.method = RequestMethod.GET;
@@ -44,5 +46,16 @@ public class Request {
 
     public void setOnGlobalExceptionListener(OnGlobalExceptionListener listener) {
         this.globalExceptionListener = listener;
+    }
+
+    public void cancel() {
+        this.isCanceled = true;
+        callback.cancel();
+    }
+
+    public void checkIfCanceled() throws AppException {
+        if (isCanceled) {
+            throw new AppException(AppException.ErrorType.CANCEL, "request has been cancelled");
+        }
     }
 }

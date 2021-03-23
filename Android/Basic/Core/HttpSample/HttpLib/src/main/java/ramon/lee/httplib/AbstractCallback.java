@@ -17,6 +17,7 @@ import java.net.HttpURLConnection;
  */
 public abstract class AbstractCallback<T> implements ICallback<T>{
     String path;
+    public volatile boolean isCanceled;
 
     @Override
     public T parse(HttpURLConnection connection) throws AppException {
@@ -26,6 +27,7 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
     @Override
     public T parse(HttpURLConnection connection, OnProgressUpdateListener listener) throws AppException {
         try {
+            checkIfCancelled();
             int state = connection.getResponseCode();
             if (state == HttpURLConnection.HTTP_OK) {
                 if (path == null) {
@@ -34,6 +36,7 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
                     byte[] buffer = new byte[2048];
                     int len;
                     while ((len = is.read(buffer)) != -1) {
+                        checkIfCancelled();
                         out.write(buffer, 0, len);
                     }
                     is.close();
@@ -52,6 +55,7 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
                     int curLen = 0;
                     int len;
                     while ((len = is.read(buffer)) != -1) {
+                        checkIfCancelled();
                         out.write(buffer, 0, len);
                         curLen += len;
                         listener.updateProgress(curLen, totalLen);
@@ -73,6 +77,13 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
         }
     }
 
+
+    protected void checkIfCancelled() throws AppException {
+        if(isCanceled) {
+            throw new AppException(AppException.ErrorType.CANCEL, "request has been cancelled");
+        }
+    }
+
     @Override
     public void updateProgress(int curLen, int totalLen) {
 
@@ -83,5 +94,10 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
     public ICallback setCachePath(String path) {
         this.path = path;
         return this;
+    }
+
+    @Override
+    public void cancel() {
+        isCanceled = true;
     }
 }

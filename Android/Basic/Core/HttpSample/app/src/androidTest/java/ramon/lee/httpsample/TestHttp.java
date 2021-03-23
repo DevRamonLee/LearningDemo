@@ -112,7 +112,7 @@ public class TestHttp {
         String url = "https://scpic.chinaz.net/files/pic/pic9/202103/apic31574.jpg";
         Request request = new Request(url);
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
+        RequestTask task = new RequestTask(request);
         String path = appContext.getExternalCacheDir().getPath() + File.separator + "test.jpg";
         request.setICallback(new FileCallback() {
             @Override
@@ -138,7 +138,47 @@ public class TestHttp {
             }
         }.setCachePath(path));
         request.enableProgressUpdated(true);
+        task.execute();
+    }
+
+
+    @Test
+    public void testHttpGetOnSubThreadDownloadCancel() throws Throwable {
+        String url = "https://scpic.chinaz.net/files/pic/pic9/202103/apic31574.jpg";
+        Request request = new Request(url);
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         RequestTask task = new RequestTask(request);
+        String path = appContext.getExternalCacheDir().getPath() + File.separator + "test.jpg";
+        request.setICallback(new FileCallback() {
+            @Override
+            public void onSuccess(String path) {
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadCancel: path" + path);
+            }
+
+            @Override
+            public void onFailure(AppException e) {
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadCancel: onFailure " + e.getMessage());
+                if (e.statusCode == 403) {
+                    if ("password incorrect".equals(e.responseMsg)) {
+                        // TODO: 提示
+                    } else if ("token invalid".equals(e.responseMsg)) {
+                        // TODO: reLogin
+                    }
+                }
+                e.printStackTrace();
+            }
+
+            @Override
+            public void updateProgress(int curLen, int totalLen) {
+                if (curLen * 100L / totalLen > 20) {
+                    // 取消请求，只能在 doInBackground 执行完之后取消
+//                    task.cancel(true);
+                    request.cancel();
+                }
+                Log.i(TAG, "testHttpGetOnSubThreadDownloadCancel: updateProgress " + curLen + "/" + totalLen);
+            }
+        }.setCachePath(path));
+        request.enableProgressUpdated(true);
         task.execute();
     }
 }

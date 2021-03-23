@@ -1,8 +1,5 @@
 package ramon.lee.httpsample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -25,7 +22,8 @@ public class MainActivity extends BaseActivity {
 
 
     private void testHandleException() {
-        String url = "https://scpic.chinaz.net/files/pic/pic9/202103/apic31574.jpg";
+        // 这里故意将地址写错，触发 BaseActivity 的 handleException
+        String url = "https://scpic.chinaz.net/files/pic/pic9/202103/apic315";
         Request request = new Request(url);
 
         String path = getApplication().getExternalCacheDir().getPath() + File.separator + "test.jpg";

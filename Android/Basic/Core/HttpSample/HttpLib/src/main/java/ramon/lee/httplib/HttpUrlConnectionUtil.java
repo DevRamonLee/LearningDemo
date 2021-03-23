@@ -3,6 +3,7 @@ package ramon.lee.httplib;
 import android.webkit.URLUtil;
 
 import java.io.IOException;
+import java.io.InterruptedIOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
@@ -16,7 +17,7 @@ public class HttpUrlConnectionUtil {
 
     public static HttpURLConnection execute(Request request) throws AppException {
         if (!URLUtil.isNetworkUrl(request.url)) {
-            throw new AppException("the url " + request.url + " is not valid");
+            throw new AppException(AppException.ErrorType.MANUAL, "the url " + request.url + " is not valid");
         }
 
         switch (request.method) {
@@ -38,8 +39,10 @@ public class HttpUrlConnectionUtil {
             connection.setConnectTimeout(15 * 3000);
             addHeader(connection, request.header);
             return connection;
+        } catch (InterruptedIOException e) {
+          throw new AppException(AppException.ErrorType.TIMEOUT, e.getMessage());
         } catch (IOException e) {
-            throw new AppException(e.getMessage());
+            throw new AppException(AppException.ErrorType.IO, e.getMessage());
         }
     }
 
@@ -53,8 +56,10 @@ public class HttpUrlConnectionUtil {
 
             addHeader(connection, request.header);
             return connection;
+        } catch (InterruptedIOException e) {
+            throw new AppException(AppException.ErrorType.TIMEOUT, e.getMessage());
         } catch (IOException e) {
-            throw new AppException(e.getMessage());
+            throw new AppException(AppException.ErrorType.IO, e.getMessage());
         }
     }
 

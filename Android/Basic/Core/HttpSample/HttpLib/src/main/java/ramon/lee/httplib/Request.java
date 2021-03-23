@@ -22,6 +22,7 @@ public class Request {
     public ICallback callback;
     public Boolean enableProgressUpdated = false;   // 是否启用进度更新
     public OnGlobalExceptionListener globalExceptionListener;   // 处理 App 异常
+    public int maxRetryCount = 3;
 
     public Request(String uri) {
         this.url = uri;

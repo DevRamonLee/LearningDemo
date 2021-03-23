@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InterruptedIOException;
 import java.net.HttpURLConnection;
 
 /**
@@ -65,8 +66,10 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
                 String responseMsg = connection.getResponseMessage();
                 throw new AppException(state, responseMsg);
             }
+        } catch (InterruptedIOException e) {
+            throw new AppException(AppException.ErrorType.TIMEOUT, e.getMessage());
         } catch (IOException e) {
-            throw new AppException(e.getMessage());
+            throw new AppException(AppException.ErrorType.IO, e.getMessage());
         }
     }
 

@@ -1,5 +1,7 @@
 package ramon.lee.httpsample;
 
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import ramon.lee.httplib.AppException;
@@ -20,6 +22,9 @@ class BaseActivity extends AppCompatActivity implements OnGlobalExceptionListene
                 // TODO: reLogin
                 return true;
             }
+        } else if ("Not Found".equals(e.responseMsg)) {
+            Log.i("BaseActivity", "handle global exception");
+            return true;
         }
         return false;
     }

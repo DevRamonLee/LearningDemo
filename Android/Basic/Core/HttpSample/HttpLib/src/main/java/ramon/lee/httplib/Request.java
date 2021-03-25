@@ -23,6 +23,7 @@ public class Request {
     public Boolean enableProgressUpdated = false;   // 是否启用进度更新
     public OnGlobalExceptionListener globalExceptionListener;   // 处理 App 异常
     public int maxRetryCount = 3;
+    public String tag;
 
     public volatile boolean isCanceled = false;
 
@@ -40,6 +41,10 @@ public class Request {
         this.callback = iCallback;
     }
 
+    /**
+     * 允许进度更新
+     * @param b
+     */
     public void enableProgressUpdated(boolean b) {
         this.enableProgressUpdated = b;
     }
@@ -57,5 +62,9 @@ public class Request {
         if (isCanceled) {
             throw new AppException(AppException.ErrorType.CANCEL, "request has been cancelled");
         }
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

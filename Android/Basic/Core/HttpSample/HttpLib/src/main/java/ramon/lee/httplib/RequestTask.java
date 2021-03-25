@@ -23,6 +23,13 @@ public class RequestTask extends AsyncTask<Void, Integer, Object> {
 
     @Override
     protected Object doInBackground(Void... voids) {
+        if (request.callback != null) {
+            Object o = request.callback.preRequest();
+            if (o != null) {
+                // 这里假如从数据库读取值之后直接返回了，如果要继续请求网络需要我们自己实现一个线程池
+                return o;
+            }
+        }
         return request(0);
     }
 

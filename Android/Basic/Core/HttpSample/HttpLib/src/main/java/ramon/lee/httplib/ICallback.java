@@ -10,6 +10,17 @@ import java.net.HttpURLConnection;
 public interface ICallback<T> {
     void onSuccess(T o);
     void onFailure(AppException e);
+    /**
+     * Invoke on sub thread
+     * @retrun if not null, will skip http request, call {@link #onSuccess(Object o)} directly
+     */
+    T preRequest();
+
+    /**
+     * Invoke on sub thread
+     * @param t serizlized by SubCallbacks
+     * @return return final result by calling {@link #onSuccess(Object o)}
+     */
     T postRequest(T t);
     /**
      * 根据返回的数据类型会有多种解析方式，如 json String bitmap xml 等

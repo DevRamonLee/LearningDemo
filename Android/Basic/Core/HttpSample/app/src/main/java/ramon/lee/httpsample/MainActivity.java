@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testHttpGetOnSubThreadGenericPostRequest();
+                testHttpGetOnSubThreadGenericLoadMore();
             }
         });
     }
@@ -89,6 +89,37 @@ public class MainActivity extends BaseActivity {
                 // TODO: insert to db or do data filter
                 users.get(0).setName("蜡笔笔芯");
                 return users;
+            }
+        });
+        RequestTask task = new RequestTask(request);
+        task.execute();
+    }
+
+    public void testHttpGetOnSubThreadGenericLoadMore() {
+        String url = "https://wanandroid.com/wxarticle/chapters/json";
+        Request request = new Request(url);
+        request.setICallback(new JsonCallback<List<User>>() {
+            @Override
+            public void onSuccess(List<User> users) {
+                Log.i(TAG, "testHttpGetOnSubThreadGeneric: users[] name is " + users.get(0).getName());
+                Log.i(TAG, "testHttpGetOnSubThreadGeneric: users size is " + users.size());
+            }
+
+            @Override
+            public void onFailure(AppException e) {
+                Log.i(TAG, "testHttpGetOnSubThreadGeneric: onFailure " + e.getMessage());
+            }
+
+            @Override
+            public List<User> postRequest(List<User> users) {
+                // TODO: insert to db or do data filter
+                return users;
+            }
+
+            @Override
+            public List<User> preRequest() {
+                // TODO: fetch data for db or other data sources
+                return super.preRequest();
             }
         });
         RequestTask task = new RequestTask(request);

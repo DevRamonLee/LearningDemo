@@ -107,6 +107,11 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
     }
 
     @Override
+    public T preRequest() {
+        return null;
+    }
+
+    @Override
     public void cancel() {
         isCanceled = true;
     }

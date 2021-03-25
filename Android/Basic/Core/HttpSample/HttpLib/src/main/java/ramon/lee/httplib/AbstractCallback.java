@@ -43,7 +43,8 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
                     out.flush();
                     out.close();
                     String result = new String(out.toByteArray());
-                    return bindData(result);
+                    T t = bindData(result);
+                    return postRequest(t);
                 } else {
                     File file = new File(path);
                     if (!file.exists()) file.createNewFile();
@@ -67,7 +68,8 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
                     out.flush();
                     out.close();
                     Log.i("AbstractCallback", "path " + path);
-                    return bindData(path);
+                    T t = bindData(path);
+                    return postRequest(t);
                 }
             } else {
                 String responseMsg = connection.getResponseMessage();
@@ -97,6 +99,11 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
     public ICallback setCachePath(String path) {
         this.path = path;
         return this;
+    }
+
+    @Override
+    public T postRequest(T t) {
+        return t;
     }
 
     @Override

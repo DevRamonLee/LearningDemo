@@ -1,17 +1,19 @@
 package ramon.lee.httpsample;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import java.io.File;
+import java.util.List;
 
 import ramon.lee.httplib.AppException;
 import ramon.lee.httplib.FileCallback;
+import ramon.lee.httplib.JsonCallback;
 import ramon.lee.httplib.Request;
 import ramon.lee.httplib.RequestManager;
 import ramon.lee.httplib.RequestTask;
+import ramon.lee.httpsample.data.User;
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
@@ -23,15 +25,9 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testHttpGetOnSubThreadDownloadCancel();
+                testHttpGetOnSubThreadGenericPostRequest();
             }
         });
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        RequestManager.getInstance().cancelRequest(toString());
     }
 
     public void testHttpGetOnSubThreadDownloadCancel() {
@@ -71,5 +67,31 @@ public class MainActivity extends BaseActivity {
         request.enableProgressUpdated(true);
         request.setTag(toString());
         RequestManager.getInstance().performRequest(request);
+    }
+
+    public void testHttpGetOnSubThreadGenericPostRequest() {
+        String url = "https://wanandroid.com/wxarticle/chapters/json";
+        Request request = new Request(url);
+        request.setICallback(new JsonCallback<List<User>>() {
+            @Override
+            public void onSuccess(List<User> users) {
+                Log.i(TAG, "testHttpGetOnSubThreadGeneric: users[] name is " + users.get(0).getName());
+                Log.i(TAG, "testHttpGetOnSubThreadGeneric: users size is " + users.size());
+            }
+
+            @Override
+            public void onFailure(AppException e) {
+                Log.i(TAG, "testHttpGetOnSubThreadGeneric: onFailure " + e.getMessage());
+            }
+
+            @Override
+            public List<User> postRequest(List<User> users) {
+                // TODO: insert to db or do data filter
+                users.get(0).setName("蜡笔笔芯");
+                return users;
+            }
+        });
+        RequestTask task = new RequestTask(request);
+        task.execute();
     }
 }

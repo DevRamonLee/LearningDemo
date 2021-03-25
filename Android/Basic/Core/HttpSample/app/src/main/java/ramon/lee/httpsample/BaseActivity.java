@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import ramon.lee.httplib.AppException;
 import ramon.lee.httplib.OnGlobalExceptionListener;
+import ramon.lee.httplib.RequestManager;
 
 /**
  * @Desc :
@@ -27,5 +28,11 @@ class BaseActivity extends AppCompatActivity implements OnGlobalExceptionListene
             return true;
         }
         return false;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        RequestManager.getInstance().cancelRequest(toString());
     }
 }

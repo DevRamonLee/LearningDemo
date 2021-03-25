@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 public interface ICallback<T> {
     void onSuccess(T o);
     void onFailure(AppException e);
+    T postRequest(T t);
     /**
      * 根据返回的数据类型会有多种解析方式，如 json String bitmap xml 等
      * @param connection

@@ -10,9 +10,11 @@ import java.util.List;
 import ramon.lee.httplib.AppException;
 import ramon.lee.httplib.FileCallback;
 import ramon.lee.httplib.JsonCallback;
+import ramon.lee.httplib.JsonReaderCallback;
 import ramon.lee.httplib.Request;
 import ramon.lee.httplib.RequestManager;
 import ramon.lee.httplib.RequestTask;
+import ramon.lee.httpsample.data.ListUser;
 import ramon.lee.httpsample.data.User;
 
 public class MainActivity extends BaseActivity {
@@ -25,7 +27,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testHttpGetOnSubThreadGenericLoadMore();
+                testHttpGetOnSubThreadGenericJsonReader();
             }
         });
     }
@@ -122,6 +124,26 @@ public class MainActivity extends BaseActivity {
                 return super.preRequest();
             }
         });
+        RequestTask task = new RequestTask(request);
+        task.execute();
+    }
+
+    public void testHttpGetOnSubThreadGenericJsonReader() {
+        String url = "https://wanandroid.com/wxarticle/chapters/json";
+        Request request = new Request(url);
+        request.enableProgressUpdated = true;
+        String path = getApplication().getExternalCacheDir().getPath() + File.separator + "json.tmp";
+        request.setICallback(new JsonReaderCallback<ListUser>() {
+            @Override
+            public void onSuccess(ListUser listUser) {
+                Log.i(TAG, "testHttpGetOnSubThreadGenericJsonReader: users size is " + listUser.users.size());
+            }
+
+            @Override
+            public void onFailure(AppException e) {
+                Log.i(TAG, "testHttpGetOnSubThreadGenericJsonReader: onFailure " + e.getMessage());
+            }
+        }.setCachePath(path));
         RequestTask task = new RequestTask(request);
         task.execute();
     }

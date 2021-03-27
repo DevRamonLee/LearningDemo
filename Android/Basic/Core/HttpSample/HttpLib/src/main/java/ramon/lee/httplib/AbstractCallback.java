@@ -55,14 +55,16 @@ public abstract class AbstractCallback<T> implements ICallback<T>{
                     int totalLen = connection.getContentLength();
                     int curLen = 0;
                     int len;
-                    while ((len = is.read(buffer)) != -1) {
-                        checkIfCancelled();
-                        for(int i = 0; i < 10000000; i++) {
-                            // 耗时模拟
+                    if (listener != null) {
+                        while ((len = is.read(buffer)) != -1) {
+                            checkIfCancelled();
+                            for (int i = 0; i < 10000000; i++) {
+                                // 耗时模拟
+                            }
+                            out.write(buffer, 0, len);
+                            curLen += len;
+                            listener.updateProgress(curLen, totalLen);
                         }
-                        out.write(buffer, 0, len);
-                        curLen += len;
-                        listener.updateProgress(curLen, totalLen);
                     }
                     is.close();
                     out.flush();

@@ -173,7 +173,7 @@ public class TestHttp {
                 if (curLen * 100L / totalLen > 20) {
                     // 取消请求，只能在 doInBackground 执行完之后取消
 //                    task.cancel(true);
-                    request.cancel();
+                    request.cancel(true);
                 }
                 Log.i(TAG, "testHttpGetOnSubThreadDownloadCancel: updateProgress " + curLen + "/" + totalLen);
             }

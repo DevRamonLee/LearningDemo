@@ -1,6 +1,9 @@
 package ramon.lee.httplib;
 
+import android.os.Build;
+
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
 
 /**
  * @Desc :
@@ -8,6 +11,7 @@ import java.util.Map;
  * @create 2021/3/21 20:34
  */
 public class Request {
+    private RequestTask requestTask;
     public enum RequestMethod {
         GET,
         POST,
@@ -53,9 +57,12 @@ public class Request {
         this.globalExceptionListener = listener;
     }
 
-    public void cancel() {
+    public void cancel(boolean force) {
         this.isCanceled = true;
         callback.cancel();
+        if (force && requestTask != null) {
+            requestTask.cancel(force);
+        }
     }
 
     public void checkIfCanceled() throws AppException {
@@ -66,5 +73,14 @@ public class Request {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public void execute(ExecutorService executorService) {
+        requestTask = new RequestTask(this);
+        if (Build.VERSION.SDK_INT > 11) {
+            requestTask.executeOnExecutor(executorService);
+        } else {
+            requestTask.execute();
+        }
     }
 }

@@ -1,8 +1,12 @@
 package ramon.lee.httplib;
 
+import android.os.Build;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @Desc :
@@ -12,6 +16,7 @@ import java.util.Map;
 public class RequestManager {
     private static RequestManager instance;
     private HashMap<String, ArrayList<Request>> mCachedRequests;
+    private static ExecutorService fixedExecutors;
 
     private RequestManager() {
         mCachedRequests = new HashMap<>();
@@ -20,13 +25,13 @@ public class RequestManager {
     public static RequestManager getInstance() {
         if (instance == null) {
             instance = new RequestManager();
+            fixedExecutors = Executors.newFixedThreadPool(5);
         }
         return instance;
     }
 
     public void performRequest(Request request) {
-        RequestTask requestTask = new RequestTask(request);
-        requestTask.execute();
+        request.execute(fixedExecutors);
         if (!mCachedRequests.containsKey(request.tag)) {
             ArrayList<Request> requests = new ArrayList<>();
             mCachedRequests.put(request.tag, requests);
@@ -46,7 +51,7 @@ public class RequestManager {
             ArrayList<Request> requests = mCachedRequests.remove(tag);
             for (Request request : requests) {
                 if (!request.isCanceled && tag.equals(request.tag)) {
-                    request.cancel();
+                    request.cancel(true);
                 }
             }
         }
@@ -57,7 +62,7 @@ public class RequestManager {
             ArrayList<Request> requests = entry.getValue();
             for (Request request : requests) {
                 if (!request.isCanceled) {
-                    request.cancel();
+                    request.cancel(true);
                 }
             }
         }

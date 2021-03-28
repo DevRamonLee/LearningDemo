@@ -12,7 +12,7 @@ public class AppException extends Exception {
     public int statusCode;
     public String responseMsg;
 
-    public enum ErrorType {CANCEL, TIMEOUT, SERVER, JSON, IO, FILE_NOT_FOUND, MANUAL}
+    public enum ErrorType {CANCEL, TIMEOUT, SERVER, JSON, IO, FILE_NOT_FOUND, MANUAL, UPLOAD}
 
     public ErrorType errorType;
 

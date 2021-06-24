@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自定义 ViewGroup 实现类似 LinearLayout的效果 -->
+<ramon.lee.androidui.customview.view.CustomVerticalViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#CCCCCC">
+    <ramon.lee.androidui.customview.view.SquareView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+
+    <ramon.lee.androidui.customview.view.SquareView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+
+    <ramon.lee.androidui.customview.view.SquareView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+</ramon.lee.androidui.customview.view.CustomVerticalViewGroup>

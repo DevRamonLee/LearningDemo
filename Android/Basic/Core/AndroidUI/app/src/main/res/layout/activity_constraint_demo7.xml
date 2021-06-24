@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   7.圆形布局
+    layout_constraintCircle : 圆心，值是某个view的id
+    layout_constraintCircleRadius : 半径
+    layout_constraintCircleAngle ：角度，值是从0-360，0是指整上方
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/a"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="A"
+        android:background="@color/green"/>
+
+    <Button
+        android:id="@+id/b"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="300"
+        app:layout_constraintCircleRadius="100dp"
+        android:text="B"
+        android:background="@color/red"/>
+
+    <Button
+        android:id="@+id/c"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintCircle="@id/a"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="100dp"
+        android:text="C"
+        android:background="@color/blue"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

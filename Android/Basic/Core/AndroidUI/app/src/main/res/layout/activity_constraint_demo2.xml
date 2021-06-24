@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2. margin 和 view gone
+    (1). 设置 margin 还是用 layout_margin* 但是注意必须在这个方向上有约束，比如设置了 layout_margin_left
+        则一定要有 layout_constraintLeft_* 才会生效
+    (2). 设置了view gone 后布局会变成一个点，但是它的约束还是起作用
+    (3). layout_goneMarginLeft 当锚点gone时这个属性会起作用-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/aa"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/blue"
+        android:text="A"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bb"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/blue"
+        android:text="B"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/aa"
+        app:layout_constraintTop_toTopOf="@id/aa" />
+
+    <Button
+        android:id="@+id/cc"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/blue"
+        android:text="C"
+        app:layout_constraintLeft_toRightOf="@id/bb"
+        app:layout_constraintTop_toTopOf="@id/bb"
+        app:layout_goneMarginLeft="50dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

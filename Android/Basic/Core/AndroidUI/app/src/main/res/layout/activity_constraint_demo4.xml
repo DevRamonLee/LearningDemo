@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4. View 的尺寸：
+     0dp在constraint可不是指大小是0dp，而是有特殊含义的。他的作用会随着不同的 layout_constraintWidth_default 设置有不同的含义:
+     spread  percent  wrap
+
+     layout_constraintDimensionRatio 宽高成一定比例。
+
+     设置最大最小值
+    layout_constraintWidth_min
+    layout_constraintWidth_max
+    layout_constraintHeight_max
+    layout_constraintHeight_min
+    -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <!--第一种:默认值 spread. width 设置 0 dp 宽度占据所有符合约束的空间-->
+    <Button
+        android:id="@+id/aa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="layout_constraintWidth_default spread"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <!--第二种：percent width 按照父布局的百分比设置,需要layout_constraintWidth_percent设置百分比例-->
+    <Button
+        android:id="@+id/bb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="layout_constraintWidth_default percent"
+        app:layout_constraintTop_toBottomOf="@id/aa"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintWidth_percent="0.3"/>
+   <!-- 第三种：wrap
+        意思匹配内容大小但不超过约束限制，注意和直接指定宽度为wrap_content的区别就是不超过约束限制
+        注意：对于wrap_content会超过约束限制，谷歌又新增了如下属性
+            app:layout_constrainedWidth=”true|false”
+            app:layout_constrainedHeight=”true|false”
+         设置了这个属性后 wrap_content 就和 wrap 效果一样了，适配内容也不会超过约束限制
+       -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/bb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/aaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:text="A"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/ccc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:text="C"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/bbb"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:background="@color/blue"
+            app:layout_constraintWidth_max="50dp"
+            android:text="wrap wrap wrap wrap wrap wrap wrap wrap"
+            app:layout_constraintLeft_toRightOf="@id/aaa"
+            app:layout_constraintRight_toLeftOf="@id/ccc"
+            app:layout_constraintWidth_default="wrap" />
+        <!--layout_constraintDimensionRatio 指定宽高成一定的比例
+            注意：使用该属性时宽和高其中有一项为0dp，有constraint
+
+            如果只有一项为0dp，则该项值按照比例计算出来。比如高为20dp，宽为0dp，radio为"2:1",则最终宽为40dp
+
+            如果两项都为0dp，则尺寸会设置为满足约束的最大值并保持比例。因为这是系统计算的，
+            有的时候不是我们想要的，我们也可以通过在前面加H、W来指定是哪一个边需要计算。
+            例如"H,2:1",则是指宽度匹配约束，高度是宽度的1/2
+            -->
+        <Button
+            android:id="@+id/ddd"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="8:1"
+            android:text="ffAAAAAAAAAAAAAAAAAAAAAAAAACC"
+            app:layout_constraintLeft_toRightOf="@id/aaa"
+            app:layout_constraintRight_toLeftOf="@id/ccc"
+            app:layout_constraintTop_toBottomOf="@id/bbb" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

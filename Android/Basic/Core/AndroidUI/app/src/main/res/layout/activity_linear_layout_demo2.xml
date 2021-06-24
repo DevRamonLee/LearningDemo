@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2. - 当 android:orientation="vertical" 时， android:layout_gravity只有水平方向的设置才起作用，
+        垂直方向的设置不起作用。即：left，right，center_horizontal 是生效的。
+       - 当 android:orientation="horizontal" 时， android:layout_gravity只有垂直方向的设置才起作用，
+       水平方向的设置不起作用。即：top，bottom，center_vertical 是生效的。-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="#00FF00"
+        android:gravity="center|bottom"
+        android:text="textView" />
+
+    <Button
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_gravity="bottom|left"
+        android:background="#FF0000"
+        android:gravity="left|top"
+        android:text="Button" />
+</LinearLayout>

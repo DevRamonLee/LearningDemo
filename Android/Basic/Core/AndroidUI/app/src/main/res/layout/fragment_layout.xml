@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_frame_layout_demo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/framelayout_1"/>
+
+        <Button
+            android:id="@+id/btn_frame_layout_demo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/framelayout_demo2"/>
+
+        <Button
+            android:id="@+id/btn_frame_layout_demo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/framelayout_demo3"/>
+
+        <Button
+            android:id="@+id/btn_grid_layout_demo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gridlayout"/>
+
+        <Button
+            android:id="@+id/btn_grid_layout_demo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gridlayout_calculate"/>
+
+        <Button
+            android:id="@+id/btn_table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tablayout"/>
+
+        <Button
+            android:id="@+id/btn_drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/drawerlayout"/>
+
+        <Button
+            android:id="@+id/btn_sliding_pane_demo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/slidingpanelayout_demo1"/>
+
+        <Button
+            android:id="@+id/btn_sliding_pane_demo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/slidingpanelayout_demo2"/>
+
+        <Button
+            android:id="@+id/btn_sliding_pane_demo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/slidingpanelayout_demo3"/>
+
+        <Button
+            android:id="@+id/btn_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/relativelayout"/>
+
+        <Button
+            android:id="@+id/btn_relative_layout_demo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/relativelayout_demo2"/>
+
+        <Button
+            android:id="@+id/btn_relative_layout_demo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/relativelayout_demo3"/>
+
+        <Button
+            android:id="@+id/btn_relative_layout_demo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/relativelayout_demo4"/>
+
+        <Button
+            android:id="@+id/btn_linear_layout_demo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/linearlayout_demo1"/>
+
+        <Button
+            android:id="@+id/btn_linear_layout_demo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/linearlayout_demo2"/>
+
+        <Button
+            android:id="@+id/btn_linear_layout_demo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/linearlayout_demo3"/>
+
+        <Button
+            android:id="@+id/btn_linear_layout_demo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/linearlayout_demo4"/>
+
+        <Button
+            android:id="@+id/btn_linear_layout_demo5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/linearlayout_demo5"/>
+
+        <Button
+            android:id="@+id/btn_linear_layout_demo6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/linearlayout_demo6"/>
+
+        <Button
+            android:id="@+id/btn_linear_layout_demo7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/linearlayout_demo7"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo1"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_layout_demo2"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo3"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo4"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_layout_demo5"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_layout_demo6"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo7"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo8"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo9"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo10"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo11"/>
+
+        <Button
+            android:id="@+id/btn_constraint_layout_demo12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/constraintlayout_demo12"/>
+
+    </LinearLayout>
+</ScrollView>

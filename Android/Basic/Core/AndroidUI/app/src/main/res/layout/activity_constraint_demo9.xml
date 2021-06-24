@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 9.辅助组件 Group
+    Group是一个可以同时控制多个view 可见性的虚拟View
+    第一个Group通过app:constraint_referenced_ids指定了a、c两个控件，这样当该Group可见性为invisible时
+    ，a、c的可见性都会变为invisible，为gone则都为gone。所以Group很适合处理有网无网之类的场景，
+    不再需要像之前那样一个一个view控制可见性，通过Group就可以统一处理了。
+Group有一些注意事项：
+    xml中，可见性配置的优先级：Group优先于View，下层Group优先于上层。
+    Group只可以引用当前ConstraintLayout下的View，子Layout 下的View不可以。
+    app:constraint_referenced_ids里直接写的是id的字符串，
+        初始化后会通过getIdentifier来反射查找叫该名字的id。
+        所以如果你的项目用了类似AndResGuard的混淆id名字的功能，
+        切记不要混淆app:constraint_referenced_ids里的id，否则在release版本就会因找不到该id而失效。
+        或者也可以通过代码setReferencedIds来设置id。
+    -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="a,c" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="b,d" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a"
+        android:id="@+id/a"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/a"
+        android:text="b"
+        android:id="@+id/b"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/b"
+        android:text="c"
+        android:id="@+id/c"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/c"
+        android:text="d"
+        android:id="@+id/d"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

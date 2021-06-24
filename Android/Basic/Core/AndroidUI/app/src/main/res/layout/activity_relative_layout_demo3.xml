@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 3. 相对父容器定位
+        layout_alignParentLeft : 相对父组件靠左
+        layout_alignParentTop ：相对父组件靠上
+        layout_alignParentRight : 相对父组件靠右
+        layout_alignParentBottom : 相对父组件靠下
+        layout_centerInParent="true" : 相对父组件垂直水平居中
+        layout_centerHorizontal="true" : 相对父组件水平居中
+        layout_centerVertical="true" : 相对父组件垂直居中
+    -->
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button1"/>
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button2"/>
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button3"/>
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button4"/>
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 6. layout_weight
+    情况1： TextView 设置 width 为 wrap_content 这里我们看到三个 TextView 的
+        宽度都被设置为了 wrap_content,layout_weight 值分别为 1、2、3
+        这种情况下：首先系统会优先分配文字占用的空间，然后在把剩余的空间按照 1:2:3 分配。
+        假设屏幕宽度为m,文字的宽度是n（例子里面文字的宽度是一致的）,那么，
+        情况1 中 textview 的实际宽度比例为 n+1/6(m-3n),n+2/6(m-3n),n+3/6(m-3n)，所以比例显示比例不是 1:2:3
+    情况2： TextView 设置 width 为 match_parent 第二种情况我们看到第三个 TextView 直接消失了，
+        为什么会出现这种情况呢？
+        第二种情况：系统首先会按照 match_parent 来分配文字空间，也就是占据整整一行空间，
+        占了一行？那么后面的组件是如何显示的呢？其实这种情况和第一种的计算方式是一样的，
+        也就是先分配空间，然后把剩余的空间按照 1:2:3 分配。
+        假设屏幕宽度为m, 首先给组件分配空间，一个占据大小为 m ，然后把剩余空间按比例分配。那么，
+        情况2 中 textview 的实际宽度比例为 m+1/6(m-3m),m+2/6(m-3m),m+3/6(m-3m) = m+(-2m/6),m+(-4m/6),m+(-6m/6) 计算可得
+        2m/3,1m/3,0 也就是 2:1:0 所以现在知道了为什么第三个textView 会消失了。
+    情况3： TextView 设置 width 为 0dp 这种情况下最终显示比例为 1:2:3.
+        第三种情况： 其实所有情况我们都记住一个公式 先分配组件的空间，然后按比例分配剩余的空间。这个公式是通用的。
+        假设屏幕宽度为m,首先给组件分配空间，也就是0dp，然后把剩下的空间按比例分配。那么情况3 中
+        textView 实际宽度比例为 0 + 1/6(m - 0),0+2/6(m - 0),0+3/6(m-0) 也就是 1:2:3 情况3是最常用的。
+    -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 情况1: TextView 设置 layout_width 为 wrap_content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#77bc1f"
+            android:text="AAA"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="#06d992"
+            android:text="BBB"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="#EEA32E"
+            android:text="CCC"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+    <!-- 情况2: TextView 设置 layout_width 为 match_parent -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#77bc1f"
+            android:text="AAA"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="#06d992"
+            android:text="BBB"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="#EEA32E"
+            android:text="CCC"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+    <!-- 情况3: TextView 设置 layout_width 为 0dp -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#77bc1f"
+            android:text="AAA"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="#06d992"
+            android:text="BBB"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="#EEA32E"
+            android:text="CCC"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+    </LinearLayout>
+</LinearLayout>

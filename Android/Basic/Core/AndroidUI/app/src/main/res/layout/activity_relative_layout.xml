@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 1. ignoreGravity 设置了该属性的组件，将不受gravity属性的影响.
+    btn_1 本来应该显示在布局的右边，指定了该属性后，不受 gravity 控制-->
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:ignoreGravity="@id/btn_1"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_below="@id/btn_1"/>
+</RelativeLayout>
+

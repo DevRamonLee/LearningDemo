@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ramon.lee.androidui">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".customview.TitleViewActivity"/>
+        <activity android:name=".layout.ConstraintActivityDemo12" />
+        <activity android:name=".layout.ConstraintActivityDemo11" />
+        <activity android:name=".layout.ConstraintActivityDemo10" />
+        <activity android:name=".layout.ConstraintActivityDemo9" />
+        <activity android:name=".layout.ConstraintActivityDemo8" />
+        <activity android:name=".layout.ConstraintActivityDemo7" />
+        <activity android:name=".layout.ConstraintActivityDemo6" />
+        <activity android:name=".layout.ConstraintActivityDemo5" />
+        <activity android:name=".layout.ConstraintActivityDemo4" />
+        <activity android:name=".layout.ConstraintActivityDemo3" />
+        <activity android:name=".layout.ConstraintActivityDemo2" />
+        <activity android:name=".layout.LinearLayoutActivityDemo7" />
+        <activity android:name=".layout.LinearLayoutActivityDemo6" />
+        <activity android:name=".layout.LinearLayoutActivityDemo5" />
+        <activity android:name=".layout.LinearLayoutActivityDemo4" />
+        <activity android:name=".layout.LinearLayoutActivityDemo3" />
+        <activity android:name=".layout.LinearLayoutActivityDemo2" />
+        <activity android:name=".layout.RelativeLayoutActivityDemo4" />
+        <activity android:name=".layout.RelativeLayoutActivityDemo3" />
+        <activity android:name=".layout.RelativeLayoutActivityDemo2" />
+        <activity android:name=".layout.SlidingPaneActivityDemo3" />
+        <activity android:name=".layout.SlidingPaneActivityDemo1" />
+        <activity android:name=".layout.GridLayoutActivityDemo2" />
+        <activity android:name=".layout.FrameLayoutActivityDemo2" />
+        <activity android:name=".layout.FrameLayoutActivityDemo1" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".layout.LinearLayoutActivityDemo1" />
+        <activity android:name=".layout.RelativeLayoutActivityDemo1" />
+        <activity android:name=".layout.ConstraintActivityDemo1" />
+        <activity android:name=".layout.FrameLayoutActivityDemo3" />
+        <activity android:name=".layout.GridLayoutActivityDemo1" />
+        <activity android:name=".layout.TableLayoutActivity" />
+        <activity
+            android:name=".layout.DrawerLayoutActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".layout.SlidingPaneActivityDemo2" />
+        <activity android:name=".layout.BaseSlideCloseActivity" />
+        <activity
+            android:name=".customview.NextActivity"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".customview.CustomViewThreeTypesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".customview.SuqareShowActivity" />
+        <activity android:name=".customview.CustomVerticalViewGroupActivity" />
+        <activity
+            android:name=".customview.PropertiesPriorityViewActivity"
+            android:theme="@style/AppThemeCustom" />
+        <activity android:name=".customview.CanvasBasicActivity" />
+        <activity android:name=".customview.PieViewActivity" />
+        <activity android:name=".customview.CanvasOperationActivity" />
+    </application>
+
+</manifest>

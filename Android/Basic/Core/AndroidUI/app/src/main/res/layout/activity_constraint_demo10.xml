@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 10. 辅助组件 Placeholder 占位布局
+        他自己本身不会绘制任何内容，但他可以通过设置app:content="id"，将 id View 的内容绘制到自己
+        的位置上，而原id的 View 就像 gone 了一样
+
+        可以看到，原本 B 是位于 A 的右边并且顶部对齐的，但因为 A 被 Placeholder 引用，使 A
+        相当于 Gone 了。而 Placeholder 的位置则显示了 A 的内容，并且大小也和 A 相符，
+        Placeholder 的大小设置并没有生效。
+        -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/a"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:text="a"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/b"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:text="b"
+        app:layout_constraintLeft_toRightOf="@+id/a"
+        app:layout_constraintTop_toTopOf="@+id/a" />
+
+    <androidx.constraintlayout.widget.Placeholder
+        android:id="@+id/place"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        app:content="@+id/a"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="c"
+        app:layout_constraintBottom_toBottomOf="@+id/place"
+        app:layout_constraintLeft_toRightOf="@+id/place" />
+</androidx.constraintlayout.widget.ConstraintLayout>

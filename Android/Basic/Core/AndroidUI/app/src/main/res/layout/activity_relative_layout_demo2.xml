@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2. 根据兄弟组件定位
+        layout_above : 参考组件上面
+        layout_below : 参考组件下面
+        layout_toLeftOf : 参考组件左边
+        layout_toRightOf : 参考组件右边
+        layout_alignLeft : 左边与参考组件左边对齐
+        layout_alignRight : 右边与参考组件右边对齐
+        layout_alignTop : 上边与参考组件上边对齐
+        layout_alignBottom ： 底部与参考组件底部对齐
+        layout_alignBaseline : 与组件基准线对齐
+    -->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_toRightOf="@id/btn_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button1"/>
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_below="@id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button2"/>
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button3"/>
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_alignLeft="@id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btn_2"
+        android:text="Button4"/>
+</RelativeLayout>

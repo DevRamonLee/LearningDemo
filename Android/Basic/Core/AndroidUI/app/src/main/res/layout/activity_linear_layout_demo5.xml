@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 5. android:measureWithLargestChild="true"
+    该属性设为 true 时，所有带权重的子元素都会具有最大子元素的最小尺寸。
+    会根据（最大尺寸的子元素 * 元素个数）计算 LinearLayout 的宽或者高。
+    如果其中的子元素设置有 weight 属性，则会拥有最大子元素的尺寸。
+    也就是把拥有 weight属性的元素变得和最大子元素一样宽或者高。
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/holo_blue_light"
+    android:measureWithLargestChild="true"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Button22222" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:text="bddsfadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsfddffffffffffffffffffffffffffffffffffffsfdf" />
+</LinearLayout>

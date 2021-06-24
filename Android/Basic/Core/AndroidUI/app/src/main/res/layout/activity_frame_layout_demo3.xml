@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--实例三： 定时更换前景图片，实现播放动画的效果 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="@drawable/img001"
+    android:foregroundGravity="center"
+    android:id="@+id/frame_container">
+
+</FrameLayout>

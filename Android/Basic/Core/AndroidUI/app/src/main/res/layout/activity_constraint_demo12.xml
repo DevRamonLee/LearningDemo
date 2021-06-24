@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 11. 辅助组件 Barrier 用法2
+        如果参考的view gone了，Barrier 可以使用 barrierAllowsGoneWidgets 不去管 gone的view
+        只参考存在的view
+        下面的例子中： A 设置为了 gone（margin会失效） ，默认情况下 C 会和布局的顶部对齐
+        如果设置了 barrierAllowsGoneWidgets 为 false 则 Barrier 只会参考 B组件，C也就会和 B顶部对齐-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/a"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="@color/red"
+        android:text="A"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/b"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/a"
+        android:layout_marginLeft="20dp"
+        android:background="@color/blue"
+        android:text="B"
+        android:layout_marginTop="40dp"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:barrierAllowsGoneWidgets="false"
+        app:constraint_referenced_ids="a,b" />
+
+    <Button
+        android:id="@+id/c"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toRightOf="@id/b"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toTopOf="@+id/barrier2"
+        android:text="C"
+        android:background="@color/green"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

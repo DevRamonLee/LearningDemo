@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 6.layout_constraintHorizontal_weight 权重的使用
+    和LinearLayout一样，链也可以使用layout_constraintHorizontal_weight，来分割剩余空间。
+    但又和android:layout_weight不太一样，不一样的地方如下：
+        (1)layout_weight ，不管当前view的大小设的是多大(也就是说不管是设置了0dp 还是 wrap_content
+            或者 match_parent)，都会继续占据剩余空间.
+        (2)layout_constraintHorizontal_weight，这个只对0dp并且layout_constraintWidth_default为spread
+        的view生效，使其大小按比例分割剩余空间，对于已经设定大小的view不生效,请看下面效果，只有第一个
+        视图的大小改变了
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/aaaa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bbbb"
+        app:layout_constraintHorizontal_weight="1"
+        android:text="A"
+        android:background="@color/blue"
+        app:layout_constraintHorizontal_chainStyle="spread"/>
+
+    <Button
+        android:id="@+id/bbbb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/aaaa"
+        app:layout_constraintRight_toLeftOf="@id/cccc"
+        android:text="B"
+        android:background="@color/red"/>
+
+    <Button
+        android:id="@+id/cccc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/bbbb"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="C"
+        android:background="@color/green"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

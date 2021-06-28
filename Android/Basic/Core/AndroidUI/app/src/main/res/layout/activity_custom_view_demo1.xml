@@ -3,9 +3,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
     <ramon.lee.androidui.customview.view.TitleView
         android:id="@+id/title_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <ramon.lee.androidui.customview.view.CounterView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"/>
+
+    <ramon.lee.androidui.customview.view.CustomListView
+        android:id="@+id/custom_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 </LinearLayout>

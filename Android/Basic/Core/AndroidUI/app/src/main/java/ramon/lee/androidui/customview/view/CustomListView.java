@@ -66,7 +66,6 @@ public class CustomListView extends ListView
         if(!isDeleteShown) {
             // 根据触摸点的坐标找到是那个 item 被选中
             mSelectedItem = pointToPosition((int) motionEvent.getX(),(int) motionEvent.getY());
-            Log.i("meng", "mSelectedItem is " + mSelectedItem);
         }
         return false;
     }
@@ -107,6 +106,7 @@ public class CustomListView extends ListView
         }
         return false;
     }
+
     // 隐藏删除按钮
     public void hideDelete() {
         mItemLayout.removeView(mDeleteBtn);

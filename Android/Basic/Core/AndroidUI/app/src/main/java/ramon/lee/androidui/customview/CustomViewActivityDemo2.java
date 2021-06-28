@@ -6,13 +6,13 @@ import android.os.Bundle;
 import ramon.lee.androidui.R;
 
 /**
- * 对 Canvas 的操作，也就是操作画布
+ * 自定义  View 和 自定义 ViewGroup 的步骤
  */
-public class CanvasOperationActivity extends AppCompatActivity {
+public class CustomViewActivityDemo2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_canvas_operation);
+        setContentView(R.layout.activity_custom_view_demo2);
     }
 }

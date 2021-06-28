@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import ramon.lee.androidui.R;
-import ramon.lee.androidui.customview.NextActivity;
 
 /* 实例三：进阶---实现滑动关闭 Activity
 *   思路：

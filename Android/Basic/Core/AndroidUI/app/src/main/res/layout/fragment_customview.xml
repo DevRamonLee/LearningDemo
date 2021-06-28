@@ -13,5 +13,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/custom_view_demo1"/>
+
+        <Button
+            android:id="@+id/btn_custom_view_demo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_view_demo2"/>
+
+        <Button
+            android:id="@+id/btn_custom_view_demo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_view_demo3"/>
+
+        <Button
+            android:id="@+id/btn_custom_view_demo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_view_demo4"/>
     </LinearLayout>
 </ScrollView>

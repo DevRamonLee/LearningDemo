@@ -12,10 +12,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import ramon.lee.androidui.R;
-import ramon.lee.androidui.customview.TitleViewActivity;
+import ramon.lee.androidui.customview.CustomViewActivityDemo1;
+import ramon.lee.androidui.customview.CustomViewActivityDemo2;
+import ramon.lee.androidui.customview.CustomViewActivityDemo3;
+import ramon.lee.androidui.customview.CustomViewActivityDemo4;
 
 public class CustomViewFragment extends Fragment {
-    private Button btnDemo1;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -25,13 +27,31 @@ public class CustomViewFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btnDemo1 = view.findViewById(R.id.btn_custom_view_demo1);
-
-
-        btnDemo1.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btn_custom_view_demo1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TitleViewActivity.class);
+                Intent intent = new Intent(getActivity(), CustomViewActivityDemo1.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.btn_custom_view_demo2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CustomViewActivityDemo2.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.btn_custom_view_demo3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CustomViewActivityDemo3.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.btn_custom_view_demo4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CustomViewActivityDemo4.class);
                 startActivity(intent);
             }
         });

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".customview.TitleViewActivity"/>
+        <activity android:name=".interactive.MenuActivity"/>
+        <activity android:name=".customview.CustomViewActivityDemo1" />
         <activity android:name=".layout.ConstraintActivityDemo12" />
         <activity android:name=".layout.ConstraintActivityDemo11" />
         <activity android:name=".layout.ConstraintActivityDemo10" />
@@ -54,19 +55,13 @@
         <activity android:name=".layout.SlidingPaneActivityDemo2" />
         <activity android:name=".layout.BaseSlideCloseActivity" />
         <activity
-            android:name=".customview.NextActivity"
+            android:name=".layout.NextActivity"
             android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity android:name=".customview.CustomViewActivityDemo2" />
         <activity
-            android:name=".customview.CustomViewThreeTypesActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".customview.SuqareShowActivity" />
-        <activity android:name=".customview.CustomVerticalViewGroupActivity" />
-        <activity
-            android:name=".customview.PropertiesPriorityViewActivity"
+            android:name=".customview.CustomViewActivityDemo3"
             android:theme="@style/AppThemeCustom" />
-        <activity android:name=".customview.CanvasBasicActivity" />
-        <activity android:name=".customview.PieViewActivity" />
-        <activity android:name=".customview.CanvasOperationActivity" />
+        <activity android:name=".customview.CustomViewActivityDemo4" />
     </application>
 
 </manifest>

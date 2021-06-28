@@ -6,16 +6,20 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 import ramon.lee.androidui.R;
-import ramon.lee.androidui.customview.view.PieView;
 import ramon.lee.androidui.customview.entity.PieData;
+import ramon.lee.androidui.customview.view.PieView;
 
-public class PieViewActivity extends AppCompatActivity {
+/**
+ * Canvas 绘制
+ */
+public class CustomViewActivityDemo4 extends AppCompatActivity {
     PieView mPieView;
-    ArrayList<PieData>  mPieData = new ArrayList<>();
+    ArrayList<PieData> mPieData = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pie_view);
+        setContentView(R.layout.activity_custom_view_demo4);
         mPieView = (PieView)findViewById(R.id.pie_view);
 
         initPieData();

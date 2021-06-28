@@ -12,13 +12,14 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import ramon.lee.androidui.fragment.CustomViewFragment;
+import ramon.lee.androidui.fragment.InteractiveFragment;
 import ramon.lee.androidui.fragment.LayoutFragment;
 
 public class MainActivity extends FragmentActivity {
     DemoCollectionAdapter demoCollectionAdapter;
     ViewPager2 viewPager;
     TabLayout tabLayout;
-    String[] tabNames = {"Layout", "CustomView"};
+    String[] tabNames = {"布局", "自定义View", "交互视图"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +51,17 @@ public class MainActivity extends FragmentActivity {
             Fragment fragment;
             if (position == 0) {
                 fragment =new LayoutFragment();
-            } else {
+            } else if (position == 1) {
                 fragment = new CustomViewFragment();
+            } else {
+                fragment = new InteractiveFragment();
             }
             return fragment;
         }
 
         @Override
         public int getItemCount() {
-            return 2;
+            return 3;
         }
     }
 }

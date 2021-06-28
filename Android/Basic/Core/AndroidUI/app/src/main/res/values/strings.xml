@@ -36,5 +36,10 @@
     <string name="constraintlayout_demo10">ConstraintLayout 辅助组件 PlaceHolder</string>
     <string name="constraintlayout_demo11">ConstraintLayout 辅助组件 Barrier</string>
     <string name="constraintlayout_demo12">ConstraintLayout Barrier 关注的组件 gone</string>
-    <string name="custom_view_demo1">自定义View：组合 View</string>
+    <string name="custom_view_demo1">自定义 View：1.组合 View 2. 绘制 View 3.继承现有组件扩展</string>
+    <string name="custom_view_demo2">自定义 View 和 自定义 ViewGroup 的过程</string>
+    <string name="custom_view_demo3">自定义 View 自定义属性的优先级</string>
+    <string name="custom_view_demo4">自定义 View Canvas 绘制</string>
+    <string name="properties_priority"><![CDATA[直接在XML中定义 > style定义 > 由defStyleAttr定义的值 > defStyleRes指定的默认值 > 直接在Theme中指定的值]]></string>
+    <string name="interactive_demo1">交互视图三种菜单：1. OptionMenu 2 ContextMenu 3 SubMenu</string>
 </resources>

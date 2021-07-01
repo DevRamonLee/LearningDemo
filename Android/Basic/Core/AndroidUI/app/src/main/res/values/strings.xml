@@ -42,4 +42,5 @@
     <string name="custom_view_demo4">自定义 View Canvas 绘制</string>
     <string name="properties_priority"><![CDATA[直接在XML中定义 > style定义 > 由defStyleAttr定义的值 > defStyleRes指定的默认值 > 直接在Theme中指定的值]]></string>
     <string name="interactive_demo1">交互视图三种菜单：1. OptionMenu 2 ContextMenu 3 SubMenu</string>
+    <string name="show_context_menu">长按显示上下文菜单</string>
 </resources>

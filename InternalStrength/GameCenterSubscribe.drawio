@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-05T07:15:31.929Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="79eVGBogo2oM3hh34Wiz" version="14.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-07-05T08:10:06.507Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="S3Yu45HBV2wTlGaaTlnk" version="14.2.7" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1422" dy="706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -268,7 +268,7 @@
         <mxCell id="ebCV4vV2BCAYUUxFwjKP-56" value="" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#FFBC21;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
           <mxGeometry y="310" width="530" height="530" as="geometry" />
         </mxCell>
-        <mxCell id="ebCV4vV2BCAYUUxFwjKP-48" value="设置 15mins 周期任务" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
+        <mxCell id="ebCV4vV2BCAYUUxFwjKP-48" value="更新预约轮询任务周期为15mins&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
           <mxGeometry x="173" y="120" width="163" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ebCV4vV2BCAYUUxFwjKP-52" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80" source="ebCV4vV2BCAYUUxFwjKP-51" target="ebCV4vV2BCAYUUxFwjKP-48">
@@ -315,8 +315,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ebCV4vV2BCAYUUxFwjKP-60" value="15mins later" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
-          <mxGeometry x="373" y="220" width="80" height="20" as="geometry" />
+        <mxCell id="ebCV4vV2BCAYUUxFwjKP-60" value="15mins / 3h later" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
+          <mxGeometry x="363" y="220" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ebCV4vV2BCAYUUxFwjKP-61" value="预约上线自动安装启用且非游戏中" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
           <mxGeometry x="214.5" y="360" width="80" height="80" as="geometry" />
@@ -346,7 +346,7 @@
           <mxGeometry x="173" y="400" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ebCV4vV2BCAYUUxFwjKP-69" value="获取已预约未下载 7 日内列表" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
-          <mxGeometry x="194.5" y="490" width="120" height="60" as="geometry" />
+          <mxGeometry x="194.5" y="490" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ebCV4vV2BCAYUUxFwjKP-70" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80" source="ebCV4vV2BCAYUUxFwjKP-61" target="ebCV4vV2BCAYUUxFwjKP-69">
           <mxGeometry relative="1" as="geometry" />
@@ -355,24 +355,41 @@
           <mxGeometry x="214.5" y="440" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ebCV4vV2BCAYUUxFwjKP-72" value="过滤本地已安装" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
-          <mxGeometry x="194.5" y="600" width="120" height="60" as="geometry" />
+          <mxGeometry x="194.5" y="620" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ebCV4vV2BCAYUUxFwjKP-73" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80" source="ebCV4vV2BCAYUUxFwjKP-69" target="ebCV4vV2BCAYUUxFwjKP-72">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="ebCV4vV2BCAYUUxFwjKP-73" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80" target="ebCV4vV2BCAYUUxFwjKP-72">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="255" y="590" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="ebCV4vV2BCAYUUxFwjKP-74" value="提交下载安装任务" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
-          <mxGeometry x="194.5" y="700" width="120" height="60" as="geometry" />
+        <mxCell id="ebCV4vV2BCAYUUxFwjKP-74" value="提交下载安装任务，或者无需要下载的任务" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
+          <mxGeometry x="194.5" y="700" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ebCV4vV2BCAYUUxFwjKP-75" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80" source="ebCV4vV2BCAYUUxFwjKP-72" target="ebCV4vV2BCAYUUxFwjKP-74">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ebCV4vV2BCAYUUxFwjKP-77" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80" source="ebCV4vV2BCAYUUxFwjKP-74" target="ebCV4vV2BCAYUUxFwjKP-62">
+        <mxCell id="ebCV4vV2BCAYUUxFwjKP-77" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80" source="ebCV4vV2BCAYUUxFwjKP-74" target="ebCV4vV2BCAYUUxFwjKP-62">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="336" y="530" as="sourcePoint" />
             <mxPoint x="386" y="480" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="393" y="745" />
+              <mxPoint x="393" y="720" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ebCV4vV2BCAYUUxFwjKP-82" value="更新预约轮询任务周期为 3 h" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
+          <mxGeometry x="194.5" y="555" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ebCV4vV2BCAYUUxFwjKP-83" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="254.5" y="670" as="sourcePoint" />
+            <mxPoint x="254.5" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ebCV4vV2BCAYUUxFwjKP-84" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ebCV4vV2BCAYUUxFwjKP-80">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="254" y="529" as="sourcePoint" />
+            <mxPoint x="253.5" y="559" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>

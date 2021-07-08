@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-08T03:53:09.895Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="ZtfO7gbBKmXM7hf65ITw" version="14.8.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-07-08T06:26:25.258Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="oB-xPwhWdszvsdmsqsdA" version="14.8.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2249" dy="706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -414,7 +414,7 @@
         <mxCell id="1FdhS4_hSl1T9DwcQxYW-117" value="1770014&lt;br&gt;subFrom = push&amp;nbsp; valuePage = /game_detail" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;position2=0.89;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="70" y="1650" width="190" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1FdhS4_hSl1T9DwcQxYW-118" value="1770018&lt;br&gt;1.&amp;nbsp;receive_invalid_online_msg&lt;br&gt;1770024&lt;br&gt;2.task_already_in_download_list&lt;br&gt;3.online_msg_but_null_url&lt;br&gt;4.game is downloading by others" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="1FdhS4_hSl1T9DwcQxYW-118" value="1770018&lt;br&gt;1.&amp;nbsp;receive_invalid_online_msg&lt;br&gt;2.task_already_in_download_list&lt;br&gt;3.online_msg_but_null_url&lt;br&gt;4.game is downloading by others" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="580" y="380" width="190" height="130" as="geometry" />
         </mxCell>
         <mxCell id="1FdhS4_hSl1T9DwcQxYW-121" value="1770024&lt;br&gt;device in gaming state" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;position2=0.86;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -429,7 +429,7 @@
         <mxCell id="1FdhS4_hSl1T9DwcQxYW-124" value="1770024&lt;br&gt;online_msg_get_download_status_error&lt;br&gt;-${statusResult.exception.message}&lt;br&gt;字段增加：包名信息" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;position2=0.86;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="150" y="1120" width="230" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="1FdhS4_hSl1T9DwcQxYW-125" value="1770015&lt;br&gt;电量或者存储导致自动任务未开始&lt;br&gt;battery or storage is low" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;position2=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="1FdhS4_hSl1T9DwcQxYW-125" value="1770024&lt;br&gt;电量或者存储导致自动任务未开始&lt;br&gt;battery or storage is low" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;position2=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="540" y="1440" width="230" height="80" as="geometry" />
         </mxCell>
         <mxCell id="1FdhS4_hSl1T9DwcQxYW-126" value="1770014&lt;br&gt;开始下载" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;position2=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">

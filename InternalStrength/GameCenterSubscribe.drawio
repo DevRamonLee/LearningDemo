@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-07-08T08:57:25.668Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="_QsThZ_Q_h8u8Zi216Db" version="14.8.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-07-08T09:32:32.295Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="Df1koiyalgCKjF5eMSGn" version="14.8.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2858" dy="1009" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2012" dy="588" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -510,10 +510,10 @@
         <mxCell id="1FdhS4_hSl1T9DwcQxYW-160" value="3Hours later" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1070" y="300" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="1FdhS4_hSl1T9DwcQxYW-163" value="1770024&lt;br&gt;1.ommision_subscribe_task_not_login&lt;br&gt;2. ommision_subscribe_task_online_install_switch_off&lt;br&gt;3. ommision_subscribe_task_in_gaming&lt;br&gt;4. ommision_subscribe_task_battery_low&lt;br&gt;5. ommision_subscribe_task_storage_low&lt;br&gt;6. ommision_subscribe_task_temperature_high" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;position2=0.41;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="1FdhS4_hSl1T9DwcQxYW-163" value="1770024&lt;br&gt;1.omission_subscribe_task_not_login&lt;br&gt;2. omission_subscribe_task_online_install_switch_off&lt;br&gt;3. omission_subscribe_task_in_gaming&lt;br&gt;4. omission_subscribe_task_battery_low&lt;br&gt;5. omission_subscribe_task_storage_low&lt;br&gt;6. omission_subscribe_task_temperature_high" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;position2=0.41;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1220" y="360" width="305" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="1FdhS4_hSl1T9DwcQxYW-165" value="1770024&lt;br&gt;1.ommision_subscribe_task_already_in_download_list&lt;br&gt;2.ommision_subscribe_task_downloading_by_others" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="1FdhS4_hSl1T9DwcQxYW-165" value="1770024&lt;br&gt;1.omission_subscribe_task_already_in_download_list&lt;br&gt;2.omission_subscribe_task_downloading_by_others" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1230" y="1010" width="305" height="80" as="geometry" />
         </mxCell>
         <mxCell id="1FdhS4_hSl1T9DwcQxYW-168" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="1FdhS4_hSl1T9DwcQxYW-167" target="1FdhS4_hSl1T9DwcQxYW-143">
@@ -579,10 +579,10 @@
         <mxCell id="1FdhS4_hSl1T9DwcQxYW-162" value="&lt;span style=&quot;background-color: rgb(255 , 242 , 204)&quot;&gt;1770014&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: rgb(255 , 242 , 204)&quot;&gt;开始下载&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1040" y="1390" width="90" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="1FdhS4_hSl1T9DwcQxYW-164" value="1770024&lt;br&gt;ommision_subscribe_task_info_invalid" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="1FdhS4_hSl1T9DwcQxYW-164" value="1770024&lt;br&gt;omission_subscribe_task_info_invalid" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1255" y="830" width="205" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="1FdhS4_hSl1T9DwcQxYW-188" value="1770024&lt;br&gt;ommision_subscribe_task_get_list_failed" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="1FdhS4_hSl1T9DwcQxYW-188" value="1770024&lt;br&gt;omission_subscribe_task_get_list_failed" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeColor=#d6b656;strokeWidth=1;fillColor=#fff2cc;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1255" y="700" width="215" height="80" as="geometry" />
         </mxCell>
         <mxCell id="1FdhS4_hSl1T9DwcQxYW-189" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">

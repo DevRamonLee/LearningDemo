@@ -9,4 +9,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/interactive_demo1"/>
+
+    <Button
+        android:id="@+id/btn_interactive_demo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/interactive_demo2"/>
+
+    <Button
+        android:id="@+id/btn_interactive_demo3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/interactive_demo3"/>
+
+    <Button
+        android:id="@+id/btn_interactive_demo4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/interactive_demo4"/>
+
+    <Button
+        android:id="@+id/btn_interactive_demo5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/interactive_demo5"/>
+
+    <Button
+        android:id="@+id/btn_interactive_demo6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/interactive_demo6"/>
 </LinearLayout>

@@ -1,7 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <style name="MyMinDialogWidth" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:windowBackground">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="dialog_animtion_style">
+        <item name="android:windowEnterAnimation">@anim/dialog_show_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_miss_anim</item>
+    </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:alertDialogTheme">@style/MyMinDialogWidth</item>
+        <item name="android:dialogTheme">@style/MyMinDialogWidth</item>
+
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -80,4 +94,8 @@
     <!-- StyleTestView 验证属性的优先级
     直接在XML中定义 > style定义 > 由defStyleAttr定义的值 > defStyleRes指定的默认值 > 直接在Theme中指定的值 @} -->
 
+    <style name="pop_anim">
+        <item name="android:windowEnterAnimation">@anim/pop_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
 </resources>

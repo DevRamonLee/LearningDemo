@@ -9,13 +9,13 @@
     tools:context=".layout.SlidingPaneActivityDemo2">
     <fragment
         android:id="@+id/fragment_leftmenu"
-        android:name="ramon.lee.androidui.fragment.LeftMenuFragment"
+        android:name="ramon.lee.androidui.layout.fragment.LeftMenuFragment"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"/>
     <fragment
         android:id="@+id/fragment_rightcontent"
-        android:name="ramon.lee.androidui.fragment.RightContentFragment"
+        android:name="ramon.lee.androidui.layout.fragment.RightContentFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"

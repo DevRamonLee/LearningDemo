@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".animation.ViewAnimationActivity"
+    android:layoutAnimation="@anim/anim_layout">
+
+    <ramon.lee.androidui.customview.view.SquareView
+        android:id="@+id/square_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#FFFF00"/>
+
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_below="@+id/square_view"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="#0000FF"
+            android:text="@string/animation_set_start"/>
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="#0000FF"
+            android:text="@string/animation_set_stop"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_custom_interpolator"
+        android:layout_below="@+id/ll_buttons"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/custom_interpolator"
+        android:background="#aaff00"/>
+
+    <Button
+        android:id="@+id/btn_show_pop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_custom_interpolator"
+        android:text="@string/pop_up_window_anim"/>
+
+    <Button
+        android:id="@+id/btn_activity_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/btn_show_pop"
+        android:text="@string/activity_anim"/>
+
+    <ImageView
+        android:id="@+id/iv_frame_anim"
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:layout_below="@+id/btn_activity_anim"/>
+</RelativeLayout>

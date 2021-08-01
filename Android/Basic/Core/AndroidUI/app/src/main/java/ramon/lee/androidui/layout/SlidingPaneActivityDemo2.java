@@ -7,8 +7,8 @@ import androidx.slidingpanelayout.widget.SlidingPaneLayout;
 import android.view.View;
 
 import ramon.lee.androidui.R;
-import ramon.lee.androidui.fragment.LeftMenuFragment;
-import ramon.lee.androidui.fragment.RightContentFragment;
+import ramon.lee.androidui.layout.fragment.LeftMenuFragment;
+import ramon.lee.androidui.layout.fragment.RightContentFragment;
 
 /* 实例二：结合 Frament 实现菜单和内容 解耦  请打开布局中的对应注释*/
 public class SlidingPaneActivityDemo2 extends AppCompatActivity implements

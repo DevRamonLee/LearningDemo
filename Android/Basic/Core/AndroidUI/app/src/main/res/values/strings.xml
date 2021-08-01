@@ -42,5 +42,92 @@
     <string name="custom_view_demo4">自定义 View Canvas 绘制</string>
     <string name="properties_priority"><![CDATA[直接在XML中定义 > style定义 > 由defStyleAttr定义的值 > defStyleRes指定的默认值 > 直接在Theme中指定的值]]></string>
     <string name="interactive_demo1">交互视图三种菜单：1. OptionMenu 2 ContextMenu 3 SubMenu</string>
+    <string name="interactive_demo2">交互视图对话框</string>
+    <string name="interactive_demo3">交互视图Toast</string>
     <string name="show_context_menu">长按显示上下文菜单</string>
+    <string name="progress_dialog_with_number">Progress dialog with number</string>
+    <string name="alert_dialog">Alert dialog</string>
+    <string name="alert_dialog_with_list">Alert dialog with list</string>
+    <string name="alert_dialog_with_choice">Alert dialog with choice</string>
+    <string name="progress_dialog">Progress dialog</string>
+    <string name="planet">Planet</string>
+    <string name="custom_dialog">Custom dialog</string>
+    <string name="custom_dialog_with_title">Custom dialog with title</string>
+    <string name="dialog_fragment">Dialog fragment</string>
+    <string name="default_toast">默认 toast</string>
+    <string name="toast_with_image">Toast 添加图片</string>
+    <string name="custom_toast">自定义 Toast</string>
+    <string name="basic_notification">基本通知</string>
+    <string name="basic_notification_fullscreen">全屏通知</string>
+    <string name="custom_notification">自定义通知: 自定义内容区域</string>
+    <string name="interactive_demo4">交互视图 Notification</string>
+    <string name="big_picture_notification">大图通知</string>
+    <string name="big_picture_scale">大图通知缩略图</string>
+    <string name="large_text_notification">大段文本通知</string>
+    <string name="in_box_notification">收件箱样式通知</string>
+    <string name="conversation_notification">对话样式通知</string>
+    <string name="media_control_notification">媒体控件通知</string>
+    <string name="this_is_a_planet">This is a planet</string>
+    <string name="interactive_demo5">交互视图 PopUpWindow</string>
+    <string name="interactive_demo6">交互视图 FloatingWindow</string>
+    <string name="show_pop">Show PopUpWindow</string>
+    <string name="happy_floating">悬浮使我快乐</string>
+    <string name="zoom">缩小</string>
+    <string name="view_animation">视图动画</string>
+    <string name="animation_set_start">开始动画</string>
+    <string name="animation_set_stop">停止动画</string>
+    <string name="custom_interpolator">自定义插值器，始末慢，中间快</string>
+    <string name="pop_up_window_anim">PopUpWindow 进入退出动画</string>
+    <string name="activity_anim">Activity 跳转动画</string>
+    <string name="property_animation">属性动画</string>
+    <string name="value_animator">创建 ValueAnimator</string>
+    <string name="view_property_animator">ViewPropertyAnimator</string>
+    <string name="frame_animation">帧动画</string>
+    <string name="viewpager_slide_anim">ViewPager 滑动动画</string>
+    <string name="view_pager_fade_in_out">ViewPropertyAnimation 淡入淡出</string>
+    <string name="lorem_ipsum">TaskRabbit lets people find freelance workers to complete household tasks such as cleaning, gardening or assembling flat-pack furniture.
+        The company says an "unauthorised user gained access to our systems" and "certain personally identifiable information may have been compromised".
+        It pledged to notify any customer who had their data accessed in the attack.
+        The TaskRabbit app and website were closed on Monday and Tuesday. And the company said it was working with law enforcement and a cyber-security company to investigate.
+        The company has urged people to change their passwords on other websites and apps, if they have used their TaskRabbit password for other accounts.
+        Ikea bought San Francisco-based TaskRabbit in 2017, although it is operated as an independent company within the Ikea Group.
+        The app was founded in 2008 by Leah Busque, who came up with the idea of a chore-hiring company when she ran out of food for her dog one evening, while waiting to go out to dinner, and wished there was someone she could call on to help.
+        完成阅读
+        本周最受关注新闻
+        Chinese bike-sharing service ofo welcomed in India
+
+        2018-04-201639
+
+        'Rampage' leads Chinese box office
+
+        2018-04-181604
+
+        Terracotta warrior damaged in US to be repaired
+
+        2018-04-171369
+
+        Air purification tower cuts PM2.5 by 15%: researcher
+
+        2018-04-191260
+
+        Water spray aims to deter jaywalkers in Hubei Province
+
+        2018-04-191164
+
+        Number of illegal online ride-hailing cars slashed after crackdown
+
+        2018-04-211147
+
+        World's oldest person dies in Japan at age of 117
+
+        2018-04-221125
+
+        China's Peppa Pig theme parks expected to open by 2019</string>
+    <integer name="card_flip_time_full">2000</integer>
+    <integer name="card_flip_time_half">1000</integer>
+    <string name="card_animation">Card Animation</string>
+    <string name="description_image_1">Thumb of image1</string>
+    <string name="description_zoom_touch_close">touch to zoom image</string>
+    <string name="zoom_animation">zoom animation</string>
+    <string name="layout_change_animate">layout change animate</string>
 </resources>

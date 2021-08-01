@@ -11,15 +11,16 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import ramon.lee.androidui.fragment.CustomViewFragment;
-import ramon.lee.androidui.fragment.InteractiveFragment;
-import ramon.lee.androidui.fragment.LayoutFragment;
+import ramon.lee.androidui.home.AnimationFragment;
+import ramon.lee.androidui.home.CustomViewFragment;
+import ramon.lee.androidui.home.InteractiveFragment;
+import ramon.lee.androidui.home.LayoutFragment;
 
 public class MainActivity extends FragmentActivity {
     DemoCollectionAdapter demoCollectionAdapter;
     ViewPager2 viewPager;
     TabLayout tabLayout;
-    String[] tabNames = {"布局", "自定义View", "交互视图"};
+    String[] tabNames = {"布局", "自定义View", "交互视图", "动画和手势"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +54,17 @@ public class MainActivity extends FragmentActivity {
                 fragment =new LayoutFragment();
             } else if (position == 1) {
                 fragment = new CustomViewFragment();
-            } else {
+            } else if (position == 2) {
                 fragment = new InteractiveFragment();
+            } else {
+                fragment = new AnimationFragment();
             }
             return fragment;
         }
 
         @Override
         public int getItemCount() {
-            return 3;
+            return 4;
         }
     }
 }

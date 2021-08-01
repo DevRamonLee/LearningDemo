@@ -8,8 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".interactive.MenuActivity"/>
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".interactive.FloatActivity"
+            android:launchMode="singleInstance" />
+        <activity android:name=".interactive.PopUpWindowActivity" />
+        <activity android:name=".interactive.NotificationActivity" />
+        <activity android:name=".interactive.ToastActivity" />
+        <activity android:name=".interactive.DialogActivity" />
+        <activity android:name=".interactive.MenuActivity" />
         <activity android:name=".customview.CustomViewActivityDemo1" />
         <activity android:name=".layout.ConstraintActivityDemo12" />
         <activity android:name=".layout.ConstraintActivityDemo11" />
@@ -62,6 +69,39 @@
             android:name=".customview.CustomViewActivityDemo3"
             android:theme="@style/AppThemeCustom" />
         <activity android:name=".customview.CustomViewActivityDemo4" />
+
+
+        <activity android:name=".animation.property.PropertyActivity"></activity>
+        <activity android:name=".animation.frame.FrameAnimActivity" />
+        <activity android:name=".animation.view.activities.ViewGroupActivity" />
+        <activity android:name=".animation.view.activities.ActivityConvertActivity" />
+        <activity android:name=".animation.view.activities.PopUpWindowActivity" />
+        <activity android:name=".animation.view.activities.ViewAnimBasicActivity" />
+        <activity android:name=".animation.view.ViewAnimActivity" />
+        <activity android:name=".animation.property.activities.CrossFadeActivity" />
+        <activity android:name=".animation.property.activities.ScreenSlidePagerActivity" />
+        <activity android:name=".animation.property.card.CardFlipActivity" />
+        <activity android:name=".animation.property.activities.ZoomActivity" />
+        <activity android:name=".animation.property.activities.LayoutChangesActivity" />
+
+        <receiver
+            android:name=".interactive.receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ramon.lee.androidui.SNOOZE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".interactive.FloatWindowService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
+
+    <permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
 </manifest>

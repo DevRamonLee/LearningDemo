@@ -2,11 +2,13 @@ package ramon.lee.androidui.customview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 
 import ramon.lee.androidui.R;
 import ramon.lee.androidui.customview.entity.PieData;
+import ramon.lee.androidui.customview.view.CheckView;
 import ramon.lee.androidui.customview.view.PieView;
 
 /**
@@ -24,6 +26,21 @@ public class CustomViewActivityDemo4 extends AppCompatActivity {
 
         initPieData();
         mPieView.setDate(mPieData);
+
+        final CheckView checkView = (CheckView)findViewById(R.id.check_view);
+        checkView.setAnimDuration(3000);
+        findViewById(R.id.btn_check).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkView.check();
+            }
+        });
+        findViewById(R.id.btn_uncheck).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkView.unCheck();
+            }
+        });
     }
 
     private void initPieData() {

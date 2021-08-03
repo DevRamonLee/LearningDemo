@@ -20,7 +20,7 @@ public class MainActivity extends FragmentActivity {
     DemoCollectionAdapter demoCollectionAdapter;
     ViewPager2 viewPager;
     TabLayout tabLayout;
-    String[] tabNames = {"布局", "自定义View", "交互视图", "动画和手势"};
+    String[] tabNames = {"布局和控件", "自定义View", "交互视图", "动画"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,13 +4,14 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
 /**
- * Created by meng.li on 2019/1/18.
  * Android  中 Canvas 的使用
  */
 
@@ -37,60 +38,60 @@ public class CanvasBasic extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        //绘制颜色是填充整个画布，常用于绘制底色
+        // 绘制颜色是填充整个画布，常用于绘制底色
         canvas.drawColor(Color.YELLOW);
 
-        //绘制点,可以绘制一个点，也可以绘制一组点
-        /*canvas.drawPoint(200, 200, mPaint);     //在坐标(200,200)位置绘制一个点
+        // 绘制点,可以绘制一个点，也可以绘制一组点
+        canvas.drawPoint(30, 10, mPaint);     //在坐标(30,10)位置绘制一个点
         canvas.drawPoints(new float[]{          //绘制一组点，坐标位置由float数组指定
-                500,500,
-                500,600,
-                500,700
-        },mPaint);*/
+                30,30,
+                50,30,
+                70,30
+        },mPaint);
 
-        //绘制直线，绘制直线也可以绘制一条或者一组，需要两个点、起始点和终止点
-        /*canvas.drawLine(300,300,500,600,mPaint);    // 在坐标(300,300)(500,600)之间绘制一条直线
+        // 绘制直线，绘制直线也可以绘制一条或者一组，需要两个点、起始点和终止点
+        canvas.drawLine(60,60,500,60,mPaint);    // 在坐标(60,60)(500,60)之间绘制一条直线
         canvas.drawLines(new float[]{               // 绘制一组线 每四数字(两个点的坐标)确定一条线
-                100,200,200,200,
-                100,300,200,300
-        },mPaint);*/
+                80,80,500,80,
+                100,100,500,100
+        },mPaint);
 
         //绘制矩形，有三种绘制方法
-        /*// 第一种
-        canvas.drawRect(100,100,800,400,mPaint);
+        // 第一种
+        canvas.drawRect(30,120,150,150,mPaint);
         // 第二种
-        Rect rect = new Rect(100,100,800,400);
+        Rect rect = new Rect(160,120,280,150);
         canvas.drawRect(rect,mPaint);
         // 第三种
-        RectF rectF = new RectF(100,100,800,400);
-        canvas.drawRect(rectF,mPaint);*/
+        RectF rectF = new RectF(290,120,410,150);
+        canvas.drawRect(rectF,mPaint);
 
-        //绘制圆角矩形 也提供了两种重载,为什么需要两个半径参数，应为绘制是椭圆的两个圆心
+        // 绘制圆角矩形 也提供了两种重载,为什么需要两个半径参数，应为绘制是椭圆的两个圆心
         // 第一种
-        /*RectF rectF = new RectF(100,100,800,400);
-        canvas.drawRoundRect(rectF,30,30,mPaint);
+        RectF rectF2 = new RectF(50,190,280,320);
+        canvas.drawRoundRect(rectF2,15,15,mPaint);
 
         // 第二种
-        canvas.drawRoundRect(100,100,800,400,30,30,mPaint);*/
+        canvas.drawRoundRect(410,190,540,320,12,12,mPaint);
 
         // 绘制圆角矩形，当我们设置半径超过矩形宽和高的一半时，图形变成了椭圆
-        /*RectF rectF = new RectF(100,100,800,400);
+        RectF rectF3 = new RectF(50,330,250,430);
         // 绘制背景矩形
         mPaint.setColor(Color.GRAY);
         canvas.drawRect(rectF,mPaint);
         // 绘制圆角矩形
         mPaint.setColor(Color.BLUE);
-        canvas.drawRoundRect(rectF,700,400,mPaint);*/
+        canvas.drawRoundRect(rectF3,110,60,mPaint);
 
-        // 绘制椭圆，需要一个矩形作为参数
-        /*// 第一种
-        RectF rectF = new RectF(100,100,800,400);
-        canvas.drawOval(rectF,mPaint);
+        // 绘制椭圆，需要一个矩形作为参数,实际就是绘制这个矩形的内切椭圆
+        // 第一种
+        RectF rectF4 = new RectF(50,440,250,540);
+        canvas.drawOval(rectF4,mPaint);
         // 第二种
-        canvas.drawOval(100,100,800,400,mPaint);*/
+        canvas.drawOval(50,550,250,650,mPaint);
 
         // 绘制圆，前两个是圆心坐标，第三个是半径
-//        canvas.drawCircle(500,500,400,mPaint);  // 绘制一个圆心坐标在(500,500)，半径为400 的圆。
+        canvas.drawCircle(50,700,30,mPaint);  // 绘制一个圆心坐标在(50,700)，半径为30 的圆。
 
         /**
          * 绘制椭圆圆弧
@@ -106,40 +107,25 @@ public class CanvasBasic extends View {
                             弧的两个端点。
          */
 
-        /*RectF rectF = new RectF(100,100,800,400);
+        RectF rectF5 = new RectF(50,750,350,1000);
         // 绘制背景矩形
         mPaint.setColor(Color.GRAY);
-        canvas.drawRect(rectF,mPaint);
+        canvas.drawRect(rectF5,mPaint);
         // 绘制圆弧
         mPaint.setColor(Color.BLUE);
-        canvas.drawArc(rectF,0,90,false,mPaint);
+        // 不使用中心
+        canvas.drawArc(rectF5,0,90,false,mPaint);
 
         //-------------------------------------
 
-        RectF rectF2 = new RectF(100,600,800,900);
+        RectF rectF6 = new RectF(400,750,700,1000);
         // 绘制背景矩形
         mPaint.setColor(Color.GRAY);
-        canvas.drawRect(rectF2,mPaint);
+        canvas.drawRect(rectF6,mPaint);
         // 绘制圆弧
         mPaint.setColor(Color.BLUE);
-        canvas.drawArc(rectF2,0,90,true,mPaint);*/
-
-        /*RectF rectF = new RectF(100,100,600,600);
-        // 绘制背景矩形
-        mPaint.setColor(Color.GRAY);
-        canvas.drawRect(rectF,mPaint);
-
-        // 绘制圆弧
-        mPaint.setColor(Color.BLUE);
-        canvas.drawArc(rectF,0,90,false,mPaint);
-        //-------------------------------------
-        RectF rectF2 = new RectF(100,700,600,1200);
-        // 绘制背景矩形
-        mPaint.setColor(Color.GRAY);
-        canvas.drawRect(rectF2,mPaint);
-        // 绘制圆弧
-        mPaint.setColor(Color.BLUE);
-        canvas.drawArc(rectF2,0,90,true,mPaint);*/
+        // 使用中心
+        canvas.drawArc(rectF6,0,90,true,mPaint);
 
         /*Paint 的三种效果
             STROKE                //描边
@@ -151,12 +137,12 @@ public class CanvasBasic extends View {
         paint.setStrokeWidth(40);     //为了实验效果明显，特地设置描边宽度非常大
         // 描边
         paint.setStyle(Paint.Style.STROKE);
-        canvas.drawCircle(200,200,100,paint);
+        canvas.drawCircle(200,1200,100,paint);
         // 填充
         paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(200,500,100,paint);
+        canvas.drawCircle(400,1200,100,paint);
         // 描边加填充（前两个之和）
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        canvas.drawCircle(200, 800, 100, paint);
+        canvas.drawCircle(600, 1200, 100, paint);
     }
 }

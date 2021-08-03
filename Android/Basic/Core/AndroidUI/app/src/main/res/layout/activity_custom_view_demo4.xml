@@ -9,11 +9,31 @@
         android:orientation="vertical">
         <ramon.lee.androidui.customview.view.CanvasBasic
             android:layout_width="match_parent"
-            android:layout_height="400dp" />
+            android:layout_height="500dp" />
 
         <ramon.lee.androidui.customview.view.CanvasOperation
             android:layout_width="match_parent"
             android:layout_height="300dp" />
+
+        <ramon.lee.androidui.customview.view.CanvasPictureBitmapText
+            android:layout_width="match_parent"
+            android:layout_height="400dp"/>
+
+        <ramon.lee.androidui.customview.view.CheckView
+            android:id="@+id/check_view"
+            android:layout_width="300dp"
+            android:layout_height="300dp"/>
+
+        <Button
+            android:id="@+id/btn_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="check"/>
+        <Button
+            android:id="@+id/btn_uncheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="uncheck"/>
 
         <ramon.lee.androidui.customview.view.PieView
             android:id="@+id/pie_view"

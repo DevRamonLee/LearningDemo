@@ -16,6 +16,8 @@ import ramon.lee.androidui.customview.CustomViewActivityDemo1;
 import ramon.lee.androidui.customview.CustomViewActivityDemo2;
 import ramon.lee.androidui.customview.CustomViewActivityDemo3;
 import ramon.lee.androidui.customview.CustomViewActivityDemo4;
+import ramon.lee.androidui.customview.CustomViewActivityDemo5;
+import ramon.lee.androidui.customview.CustomViewActivityDemo6;
 
 public class CustomViewFragment extends Fragment {
     @Nullable
@@ -52,6 +54,20 @@ public class CustomViewFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CustomViewActivityDemo4.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.btn_custom_view_demo5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CustomViewActivityDemo5.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.btn_custom_view_demo6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CustomViewActivityDemo6.class);
                 startActivity(intent);
             }
         });

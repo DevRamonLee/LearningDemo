@@ -27,7 +27,7 @@ public class PopUpWindowActivity extends AppCompatActivity {
         View view = inflater.inflate(R.layout.pop_up_window_layout, null);
         // 创建PopupWindow对象
         final PopupWindow pop = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
-        Button btn = (Button) findViewById(R.id.btn_show_pop);
+        Button btn = findViewById(R.id.show_pop);
         // 需要设置一下此参数，点击外边可消失
         pop.setBackgroundDrawable(new BitmapDrawable());
         //设置点击窗口外边窗口消失

@@ -35,7 +35,6 @@ public class PopUpWindowActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void initWindow() {

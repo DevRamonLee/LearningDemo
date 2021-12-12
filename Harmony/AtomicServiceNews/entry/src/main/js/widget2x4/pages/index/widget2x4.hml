@@ -1,0 +1,18 @@
+<div class="card_root_layout">
+    <div class="card_root_layout">
+        <div class="title" onclick="mainRouter">
+            <text class="titleText" id="titleText">{{ title }}</text>
+            <text class="titleText" id="fullText">{{ fullText }}</text>
+        </div>
+        <div class="news">
+            <div class="newsItem" onclick="leftRouter">
+                <image src="{{ firstNewsImgUrl }}" class="image"></image>
+                <text class="newsName">{{ firstNewsTitle }}</text>
+            </div>
+            <div class="newsItem" onclick="rightRouter">
+                <image src="{{ secondNewsImgUrl }}" class="image"></image>
+                <text class="newsName">{{ firstNewsTitle }}</text>
+            </div>
+        </div>
+    </div>
+</div>

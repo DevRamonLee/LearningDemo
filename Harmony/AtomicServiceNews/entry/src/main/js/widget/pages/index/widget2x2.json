@@ -1,0 +1,29 @@
+{
+  "data": {
+    "title": "新闻卡片2*2",
+    "firstIndex": "",
+    "firstNewsTitle": "",
+    "secondIndex": "",
+    "secondNewsTitle": ""
+  },
+  "actions": {
+    "routers": {
+      "action": "router",
+      "abilityName": "com.example.atomicservicenews.NewsAbility"
+    },
+    "jumpAction1": {
+      "action": "router",
+      "abilityName": "com.example.atomicservicenews.NewsAbility",
+      "params": {
+        "index": "{{firstIndex}}"
+      }
+    },
+    "jumpAction2": {
+      "action": "message",
+      "params": {
+        "index": "{{secondIndex}}"
+      }
+    }
+  }
+}
+

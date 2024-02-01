@@ -11,6 +11,5 @@
 /build
 /captures
 .externalNativeBuild
-/entry/.preview
 .cxx
-/node_modules
+local.properties

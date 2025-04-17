@@ -1,7 +1,7 @@
 /*
  * @Author: Ramon
  * @Date: 2025-03-29 10:34:47
- * @LastEditTime: 2025-04-16 11:29:50
+ * @LastEditTime: 2025-04-17 10:38:17
  * @FilePath: /DesignPattern/app/src/main/java/org/example/App.java
  * @Description: 
  */
@@ -10,6 +10,7 @@
  */
 package org.example;
 
+import org.example.builder.BuilderTest;
 import org.example.factory.abs.Nvwa2;
 import org.example.factory.normal.NvWa;
 import org.example.proxy.ProxyTest;
@@ -28,6 +29,7 @@ enum PatternType {
     FACTORY_NORMAL,  // 工厂模式
     FACTORY_ABSTRACT, // 抽象工厂
     TEMPLATE,   // 模板方法
+    BUILDER,  // 建造者模式
 }
 
 public class App {
@@ -65,6 +67,9 @@ public class App {
             case TEMPLATE:
                 TemplateTest.templageTest();
                 break;
+            case BUILDER:
+                BuilderTest.builderTest();
+                break;
             default:
                 break;
         }
@@ -78,6 +83,7 @@ public class App {
         // runTest(PatternType.PROXY_CGLIB);
         // runTest((PatternType.FACTORY_NORMAL));
         // runTest(PatternType.FACTORY_ABSTRACT);
-        runTest(PatternType.TEMPLATE);
+        // runTest(PatternType.TEMPLATE);
+        runTest(PatternType.BUILDER);
     }
 }

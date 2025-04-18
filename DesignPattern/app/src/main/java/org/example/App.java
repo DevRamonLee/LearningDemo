@@ -1,7 +1,7 @@
 /*
  * @Author: Ramon
  * @Date: 2025-03-29 10:34:47
- * @LastEditTime: 2025-04-17 10:38:17
+ * @LastEditTime: 2025-04-18 10:20:33
  * @FilePath: /DesignPattern/app/src/main/java/org/example/App.java
  * @Description: 
  */
@@ -13,6 +13,7 @@ package org.example;
 import org.example.builder.BuilderTest;
 import org.example.factory.abs.Nvwa2;
 import org.example.factory.normal.NvWa;
+import org.example.protocol.MailTest;
 import org.example.proxy.ProxyTest;
 import org.example.singleton.SingletonTest;
 import org.example.template.TemplateTest;
@@ -26,10 +27,12 @@ enum PatternType {
     PROXY_FORCE,    // 强制代理
     PROXY_JDK,      // JDK 动态代理实现
     PROXY_CGLIB,     // CGLIB 动态代理实现
+    /* 工厂 */
     FACTORY_NORMAL,  // 工厂模式
     FACTORY_ABSTRACT, // 抽象工厂
     TEMPLATE,   // 模板方法
     BUILDER,  // 建造者模式
+    PROTOTYPE, // 原型模式
 }
 
 public class App {
@@ -70,6 +73,9 @@ public class App {
             case BUILDER:
                 BuilderTest.builderTest();
                 break;
+            case PROTOTYPE:
+                MailTest.mailTest();
+                break;
             default:
                 break;
         }
@@ -84,6 +90,7 @@ public class App {
         // runTest((PatternType.FACTORY_NORMAL));
         // runTest(PatternType.FACTORY_ABSTRACT);
         // runTest(PatternType.TEMPLATE);
-        runTest(PatternType.BUILDER);
+        // runTest(PatternType.BUILDER);
+        runTest(PatternType.PROTOTYPE);
     }
 }

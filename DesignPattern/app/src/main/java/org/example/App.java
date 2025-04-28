@@ -1,7 +1,7 @@
 /*
  * @Author: Ramon
  * @Date: 2025-03-29 10:34:47
- * @LastEditTime: 2025-04-25 16:11:51
+ * @LastEditTime: 2025-04-28 14:49:43
  * @FilePath: /DesignPattern/app/src/main/java/org/example/App.java
  * @Description:
  */
@@ -11,19 +11,28 @@
 package org.example;
 
 import org.example.adapter.AdapterTest;
+import org.example.bridge.BridgeTest;
 import org.example.builder.BuilderTest;
 import org.example.chain.ChainTest;
 import org.example.command.CommandTest;
+import org.example.composite.CompositeTest;
 import org.example.decorator.Father;
+import org.example.expression.ExpressionTest;
+import org.example.facade.FacadeTest;
 import org.example.factory.abs.Nvwa2;
 import org.example.factory.normal.NvWa;
 import org.example.iterator.Boss;
 import org.example.mediator.MediatorTest;
+import org.example.memento.MementoTest;
+import org.example.observer.ObserverTest;
 import org.example.protocol.MailTest;
 import org.example.proxy.ProxyTest;
+import org.example.share.GoGame;
 import org.example.singleton.SingletonTest;
+import org.example.state.StateTest;
 import org.example.strategy.ZhaoYun;
 import org.example.template.TemplateTest;
+import org.example.visitor.VisitorTest;
 
 enum PatternType {
     /* 单例模式 */
@@ -47,6 +56,15 @@ enum PatternType {
     STRATEGY, // 策略模式
     ADAPTER, // 适配器模式
     ITERATOR, // 迭代器模式
+    COMPOSITE, // 组合模式
+    OBSERVER, // 观察者模式
+    FACADE, // 门面模式
+    MEMENTO, // 备忘录模式
+    VISITOR, // 访问者模式
+    STATE, // 状态模式
+    EXPRESSION, // 解释器模式
+    SHARE, // 享元模式
+    BRIDGE, // 桥接模式
 }
 
 public class App {
@@ -111,6 +129,33 @@ public class App {
             case ITERATOR:
                 Boss.iteratorTest();
                 break;
+            case COMPOSITE:
+                CompositeTest.compositeTest();
+                break;
+            case OBSERVER:
+                ObserverTest.observerTest();
+                break;
+            case FACADE:
+                FacadeTest.facadeTest();
+                break;
+            case MEMENTO:
+                MementoTest.mementoTest();
+                break;
+            case VISITOR:
+                VisitorTest.visitorTest();
+                break;
+            case STATE:
+                StateTest.stateTest();
+                break;
+            case EXPRESSION:
+                ExpressionTest.expressionTest();
+                break;
+            case SHARE:
+                GoGame.shareTest();
+                break;
+            case BRIDGE:
+                BridgeTest.bridgeTest();
+                break;
             default:
                 break;
         }
@@ -133,6 +178,15 @@ public class App {
         // runTest(PatternType.DECORATOR);
         // runTest((PatternType.STRATEGY));
         // runTest(PatternType.ADAPTER);
-        runTest(PatternType.ITERATOR);
+        // runTest(PatternType.ITERATOR);
+        // runTest(PatternType.COMPOSITE);
+        // runTest(PatternType.OBSERVER);
+        // runTest(PatternType.FACADE);
+        // runTest(PatternType.MEMENTO);
+        // runTest(PatternType.VISITOR);
+        // runTest(PatternType.STATE);
+        // runTest(PatternType.EXPRESSION);
+        // runTest(PatternType.SHARE);
+        runTest(PatternType.BRIDGE);
     }
 }

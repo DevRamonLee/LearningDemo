@@ -24,6 +24,7 @@ public class ScrollerListView extends ListView{
 
     // 缓慢滑动到指定位置
     public void smoothScrollTo(int destX, int destY) {
+        // 获取当前内容相对于左边界的偏移量
         int scrollX = getScrollX();
         int delta = destX - scrollX;
         // 1000 ms 内滑向 destX

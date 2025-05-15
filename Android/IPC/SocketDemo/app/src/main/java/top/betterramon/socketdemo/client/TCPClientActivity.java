@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.lang.ref.WeakReference;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,32 +30,41 @@ import top.betterramon.socketdemo.service.TCPServerService;
 public class TCPClientActivity extends AppCompatActivity implements View.OnClickListener{
     private static final int MESSAGE_RECEIVE_NEW_MSG = 1;
     private static final int MESSAGE_SOCKET_CONNECTED = 2;
-
     private Button mSendButton;
     private TextView mMessageTextView;
     private EditText mMessageEditText;
 
     private PrintWriter mPrintWriter;
     private Socket mClientSocket;
+    private Handler mHandler;
+    private final StringBuilder mMessageBuffer = new StringBuilder();
 
-    private Handler mHandler = new Handler() {
+    private static class MyHandler extends Handler {
+        private final WeakReference<TCPClientActivity> mActivityRef;
+        public MyHandler(TCPClientActivity activity) {
+            mActivityRef = new WeakReference<>(activity);
+        }
+
         @Override
         public void handleMessage(Message msg) {
+            TCPClientActivity activity = mActivityRef.get();
+            if (activity == null || activity.isFinishing()) {
+                return;
+            }
+
             switch (msg.what) {
-                case MESSAGE_RECEIVE_NEW_MSG: {
-                    mMessageTextView.setText(mMessageTextView.getText()
-                            + (String) msg.obj);
+                case MESSAGE_RECEIVE_NEW_MSG:
+                    activity.mMessageBuffer.append((String) msg.obj).append("\n");
+                    activity.mMessageTextView.setText(activity.mMessageBuffer.toString());
                     break;
-                }
-                case MESSAGE_SOCKET_CONNECTED: {
-                    mSendButton.setEnabled(true);
+                case MESSAGE_SOCKET_CONNECTED:
+                    activity.mSendButton.setEnabled(true);
                     break;
-                }
                 default:
                     break;
             }
         }
-    };
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +73,7 @@ public class TCPClientActivity extends AppCompatActivity implements View.OnClick
         mSendButton = findViewById(R.id.send);
         mSendButton.setOnClickListener(this);
         mMessageEditText = findViewById(R.id.msg);
+        mHandler = new MyHandler(this);
         Intent service = new Intent(this, TCPServerService.class);
         startService(service);      // 启动服务端的服务
         new Thread() {
@@ -100,7 +111,8 @@ public class TCPClientActivity extends AppCompatActivity implements View.OnClick
                 mMessageEditText.setText("");
                 String time = formatDateTime(System.currentTimeMillis());
                 final String showedMsg = "self " + time + " : " + msg + "\n";
-                mMessageTextView.setText(mMessageTextView.getText() + showedMsg);
+                mMessageBuffer.append(showedMsg).append("\n");
+                mMessageTextView.setText(mMessageBuffer.toString());
             }
         }
     }
